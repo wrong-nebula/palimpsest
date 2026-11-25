@@ -1,0 +1,12 @@
+--- a/profiles.py
++++ b/profiles.py
+@@ -49,7 +49,8 @@
+         shape = np.column_stack([weight, weight*x, weight*y])
+     elif kind == "mound_pit":
+         # Compact central relief and its annulus can have opposing signs.
+-        weight = np.exp(-2*r*r)
++        # A bounded biweight core leaves the independently fitted rim at r=1.
++        weight = np.maximum(1.0 - r*r, 0.0)**2
+         shape = np.column_stack([weight, np.exp(-((r-1)/0.35)**2)])
+     else:
+         # Angle points across the trench. Fit the depth independently of tilt.

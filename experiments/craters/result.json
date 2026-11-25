@@ -1,0 +1,404 @@
+{
+  "features": [
+    "rim_over_floor_per_radius",
+    "rim_over_exterior_per_radius",
+    "fraction_enclosed_spokes"
+  ],
+  "coefficients": [
+    0.2738725730655399,
+    0.5450693550695769,
+    1.122311160286093,
+    0.9266579930607406
+  ],
+  "mean": [
+    0.07061979022757611,
+    0.003355339332945416,
+    0.8269230769230769
+  ],
+  "scale": [
+    0.06763033040717012,
+    0.027173350782385555,
+    0.31599378317605736
+  ],
+  "threshold": 0.5,
+  "train_count": 13,
+  "evaluation": {
+    "tp": 2,
+    "fn": 1,
+    "tn": 0,
+    "fp": 7,
+    "unscored_positive": 0,
+    "unscored_negative": 0
+  },
+  "sites": [
+    {
+      "site": "Barringer",
+      "lat": "35.027387",
+      "lon": "-111.022314",
+      "diam_km": "1.18",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_W112_00_DEM/Copernicus_DSM_COG_10_N35_00_W112_00_DEM.tif",
+      "features": [
+        0.24029258058420602,
+        0.02659385434075591,
+        1.0
+      ],
+      "rank_score": 0.9572503378319974
+    },
+    {
+      "site": "Wolfe Creek",
+      "lat": "-19.171774",
+      "lon": "127.795474",
+      "diam_km": "0.87",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S20_00_E127_00_DEM/Copernicus_DSM_COG_10_S20_00_E127_00_DEM.tif",
+      "features": [
+        0.08565372973299129,
+        0.017384605312807073,
+        1.0
+      ],
+      "rank_score": 0.8148784177554657
+    },
+    {
+      "site": "Amguid",
+      "lat": "26.087421",
+      "lon": "4.395037",
+      "diam_km": "0.45",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E004_00_DEM/Copernicus_DSM_COG_10_N26_00_E004_00_DEM.tif",
+      "features": [
+        0.09304442635154701,
+        -0.02816255294317999,
+        1.0
+      ],
+      "rank_score": 0.4159084208910221
+    },
+    {
+      "site": "Aouelloul",
+      "lat": "20.241106",
+      "lon": "-12.674604",
+      "diam_km": "0.39",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_W013_00_DEM/Copernicus_DSM_COG_10_N20_00_W013_00_DEM.tif",
+      "features": [
+        0.07077039565475761,
+        0.04166368592666196,
+        1.0
+      ],
+      "rank_score": 0.9141070216065039
+    },
+    {
+      "site": "Tenoumer",
+      "lat": "22.917858",
+      "lon": "-10.40647",
+      "diam_km": "1.9",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N22_00_W011_00_DEM/Copernicus_DSM_COG_10_N22_00_W011_00_DEM.tif",
+      "features": [
+        0.049334219446823646,
+        0.021173469652370016,
+        1.0
+      ],
+      "rank_score": 0.7934412921914453
+    },
+    {
+      "site": "Roter Kamm",
+      "lat": "-27.766422",
+      "lon": "16.288803",
+      "diam_km": "2.5",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S28_00_E016_00_DEM/Copernicus_DSM_COG_10_S28_00_E016_00_DEM.tif",
+      "features": [
+        0.05081195193994049,
+        0.03688632667283414,
+        1.0
+      ],
+      "rank_score": 0.8814961992889215
+    },
+    {
+      "site": "Tswaing",
+      "lat": "-25.40855",
+      "lon": "28.082931",
+      "diam_km": "1.13",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S26_00_E028_00_DEM/Copernicus_DSM_COG_10_S26_00_E028_00_DEM.tif",
+      "features": [
+        0.13361713173014225,
+        0.023193614851910314,
+        1.0
+      ],
+      "rank_score": 0.8917277737989449
+    },
+    {
+      "site": "Henbury",
+      "lat": "-24.571904",
+      "lon": "133.148138",
+      "diam_km": "0.15",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S25_00_E133_00_DEM/Copernicus_DSM_COG_10_S25_00_E133_00_DEM.tif",
+      "features": [
+        0.08078005560168265,
+        -0.018714012018043034,
+        1.0
+      ],
+      "rank_score": 0.48795354798355345
+    },
+    {
+      "site": "Boxhole",
+      "lat": "-22.612711",
+      "lon": "135.195314",
+      "diam_km": "0.17",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S23_00_E135_00_DEM/Copernicus_DSM_COG_10_S23_00_E135_00_DEM.tif",
+      "features": [
+        0.0796626842599494,
+        -0.008900538840883347,
+        1.0
+      ],
+      "rank_score": 0.5861602769523806
+    },
+    {
+      "site": "Talemzane",
+      "lat": "33.314728",
+      "lon": "4.034495",
+      "diam_km": "1.75",
+      "evidence": "catalogued impact",
+      "label": "1",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E004_00_DEM/Copernicus_DSM_COG_10_N33_00_E004_00_DEM.tif",
+      "features": [
+        0.038238393723416135,
+        0.009788036806032064,
+        1.0
+      ],
+      "rank_score": 0.6869992383005159
+    },
+    {
+      "site": "G4382",
+      "lat": "25.92189557913142",
+      "lon": "5.218215942991792",
+      "diam_km": "0.3",
+      "evidence": "suspected GEM artifact",
+      "label": "0",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E005_00_DEM/Copernicus_DSM_COG_10_N25_00_E005_00_DEM.tif",
+      "features": [
+        0.0006511265325665742,
+        -0.0023241831784283325,
+        0.625
+      ],
+      "rank_score": 0.2466125466482923
+    },
+    {
+      "site": "G1408",
+      "lat": "20.12499739429942",
+      "lon": "-5.560398616227183",
+      "diam_km": "0.18",
+      "evidence": "suspected GEM artifact",
+      "label": "0",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_W006_00_DEM/Copernicus_DSM_COG_10_N20_00_W006_00_DEM.tif",
+      "features": [
+        -0.002535622154648978,
+        0.003849125650077983,
+        0.125
+      ],
+      "rank_score": 0.08676932580755428
+    },
+    {
+      "site": "G1513",
+      "lat": "20.039789485318636",
+      "lon": "-5.750624622929719",
+      "diam_km": "0.27",
+      "evidence": "suspected GEM artifact",
+      "label": "0",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_W006_00_DEM/Copernicus_DSM_COG_10_N20_00_W006_00_DEM.tif",
+      "features": [
+        -0.001928546870134874,
+        0.0017382819764312292,
+        0.125
+      ],
+      "rank_score": 0.08046657958372352
+    },
+    {
+      "site": "G0151",
+      "lat": "21.74140542971391",
+      "lon": "-8.048137418912408",
+      "diam_km": "0.27",
+      "evidence": "suspected GEM artifact",
+      "label": "0",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N21_00_W009_00_DEM/Copernicus_DSM_COG_10_N21_00_W009_00_DEM.tif",
+      "features": [
+        0.007436654929701986,
+        -0.000978855033421016,
+        0.875
+      ],
+      "rank_score": 0.4320778923964958
+    },
+    {
+      "site": "G0032",
+      "lat": "26.8494382639804",
+      "lon": "6.532387960119201",
+      "diam_km": "0.72",
+      "evidence": "dune hollow",
+      "label": "0",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E006_00_DEM/Copernicus_DSM_COG_10_N26_00_E006_00_DEM.tif",
+      "features": [
+        0.11244040369399594,
+        -0.04715976491078272,
+        1.0
+      ],
+      "rank_score": 0.27530105346383354
+    },
+    {
+      "site": "G0057",
+      "lat": "26.754439370063604",
+      "lon": "6.518160431894911",
+      "diam_km": "1.32",
+      "evidence": "dune hollow",
+      "label": "0",
+      "partition": "fit",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E006_00_DEM/Copernicus_DSM_COG_10_N26_00_E006_00_DEM.tif",
+      "features": [
+        0.12588415739617564,
+        -0.04264162848297116,
+        1.0
+      ],
+      "rank_score": 0.33784041119978614
+    },
+    {
+      "site": "review-1",
+      "lat": "-23.373757074162373",
+      "lon": "120.1311791040756",
+      "diam_km": "0.6",
+      "evidence": "mine",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S24_00_E120_00_DEM/Copernicus_DSM_COG_10_S24_00_E120_00_DEM.tif",
+      "features": [
+        0.11086250065737185,
+        0.004070384340708983,
+        1.0
+      ],
+      "rank_score": 0.7568146592266181
+    },
+    {
+      "site": "review-2",
+      "lat": "-23.46386298949529",
+      "lon": "120.15770301715602",
+      "diam_km": "1.2",
+      "evidence": "ridge_network",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S24_00_E120_00_DEM/Copernicus_DSM_COG_10_S24_00_E120_00_DEM.tif",
+      "features": [
+        0.013571875958014441,
+        0.003272732213639908,
+        1.0
+      ],
+      "rank_score": 0.5788933846729033
+    },
+    {
+      "site": "review-3",
+      "lat": "-23.183204840360148",
+      "lon": "120.97015514999357",
+      "diam_km": "0.6",
+      "evidence": "open_valley",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S24_00_E120_00_DEM/Copernicus_DSM_COG_10_S24_00_E120_00_DEM.tif",
+      "features": [
+        0.047662959259643006,
+        0.0005133083256339433,
+        1.0
+      ],
+      "rank_score": 0.6175167342170407
+    },
+    {
+      "site": "review-4",
+      "lat": "-23.182946625053194",
+      "lon": "120.95023483164886",
+      "diam_km": "0.72",
+      "evidence": "open_valley",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S24_00_E120_00_DEM/Copernicus_DSM_COG_10_S24_00_E120_00_DEM.tif",
+      "features": [
+        0.07830128542982524,
+        -0.01207310900737563,
+        1.0
+      ],
+      "rank_score": 0.551345627237237
+    },
+    {
+      "site": "review-82",
+      "lat": "-24.11585477896286",
+      "lon": "120.95452897493705",
+      "diam_km": "0.6",
+      "evidence": "repeated_sand_ridge_hollow",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S25_00_E120_00_DEM/Copernicus_DSM_COG_10_S25_00_E120_00_DEM.tif",
+      "features": [
+        0.023968188725775785,
+        0.00841673667334637,
+        1.0
+      ],
+      "rank_score": 0.6489618357842623
+    },
+    {
+      "site": "review-83",
+      "lat": "-24.43354963833971",
+      "lon": "120.9742835746492",
+      "diam_km": "0.6",
+      "evidence": "repeated_sand_ridge_hollow",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S25_00_E120_00_DEM/Copernicus_DSM_COG_10_S25_00_E120_00_DEM.tif",
+      "features": [
+        0.025749180787281507,
+        0.005267441396775041,
+        1.0
+      ],
+      "rank_score": 0.6221681278913445
+    },
+    {
+      "site": "review-177",
+      "lat": "-23.874171261669968",
+      "lon": "121.693030676013",
+      "diam_km": "0.72",
+      "evidence": "repeated_sand_ridge_hollow",
+      "label": "0",
+      "partition": "evaluation",
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S24_00_E121_00_DEM/Copernicus_DSM_COG_10_S24_00_E121_00_DEM.tif",
+      "features": [
+        0.021709817746427974,
+        -0.0008430897345610965,
+        1.0
+      ],
+      "rank_score": 0.553254506634012
+    }
+  ],
+  "scope": "Known centres and diameters supplied. Australia withheld from fitting. Review labels are morphological. No archaeological or discovery accuracy inferred."
+}

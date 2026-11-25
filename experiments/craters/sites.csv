@@ -1,0 +1,24 @@
+site,lat,lon,diam_km,evidence,label,partition
+Barringer,35.027387,-111.022314,1.18,catalogued impact,1,fit
+Wolfe Creek,-19.171774,127.795474,0.87,catalogued impact,1,evaluation
+Amguid,26.087421,4.395037,0.45,catalogued impact,1,fit
+Aouelloul,20.241106,-12.674604,0.39,catalogued impact,1,fit
+Tenoumer,22.917858,-10.40647,1.9,catalogued impact,1,fit
+Roter Kamm,-27.766422,16.288803,2.5,catalogued impact,1,fit
+Tswaing,-25.40855,28.082931,1.13,catalogued impact,1,fit
+Henbury,-24.571904,133.148138,0.15,catalogued impact,1,evaluation
+Boxhole,-22.612711,135.195314,0.17,catalogued impact,1,evaluation
+Talemzane,33.314728,4.034495,1.75,catalogued impact,1,fit
+G4382,25.92189557913142,5.218215942991792,0.3,suspected GEM artifact,0,fit
+G1408,20.12499739429942,-5.560398616227183,0.18,suspected GEM artifact,0,fit
+G1513,20.039789485318636,-5.750624622929719,0.27,suspected GEM artifact,0,fit
+G0151,21.74140542971391,-8.048137418912408,0.27,suspected GEM artifact,0,fit
+G0032,26.8494382639804,6.532387960119201,0.72,dune hollow,0,fit
+G0057,26.754439370063604,6.518160431894911,1.32,dune hollow,0,fit
+review-1,-23.373757074162373,120.1311791040756,0.6,mine,0,evaluation
+review-2,-23.46386298949529,120.15770301715602,1.2,ridge_network,0,evaluation
+review-3,-23.183204840360148,120.97015514999357,0.6,open_valley,0,evaluation
+review-4,-23.182946625053194,120.95023483164886,0.72,open_valley,0,evaluation
+review-82,-24.11585477896286,120.95452897493705,0.6,repeated_sand_ridge_hollow,0,evaluation
+review-83,-24.43354963833971,120.9742835746492,0.6,repeated_sand_ridge_hollow,0,evaluation
+review-177,-23.874171261669968,121.693030676013,0.72,repeated_sand_ridge_hollow,0,evaluation
