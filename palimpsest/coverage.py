@@ -188,7 +188,7 @@ def finish_field_map(out, cache, detection=None):
     write_field_map(out, detection, support)
 
 
-def write_field_map(out, detection, support):
+def write_field_map(out, detection, support, *, featured_id=None):
     import base64
     from html import escape
     from rasterio.enums import Resampling
@@ -205,9 +205,18 @@ def write_field_map(out, detection, support):
         src = base64.b64encode(mem.read()).decode()
     x0,y0,x1,y1=support["bounds"]
     markers=[]
+    focus=""
     for c in detection.survivors:
         x=(c.x_6676-x0)*w/(x1-x0); y=(y1-c.y_6676)*h/(y1-y0)
         markers.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="4.5" fill="white" stroke="#162436" stroke-width="1.6"><title>{escape(c.candidate_id)} · {escape(c.morphology)}</title></circle>')
+        if c.candidate_id == featured_id:
+            focus = f'''<g id="{escape(featured_id)}" transform="translate({x:.2f} {y:.2f})" class="focus-pin">
+<title>Featured candidate {escape(featured_id)}</title>
+<circle r="17" fill="none" stroke="#132b30" stroke-width="8"/><circle r="17" fill="none" stroke="#77ffeb" stroke-width="4"/>
+<path d="M12 -12l25 -25h10" fill="none" stroke="#132b30" stroke-width="5"/>
+<rect x="43" y="-53" width="120" height="31" rx="3" fill="#132b30"/>
+<text x="103" y="-32" fill="white" text-anchor="middle" font-size="17">{escape(featured_id)}</text></g>'''
+    density_link = ' · <a href="ground_density.tif">Density GeoTIFF</a>' if (out/"ground_density.tif").is_file() else ""
     examples=[]
     for letter, item in zip(("L","H"), support.get("blank_examples",[])):
         x=(item["x"]-x0)*w/(x1-x0);y=(y1-item["y"])*h/(y1-y0)
@@ -229,8 +238,8 @@ def write_field_map(out, detection, support):
         catalog.append(f'<tr><td>{escape(c.candidate_id)}</td><td>{escape(c.temporal_class)}</td><td>{escape(c.morphology)}</td><td>{ref["center_rho"]:.2f}</td><td>{ref["mean_16m"]:.2f}</td><td>{blackout:.1f}%</td><td>{escape(LABELS[ref["code"]])}</td><td>{escape(disposition)}</td></tr>')
     bar=250*w/(x1-x0)
     html=f'''<!doctype html><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ground support · Takatenjin West Ridge</title>
-<style>*{{box-sizing:border-box}}body{{margin:2rem auto;padding:0 1.5rem;max-width:1160px;color:#19313a;background:#faf9f5;font:16px/1.5 system-ui}}h1{{margin:0}}main{{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(290px,1fr);gap:28px}}svg{{width:100%;border:1px solid #7a837e}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;padding:6px 4px;border-bottom:1px solid #ddd}}i{{display:inline-block;width:1em;height:1em;margin-right:.5em}}@media(max-width:750px){{main{{display:block}}}}a{{color:#165e6a}}</style>
-<h1>Ground support on Takatenjin West Ridge</h1><p>Projected north up · JGD2011 / Japan Plane Rectangular CS VIII · EPSG:6676</p><main><section><svg viewBox="0 0 {w} {h}" aria-label="Basin ground support with field waypoints"><image width="{w}" height="{h}" href="data:image/png;base64,{src}"/><g id="pins">{''.join(markers)}</g>{''.join(examples)}<g fill="#152f38"><rect x="20" y="{h-50}" width="{bar+24}" height="36" fill="white"/><path d="M30 {h-25}h{bar}" stroke="black" stroke-width="4"/><text x="30" y="{h-33}" font-size="13">250 m</text></g></svg><label><input type="checkbox" checked onchange="document.getElementById('pins').style.display=this.checked?'':'none'"> Show field waypoints</label></section>
+<style>*{{box-sizing:border-box}}body{{margin:2rem auto;padding:0 1.5rem;max-width:1160px;color:#19313a;background:#faf9f5;font:16px/1.5 system-ui}}h1{{margin:0}}main{{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(290px,1fr);gap:28px}}svg{{width:100%;border:1px solid #7a837e}}table{{border-collapse:collapse;width:100%}}td,th{{text-align:left;padding:6px 4px;border-bottom:1px solid #ddd}}i{{display:inline-block;width:1em;height:1em;margin-right:.5em}}@media(max-width:750px){{main{{display:block}}}}a{{color:#165e6a}}.focus-pin{{display:none}}.focus-pin:target{{display:inline}}</style>
+<h1>Ground support on Takatenjin West Ridge</h1><p>Projected north up · JGD2011 / Japan Plane Rectangular CS VIII · EPSG:6676</p><main><section><svg viewBox="0 0 {w} {h}" aria-label="Basin ground support with field waypoints"><image width="{w}" height="{h}" href="data:image/png;base64,{src}"/><g id="pins">{''.join(markers)}{focus}</g>{''.join(examples)}<g fill="#152f38"><rect x="20" y="{h-50}" width="{bar+24}" height="36" fill="white"/><path d="M30 {h-25}h{bar}" stroke="black" stroke-width="4"/><text x="30" y="{h-33}" font-size="13">250 m</text></g></svg><label><input type="checkbox" checked onchange="document.getElementById('pins').style.display=this.checked?'':'none'"> Show field waypoints</label></section>
 <section><h2>Reading a blank area</h2><p>White circles mark catalog survivors. {example_caption}A blank in the lowest tested band gives little evidence about buried relief. In the higher bands, “no detected feature” means the search saw ground and returned no candidate. Features can still be missed. Density measures ground observation. Open land, mapped infrastructure and other excluded settings can also have high ground density and a blank catalog.</p><table><thead><tr><th>Ground pts/m²</th><th>km²</th><th>Calibration sites</th></tr></thead>{''.join(legend)}</table>
-<p>Blackout uses native local density below 0.5 pts/m². Other colors use the surrounding 16 m square mean. Band counts describe injections on four calibration tiles. They do not estimate the probability that any particular blank contains a site.</p><p>Bounds in metres, east {x0:.0f} to {x1:.0f}, north {y0:.0f} to {y1:.0f}. The overview samples the native grid for display.</p><p><a href="ground_coverage.tif">Native coverage GeoTIFF</a> · <a href="ground_density.tif">Density GeoTIFF</a> · <a href="field_support.json">Candidate support</a></p></section></main><details><summary>Ground support for all {len(catalog)} catalog records</summary><p>Local and 16 m mean densities are in pts/m². Blackout is the percentage of cells in the 16 m square below the local firewall.</p><table><tr><th>ID</th><th>Class</th><th>Shape</th><th>Local</th><th>16 m mean</th><th>Blackout</th><th>Map class</th><th>Photo review</th></tr>{''.join(catalog)}</table></details>'''
+<p>Blackout uses native local density below 0.5 pts/m². Other colors use the surrounding 16 m square mean. Band counts describe injections on four calibration tiles. They do not estimate the probability that any particular blank contains a site.</p><p>Bounds in metres, east {x0:.0f} to {x1:.0f}, north {y0:.0f} to {y1:.0f}. The overview samples the native grid for display.</p><p><a href="ground_coverage.tif">Native coverage GeoTIFF</a>{density_link} · <a href="field_support.json">Candidate support</a></p></section></main><details><summary>Ground support for all {len(catalog)} catalog records</summary><p>Local and 16 m mean densities are in pts/m². Blackout is the percentage of cells in the 16 m square below the local firewall.</p><table><tr><th>ID</th><th>Class</th><th>Shape</th><th>Local</th><th>16 m mean</th><th>Blackout</th><th>Map class</th><th>Photo review</th></tr>{''.join(catalog)}</table></details>'''
     (out/"coverage_map.html").write_text(html)
