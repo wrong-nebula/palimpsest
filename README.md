@@ -12,6 +12,8 @@ On the two most recent blinded Shizuoka tiles, the frozen detector recovered one
 
 The Colab notebook downloads a checksummed public swisstopo tile, clips a small core with a 50 m halo, streams the raw returns through cloth filtering, checks detections against raw ground elevations, and exports GeoTIFF coverage, GeoJSON leads, and survey provenance. Run one footprint per output directory. The international adapter uses the source survey's projected metre CRS. Historical classes, map falsifiers and regional accuracy estimates require local evidence.
 
+The Swiss example was executed on both a Colab CPU and the local workstation. Both runs read the same LAS checksum, processed 1,418,300 returns including the halo, found 55,351.75 m² above the local support threshold, and returned zero leads. Colab peak process RSS was 0.809 decimal GB. [Colab run record](docs/bench/data/swiss_pilot/colab.json)
+
 For local use, install the packages in requirements-pilot.txt with Python 3.11 or newer. With a LAS or LAZ file and its documented horizontal CRS, vertical metre units and bounds, run:
 
 ```sh

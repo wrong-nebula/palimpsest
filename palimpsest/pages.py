@@ -33,7 +33,7 @@ def build(root, dest):
     (data/"candidates.json").write_text(json.dumps(records,ensure_ascii=False))
     for f in ("field_support.json","ground_coverage.u8.gz","ground_coverage.tif","paired_trial/comparison.json",
               "paired_trial/verify_production.json","swiss_pilot/scan.json","swiss_pilot/leads.geojson",
-              "swiss_pilot/ground_coverage.tif"):
+              "swiss_pilot/ground_coverage.tif","swiss_pilot/colab.json"):
         copy(f)
     for tile in ("08OC7981","08OC8838"):
         for f in ("trial_map.html","results.json","unsealed_truth.json"):
