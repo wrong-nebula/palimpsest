@@ -1,0 +1,951 @@
+{
+  "per_tile": {
+    "08OC7981": {
+      "frozen": {
+        "< 0.5": {
+          "band": "< 0.5",
+          "targets": 0,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": null,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 0
+            }
+          },
+          "support_km2": 0.00128375,
+          "novel_on_support": 0
+        },
+        "[0.5, 1.0)": {
+          "band": "[0.5, 1.0)",
+          "targets": 1,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.00531975,
+          "novel_on_support": 0
+        },
+        "[1.0, 2.5)": {
+          "band": "[1.0, 2.5)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.03377225,
+          "novel_on_support": 0
+        },
+        "[2.5, 5.0)": {
+          "band": "[2.5, 5.0)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.031412999999999996,
+          "novel_on_support": 0
+        },
+        ">= 5.0": {
+          "band": ">= 5.0",
+          "targets": 3,
+          "detected": 1,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.3333333333333333,
+          "false_positive_alerts": 0,
+          "correct_class": 1,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 1,
+              "total": 1
+            }
+          },
+          "support_km2": 0.0131655,
+          "novel_on_support": 0
+        }
+      },
+      "compact_floor": {
+        "< 0.5": {
+          "band": "< 0.5",
+          "targets": 0,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": null,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 0
+            }
+          },
+          "support_km2": 0.00128375,
+          "novel_on_support": 0
+        },
+        "[0.5, 1.0)": {
+          "band": "[0.5, 1.0)",
+          "targets": 1,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.00531975,
+          "novel_on_support": 0
+        },
+        "[1.0, 2.5)": {
+          "band": "[1.0, 2.5)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.03377225,
+          "novel_on_support": 0
+        },
+        "[2.5, 5.0)": {
+          "band": "[2.5, 5.0)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.031412999999999996,
+          "novel_on_support": 0
+        },
+        ">= 5.0": {
+          "band": ">= 5.0",
+          "targets": 3,
+          "detected": 1,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.3333333333333333,
+          "false_positive_alerts": 0,
+          "correct_class": 1,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 1,
+              "total": 1
+            }
+          },
+          "support_km2": 0.0131655,
+          "novel_on_support": 0
+        }
+      }
+    },
+    "08OC8838": {
+      "frozen": {
+        "< 0.5": {
+          "band": "< 0.5",
+          "targets": 0,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": null,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 0
+            }
+          },
+          "support_km2": 0.0012655,
+          "novel_on_support": 0
+        },
+        "[0.5, 1.0)": {
+          "band": "[0.5, 1.0)",
+          "targets": 1,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.00569275,
+          "novel_on_support": 0
+        },
+        "[1.0, 2.5)": {
+          "band": "[1.0, 2.5)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 1,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 1,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.02591675,
+          "novel_on_support": 1
+        },
+        "[2.5, 5.0)": {
+          "band": "[2.5, 5.0)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.020217,
+          "novel_on_support": 0
+        },
+        ">= 5.0": {
+          "band": ">= 5.0",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 1,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 1,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.028148,
+          "novel_on_support": 0
+        }
+      },
+      "compact_floor": {
+        "< 0.5": {
+          "band": "< 0.5",
+          "targets": 0,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": null,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 0
+            }
+          },
+          "support_km2": 0.0012655,
+          "novel_on_support": 0
+        },
+        "[0.5, 1.0)": {
+          "band": "[0.5, 1.0)",
+          "targets": 1,
+          "detected": 0,
+          "tracks": 0,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 0
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 0
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.00569275,
+          "novel_on_support": 0
+        },
+        "[1.0, 2.5)": {
+          "band": "[1.0, 2.5)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 1,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 1,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.02591675,
+          "novel_on_support": 1
+        },
+        "[2.5, 5.0)": {
+          "band": "[2.5, 5.0)",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 2,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 0,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.020217,
+          "novel_on_support": 0
+        },
+        ">= 5.0": {
+          "band": ">= 5.0",
+          "targets": 3,
+          "detected": 0,
+          "tracks": 1,
+          "track_hits": 0,
+          "track_alerts": 0,
+          "duplicates": 0,
+          "novel": 0,
+          "baseline_unconfirmed": 1,
+          "recall": 0.0,
+          "false_positive_alerts": 0,
+          "correct_class": 0,
+          "class_counts": {
+            "terrace": {
+              "correct": 0,
+              "total": 1
+            },
+            "mound_pit": {
+              "correct": 0,
+              "total": 1
+            },
+            "horikiri": {
+              "correct": 0,
+              "total": 1
+            }
+          },
+          "support_km2": 0.028148,
+          "novel_on_support": 0
+        }
+      }
+    }
+  },
+  "pooled": {
+    "frozen": {
+      "< 0.5": {
+        "targets": 0,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 0,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 0,
+        "support_km2": 0.00254925,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 0
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 0
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 0
+          }
+        },
+        "novel_per_support_km2": 0.0
+      },
+      "[0.5, 1.0)": {
+        "targets": 2,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 0,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 0,
+        "support_km2": 0.0110125,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 0
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 0
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 0.0
+      },
+      "[1.0, 2.5)": {
+        "targets": 6,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 4,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 1,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 1,
+        "support_km2": 0.05968899999999999,
+        "novel_on_support": 1,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 2
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 2
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 16.75350567106167
+      },
+      "[2.5, 5.0)": {
+        "targets": 6,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 4,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 0,
+        "support_km2": 0.051629999999999995,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 2
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 2
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 0.0
+      },
+      ">= 5.0": {
+        "targets": 6,
+        "detected": 1,
+        "correct_class": 1,
+        "tracks": 3,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 1,
+        "false_positive_alerts": 0,
+        "support_km2": 0.0413135,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 2
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 2
+          },
+          "horikiri": {
+            "correct": 1,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 0.0
+      }
+    },
+    "compact_floor": {
+      "< 0.5": {
+        "targets": 0,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 0,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 0,
+        "support_km2": 0.00254925,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 0
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 0
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 0
+          }
+        },
+        "novel_per_support_km2": 0.0
+      },
+      "[0.5, 1.0)": {
+        "targets": 2,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 0,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 0,
+        "support_km2": 0.0110125,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 0
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 0
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 0.0
+      },
+      "[1.0, 2.5)": {
+        "targets": 6,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 4,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 1,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 1,
+        "support_km2": 0.05968899999999999,
+        "novel_on_support": 1,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 2
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 2
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 16.75350567106167
+      },
+      "[2.5, 5.0)": {
+        "targets": 6,
+        "detected": 0,
+        "correct_class": 0,
+        "tracks": 4,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 0,
+        "false_positive_alerts": 0,
+        "support_km2": 0.051629999999999995,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 2
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 2
+          },
+          "horikiri": {
+            "correct": 0,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 0.0
+      },
+      ">= 5.0": {
+        "targets": 6,
+        "detected": 1,
+        "correct_class": 1,
+        "tracks": 3,
+        "track_hits": 0,
+        "track_alerts": 0,
+        "duplicates": 0,
+        "novel": 0,
+        "baseline_unconfirmed": 1,
+        "false_positive_alerts": 0,
+        "support_km2": 0.0413135,
+        "novel_on_support": 0,
+        "class_counts": {
+          "terrace": {
+            "correct": 0,
+            "total": 2
+          },
+          "mound_pit": {
+            "correct": 0,
+            "total": 2
+          },
+          "horikiri": {
+            "correct": 1,
+            "total": 2
+          }
+        },
+        "novel_per_support_km2": 0.0
+      }
+    }
+  },
+  "totals": {
+    "frozen": {
+      "correct_by_class": {
+        "mound_pit": 0,
+        "horikiri": 1,
+        "terrace": 0
+      },
+      "track_hits": 0,
+      "support_km2": 0.16619425,
+      "novel_per_support_km2": 6.017055343370785
+    },
+    "compact_floor": {
+      "correct_by_class": {
+        "mound_pit": 0,
+        "horikiri": 1,
+        "terrace": 0
+      },
+      "track_hits": 0,
+      "support_km2": 0.16619425,
+      "novel_per_support_km2": 6.017055343370785
+    }
+  },
+  "promotion_rule": "Increase correct-class pit recoveries, preserve each other class's correct recoveries, and do not increase track hits or novel alerts per support-eligible square kilometre across these two prespecified tiles.",
+  "promotion_checks": {
+    "more_correct_pits": false,
+    "other_classes_preserved": true,
+    "no_more_track_hits": true,
+    "no_more_novel_per_km2": true
+  },
+  "meets_promotion_rule": false,
+  "density_bands": [
+    "< 0.5",
+    "[0.5, 1.0)",
+    "[1.0, 2.5)",
+    "[2.5, 5.0)",
+    ">= 5.0"
+  ],
+  "unit": "Pre-injection 16 m context, pts/m²",
+  "support_km2": "Area with native density at least 0.5 pts/m², including tile margins and open terrain. Rates use novel-alert centres on this support. Baseline alerts have unknown truth."
+}

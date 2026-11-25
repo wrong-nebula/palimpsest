@@ -1,0 +1,19 @@
+{
+  "source": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swisssurface3d/items/swisssurface3d_2023_2598-1202",
+  "source_file_sha256": "d52064b36e680489ecdd4d13e6a69234816f53ef235129aa0d433d77c9d1168c",
+  "epsg": 2056,
+  "core_bounds": [
+    2598280,
+    1202700,
+    2598520,
+    1202940
+  ],
+  "halo_m": 50,
+  "returns_including_halo": 1418300,
+  "cell_m": 0.5,
+  "core_area_m2": 57600,
+  "supported_area_m2": 55351.75,
+  "leads": 0,
+  "peak_decimal_gb": 1.228619776,
+  "interpretation": "Exploratory. Raw confirmation required. Local sensitivity, modern land use and chronology unassessed."
+}

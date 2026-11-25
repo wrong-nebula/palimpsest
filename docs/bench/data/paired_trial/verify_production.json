@@ -1,0 +1,1218 @@
+{
+  "timestamp_utc": "2026-11-25T07:48:27.506719+00:00",
+  "status": "PASS",
+  "results": {
+    "oracle_sha256": {
+      "pass": true,
+      "checked": 6,
+      "missing": [],
+      "unexpected": [],
+      "mismatches": []
+    },
+    "tier1_analytical": {
+      "oracle": "tier1_analytical",
+      "status": "PASS",
+      "openness_and_svf": [
+        {
+          "surface": "paraboloid",
+          "L_m": 10.0,
+          "phi_rel_err": 7.247464901092375e-05,
+          "psi_rel_err": 0.005644937695634241,
+          "svf_rel_err": 8.112261966755018e-05,
+          "pass": true
+        },
+        {
+          "surface": "vtrench",
+          "L_m": 10.0,
+          "phi_rel_err": 5.9400601903851224e-05,
+          "psi_rel_err": 0.0031658038955265093,
+          "svf_rel_err": 9.202027986939904e-08,
+          "pass": true
+        },
+        {
+          "surface": "cyl_pit",
+          "L_m": 10.0,
+          "phi_rel_err": 0.004288239516159113,
+          "psi_rel_err": 1.0371852568704141e-07,
+          "svf_rel_err": 0.006995216392585977,
+          "pass": true
+        },
+        {
+          "surface": "paraboloid",
+          "L_m": 25.0,
+          "phi_rel_err": 2.5958849454618805e-05,
+          "psi_rel_err": 0.005644937695634241,
+          "svf_rel_err": 4.003367408084997e-05,
+          "pass": true
+        },
+        {
+          "surface": "vtrench",
+          "L_m": 25.0,
+          "phi_rel_err": 3.820042614587951e-06,
+          "psi_rel_err": 0.0031658038955265093,
+          "svf_rel_err": 9.917259621361831e-08,
+          "pass": true
+        },
+        {
+          "surface": "cyl_pit",
+          "L_m": 25.0,
+          "phi_rel_err": 0.004288239516159113,
+          "psi_rel_err": 1.0371852568704141e-07,
+          "svf_rel_err": 0.006995216392585977,
+          "pass": true
+        },
+        {
+          "surface": "paraboloid",
+          "L_m": 50.0,
+          "phi_rel_err": 1.6368059736266304e-05,
+          "psi_rel_err": 0.005644937695634241,
+          "svf_rel_err": 3.0139887613650688e-05,
+          "pass": true
+        },
+        {
+          "surface": "vtrench",
+          "L_m": 50.0,
+          "phi_rel_err": 4.992536997177389e-08,
+          "psi_rel_err": 0.0031658038955265093,
+          "svf_rel_err": 1.0401463545992427e-07,
+          "pass": true
+        },
+        {
+          "surface": "cyl_pit",
+          "L_m": 50.0,
+          "phi_rel_err": 0.004288239516159113,
+          "psi_rel_err": 1.0371852568704141e-07,
+          "svf_rel_err": 0.006995216392585977,
+          "pass": true
+        }
+      ],
+      "dinf_flow_azimuth": [
+        {
+          "target_deg": 17.0,
+          "mean_angular_err_deg": 0.0011804577661678195,
+          "max_angular_err_deg": 0.002716064453125,
+          "slope_err_deg": 0.0001769054651958868,
+          "pass": true
+        },
+        {
+          "target_deg": 63.0,
+          "mean_angular_err_deg": 0.0010690635535866022,
+          "max_angular_err_deg": 0.0029449462890625,
+          "slope_err_deg": 0.0002860844833776355,
+          "pass": true
+        },
+        {
+          "target_deg": 128.0,
+          "mean_angular_err_deg": 0.0007717983680777252,
+          "max_angular_err_deg": 0.00323486328125,
+          "slope_err_deg": 0.00023308559320867062,
+          "pass": true
+        },
+        {
+          "target_deg": 197.0,
+          "mean_angular_err_deg": 0.0011804577661678195,
+          "max_angular_err_deg": 0.002716064453125,
+          "slope_err_deg": 0.0001769054651958868,
+          "pass": true
+        },
+        {
+          "target_deg": 215.0,
+          "mean_angular_err_deg": 0.0014567816397175193,
+          "max_angular_err_deg": 0.00347900390625,
+          "slope_err_deg": 0.00023725736537016928,
+          "pass": true
+        },
+        {
+          "target_deg": 284.0,
+          "mean_angular_err_deg": 0.0019188864389434457,
+          "max_angular_err_deg": 0.0027923583984375,
+          "slope_err_deg": 0.00026639964198693633,
+          "pass": true
+        },
+        {
+          "target_deg": 311.0,
+          "mean_angular_err_deg": 0.001195723656564951,
+          "max_angular_err_deg": 0.00421142578125,
+          "slope_err_deg": 5.1974799134768546e-05,
+          "pass": true
+        }
+      ]
+    },
+    "tier1_firewall": {
+      "oracle": "tier1_firewall",
+      "status": "PASS",
+      "blackout_patch": {
+        "total_survivors": 0,
+        "overlapping_blackout_survivors": [],
+        "pass": true
+      },
+      "switchback_and_osm_firewall": {
+        "total_survivors": 0,
+        "switchback_survivor_ids": [],
+        "switchback_surviving_area_frac": 0.0,
+        "tower_pads_survived": 0,
+        "tower_pads_total": 4,
+        "tower_survivor_ids": [],
+        "overall_rejection_rate": 1.0,
+        "pass": true
+      }
+    },
+    "tier2_soil_creep": {
+      "oracle": "tier2_soil_creep",
+      "status": "PASS",
+      "counts": {
+        "ruins_injected": 45,
+        "decoys_injected": 20,
+        "tp": 13,
+        "fn": 32,
+        "decoy_fp": 0,
+        "novel_background_fp": 0,
+        "fp_total": 0
+      },
+      "metrics": {
+        "empirical_fdr": 0.0,
+        "max_survivor_q_value": 0.014432383515805131,
+        "precision": 1.0,
+        "recall_overall": 0.28888888888888886
+      },
+      "recall_by_class": {
+        "terrace": {
+          "total": 15,
+          "detected": 4,
+          "recall": 0.26666666666666666
+        },
+        "mound_pit": {
+          "total": 15,
+          "detected": 2,
+          "recall": 0.13333333333333333
+        },
+        "horikiri": {
+          "total": 15,
+          "detected": 7,
+          "recall": 0.4666666666666667
+        }
+      },
+      "recall_by_age_yr": {
+        "100": {
+          "total": 15,
+          "detected": 6,
+          "recall": 0.4
+        },
+        "300": {
+          "total": 15,
+          "detected": 4,
+          "recall": 0.26666666666666666
+        },
+        "800": {
+          "total": 15,
+          "detected": 3,
+          "recall": 0.2
+        }
+      },
+      "recall_by_rho_gnd": {
+        "[0.5, 1.0)": {
+          "total": 11,
+          "detected": 0,
+          "recall": 0.0
+        },
+        "[1.0, 2.5)": {
+          "total": 11,
+          "detected": 4,
+          "recall": 0.36363636363636365
+        },
+        "[2.5, 5.0)": {
+          "total": 12,
+          "detected": 4,
+          "recall": 0.3333333333333333
+        },
+        ">= 5.0": {
+          "total": 11,
+          "detected": 5,
+          "recall": 0.45454545454545453
+        }
+      },
+      "peak_rss_gb": 0.1697540283203125
+    },
+    "tier3_basin_audit": {
+      "oracle": "tier3_basin_audit",
+      "status": "PASS",
+      "survivor_count": 104,
+      "manifest": {
+        "pass": true,
+        "checked": 498,
+        "missing": [],
+        "mismatches": []
+      },
+      "binary_packs": {
+        "pass": true,
+        "checked": 116,
+        "failures": []
+      },
+      "raw_laz_ground_audit": {
+        "pass": true,
+        "audited_count": 104,
+        "failed_ids": [],
+        "details": [
+          {
+            "candidate_id": "PLMP-0001",
+            "claimed_mean_rho_gnd": 2.711,
+            "raw_las2_rho_gnd": 1.790229885057471,
+            "raw_csf_rho_gnd": 0.5402298850574712,
+            "raw_csf_count": 188,
+            "eval_radius_m": 10.524820207108489,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0002",
+            "claimed_mean_rho_gnd": 2.804,
+            "raw_las2_rho_gnd": 1.5741935483870968,
+            "raw_csf_rho_gnd": 1.1096774193548387,
+            "raw_csf_count": 129,
+            "eval_radius_m": 6.083052216516448,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0003",
+            "claimed_mean_rho_gnd": 2.775,
+            "raw_las2_rho_gnd": 1.1352549889135255,
+            "raw_csf_rho_gnd": 1.2682926829268293,
+            "raw_csf_count": 143,
+            "eval_radius_m": 5.99077955421683,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0004",
+            "claimed_mean_rho_gnd": 4.255,
+            "raw_las2_rho_gnd": 2.567335243553009,
+            "raw_csf_rho_gnd": 1.7306590257879657,
+            "raw_csf_count": 151,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0005",
+            "claimed_mean_rho_gnd": 4.909,
+            "raw_las2_rho_gnd": 4.595598981778478,
+            "raw_csf_rho_gnd": 1.2533451768486759,
+            "raw_csf_count": 63,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0006",
+            "claimed_mean_rho_gnd": 4.872,
+            "raw_las2_rho_gnd": 1.9337748344370862,
+            "raw_csf_rho_gnd": 1.7086092715231789,
+            "raw_csf_count": 129,
+            "eval_radius_m": 4.902284814948658,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0007",
+            "claimed_mean_rho_gnd": 4.032,
+            "raw_las2_rho_gnd": 1.939393939393939,
+            "raw_csf_rho_gnd": 0.8848484848484847,
+            "raw_csf_count": 73,
+            "eval_radius_m": 5.124506377219443,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0008",
+            "claimed_mean_rho_gnd": 2.381,
+            "raw_las2_rho_gnd": 1.8146964856230032,
+            "raw_csf_rho_gnd": 0.8178913738019169,
+            "raw_csf_count": 128,
+            "eval_radius_m": 7.0580094352277,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0009",
+            "claimed_mean_rho_gnd": 3.927,
+            "raw_las2_rho_gnd": 2.0463320463320462,
+            "raw_csf_rho_gnd": 2.640926640926641,
+            "raw_csf_count": 342,
+            "eval_radius_m": 6.420368389804505,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0010",
+            "claimed_mean_rho_gnd": 2.302,
+            "raw_las2_rho_gnd": 1.604113110539846,
+            "raw_csf_rho_gnd": 0.4113110539845759,
+            "raw_csf_count": 40,
+            "eval_radius_m": 5.563778970391764,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0011",
+            "claimed_mean_rho_gnd": 3.144,
+            "raw_las2_rho_gnd": 1.8044692737430168,
+            "raw_csf_rho_gnd": 1.7150837988826815,
+            "raw_csf_count": 307,
+            "eval_radius_m": 7.54834217738561,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0012",
+            "claimed_mean_rho_gnd": 5.303,
+            "raw_las2_rho_gnd": 3.43225806451613,
+            "raw_csf_rho_gnd": 2.95483870967742,
+            "raw_csf_count": 229,
+            "eval_radius_m": 4.9667913363905045,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0013",
+            "claimed_mean_rho_gnd": 3.647,
+            "raw_las2_rho_gnd": 2.383954154727794,
+            "raw_csf_rho_gnd": 1.3753581661891117,
+            "raw_csf_count": 120,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0014",
+            "claimed_mean_rho_gnd": 4.041,
+            "raw_las2_rho_gnd": 1.995381062355658,
+            "raw_csf_rho_gnd": 1.575057736720554,
+            "raw_csf_count": 341,
+            "eval_radius_m": 8.301451099584378,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0015",
+            "claimed_mean_rho_gnd": 5.177,
+            "raw_las2_rho_gnd": 2.559006211180124,
+            "raw_csf_rho_gnd": 4.939130434782609,
+            "raw_csf_count": 994,
+            "eval_radius_m": 8.00374066262069,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0016",
+            "claimed_mean_rho_gnd": 2.19,
+            "raw_las2_rho_gnd": 1.1646511627906977,
+            "raw_csf_rho_gnd": 0.6734883720930233,
+            "raw_csf_count": 181,
+            "eval_radius_m": 9.249096275414898,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0017",
+            "claimed_mean_rho_gnd": 2.312,
+            "raw_las2_rho_gnd": 1.6996336996336996,
+            "raw_csf_rho_gnd": 0.4542124542124542,
+            "raw_csf_count": 31,
+            "eval_radius_m": 4.660970900149851,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0018",
+            "claimed_mean_rho_gnd": 3.542,
+            "raw_las2_rho_gnd": 1.3502824858757063,
+            "raw_csf_rho_gnd": 0.943502824858757,
+            "raw_csf_count": 167,
+            "eval_radius_m": 7.506054213402069,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0019",
+            "claimed_mean_rho_gnd": 2.583,
+            "raw_las2_rho_gnd": 1.8351254480286734,
+            "raw_csf_rho_gnd": 2.1218637992831537,
+            "raw_csf_count": 148,
+            "eval_radius_m": 4.7119119857356635,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0020",
+            "claimed_mean_rho_gnd": 3.607,
+            "raw_las2_rho_gnd": 2.369905956112852,
+            "raw_csf_rho_gnd": 1.4294670846394981,
+            "raw_csf_count": 114,
+            "eval_radius_m": 5.038374085273672,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0021",
+            "claimed_mean_rho_gnd": 4.671,
+            "raw_las2_rho_gnd": 3.201451905626134,
+            "raw_csf_rho_gnd": 0.014519056261343012,
+            "raw_csf_count": 2,
+            "eval_radius_m": 6.621720835388424,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0022",
+            "claimed_mean_rho_gnd": 3.976,
+            "raw_las2_rho_gnd": 1.8654377880184327,
+            "raw_csf_rho_gnd": 1.5428571428571425,
+            "raw_csf_count": 837,
+            "eval_radius_m": 13.14089469003943,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0023",
+            "claimed_mean_rho_gnd": 3.909,
+            "raw_las2_rho_gnd": 1.6068866571018652,
+            "raw_csf_rho_gnd": 3.2826398852223817,
+            "raw_csf_count": 572,
+            "eval_radius_m": 7.447516207939767,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0024",
+            "claimed_mean_rho_gnd": 3.891,
+            "raw_las2_rho_gnd": 2.0093311565351786,
+            "raw_csf_rho_gnd": 2.088908628081126,
+            "raw_csf_count": 105,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0025",
+            "claimed_mean_rho_gnd": 9.509,
+            "raw_las2_rho_gnd": 4.687679083094556,
+            "raw_csf_rho_gnd": 5.0315186246418335,
+            "raw_csf_count": 439,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0026",
+            "claimed_mean_rho_gnd": 5.072,
+            "raw_las2_rho_gnd": 3.5530085959885387,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0027",
+            "claimed_mean_rho_gnd": 2.929,
+            "raw_las2_rho_gnd": 1.2931339126216497,
+            "raw_csf_rho_gnd": 1.9695424207622048,
+            "raw_csf_count": 99,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0028",
+            "claimed_mean_rho_gnd": 2.328,
+            "raw_las2_rho_gnd": 1.1647058823529413,
+            "raw_csf_rho_gnd": 1.0,
+            "raw_csf_count": 85,
+            "eval_radius_m": 5.201570947860099,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0029",
+            "claimed_mean_rho_gnd": 1.681,
+            "raw_las2_rho_gnd": 1.1818181818181819,
+            "raw_csf_rho_gnd": 0.19008264462809918,
+            "raw_csf_count": 23,
+            "eval_radius_m": 6.206085419025319,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0030",
+            "claimed_mean_rho_gnd": 3.337,
+            "raw_las2_rho_gnd": 1.5098039215686276,
+            "raw_csf_rho_gnd": 2.509803921568628,
+            "raw_csf_count": 384,
+            "eval_radius_m": 6.978639737521917,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0031",
+            "claimed_mean_rho_gnd": 3.615,
+            "raw_las2_rho_gnd": 1.7435897435897438,
+            "raw_csf_rho_gnd": 1.663817663817664,
+            "raw_csf_count": 146,
+            "eval_radius_m": 5.285044229959445,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0032",
+            "claimed_mean_rho_gnd": 2.55,
+            "raw_las2_rho_gnd": 1.6370106761565832,
+            "raw_csf_rho_gnd": 1.1245551601423485,
+            "raw_csf_count": 79,
+            "eval_radius_m": 4.72877040089824,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0033",
+            "claimed_mean_rho_gnd": 1.81,
+            "raw_las2_rho_gnd": 1.672955974842767,
+            "raw_csf_rho_gnd": 1.1572327044025155,
+            "raw_csf_count": 92,
+            "eval_radius_m": 5.0304707485096625,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0034",
+            "claimed_mean_rho_gnd": 4.425,
+            "raw_las2_rho_gnd": 2.952789699570815,
+            "raw_csf_rho_gnd": 3.7596566523605146,
+            "raw_csf_count": 219,
+            "eval_radius_m": 4.305990114968427,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0035",
+            "claimed_mean_rho_gnd": 2.222,
+            "raw_las2_rho_gnd": 0.8439108061749572,
+            "raw_csf_rho_gnd": 0.823327615780446,
+            "raw_csf_count": 120,
+            "eval_radius_m": 6.8112895923817165,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0036",
+            "claimed_mean_rho_gnd": 2.356,
+            "raw_las2_rho_gnd": 1.8343195266272185,
+            "raw_csf_rho_gnd": 1.739644970414201,
+            "raw_csf_count": 147,
+            "eval_radius_m": 5.186249645218625,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0037",
+            "claimed_mean_rho_gnd": 2.186,
+            "raw_las2_rho_gnd": 1.3953488372093021,
+            "raw_csf_rho_gnd": 0.5182724252491694,
+            "raw_csf_count": 39,
+            "eval_radius_m": 4.894161719368318,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0038",
+            "claimed_mean_rho_gnd": 2.11,
+            "raw_las2_rho_gnd": 1.3982808022922637,
+            "raw_csf_rho_gnd": 0.27507163323782235,
+            "raw_csf_count": 24,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0039",
+            "claimed_mean_rho_gnd": 1.997,
+            "raw_las2_rho_gnd": 0.6366197723675814,
+            "raw_csf_rho_gnd": 0.13926057520540844,
+            "raw_csf_count": 7,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0040",
+            "claimed_mean_rho_gnd": 3.794,
+            "raw_las2_rho_gnd": 1.475083056478405,
+            "raw_csf_rho_gnd": 2.272425249169435,
+            "raw_csf_count": 171,
+            "eval_radius_m": 4.894161719368318,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0041",
+            "claimed_mean_rho_gnd": 2.354,
+            "raw_las2_rho_gnd": 1.8202898550724638,
+            "raw_csf_rho_gnd": 0.5449275362318841,
+            "raw_csf_count": 47,
+            "eval_radius_m": 5.239678204179332,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0042",
+            "claimed_mean_rho_gnd": 3.514,
+            "raw_las2_rho_gnd": 1.6116152450090744,
+            "raw_csf_rho_gnd": 2.9038112522686026,
+            "raw_csf_count": 400,
+            "eval_radius_m": 6.621720835388424,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0043",
+            "claimed_mean_rho_gnd": 3.823,
+            "raw_las2_rho_gnd": 1.909859317102744,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0044",
+            "claimed_mean_rho_gnd": 3.243,
+            "raw_las2_rho_gnd": 2.0727272727272723,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.124506377219443,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0045",
+            "claimed_mean_rho_gnd": 3.345,
+            "raw_las2_rho_gnd": 1.7948339483394837,
+            "raw_csf_rho_gnd": 1.5940959409594098,
+            "raw_csf_count": 540,
+            "eval_radius_m": 10.384000864058086,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0046",
+            "claimed_mean_rho_gnd": 3.868,
+            "raw_las2_rho_gnd": 2.95702005730659,
+            "raw_csf_rho_gnd": 3.438395415472779,
+            "raw_csf_count": 300,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0047",
+            "claimed_mean_rho_gnd": 1.528,
+            "raw_las2_rho_gnd": 1.0793650793650793,
+            "raw_csf_rho_gnd": 0.6349206349206349,
+            "raw_csf_count": 50,
+            "eval_radius_m": 5.006685883593409,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0048",
+            "claimed_mean_rho_gnd": 2.163,
+            "raw_las2_rho_gnd": 1.1866666666666668,
+            "raw_csf_rho_gnd": 1.3466666666666667,
+            "raw_csf_count": 101,
+            "eval_radius_m": 4.886025119029199,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0049",
+            "claimed_mean_rho_gnd": 2.433,
+            "raw_las2_rho_gnd": 0.6147540983606556,
+            "raw_csf_rho_gnd": 1.2950819672131144,
+            "raw_csf_count": 158,
+            "eval_radius_m": 6.231677632421503,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0050",
+            "claimed_mean_rho_gnd": 1.999,
+            "raw_las2_rho_gnd": 1.2057971014492754,
+            "raw_csf_rho_gnd": 1.0898550724637681,
+            "raw_csf_count": 94,
+            "eval_radius_m": 5.239678204179332,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0051",
+            "claimed_mean_rho_gnd": 3.407,
+            "raw_las2_rho_gnd": 1.847953216374269,
+            "raw_csf_rho_gnd": 0.14035087719298245,
+            "raw_csf_count": 12,
+            "eval_radius_m": 5.216847253726536,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0052",
+            "claimed_mean_rho_gnd": 2.422,
+            "raw_las2_rho_gnd": 0.8027210884353742,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.8369180925986965,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0053",
+            "claimed_mean_rho_gnd": 1.863,
+            "raw_las2_rho_gnd": 0.8753521870054244,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0054",
+            "claimed_mean_rho_gnd": 1.608,
+            "raw_las2_rho_gnd": 1.107692307692308,
+            "raw_csf_rho_gnd": 0.8492307692307693,
+            "raw_csf_count": 69,
+            "eval_radius_m": 5.085536181410274,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0055",
+            "claimed_mean_rho_gnd": 4.947,
+            "raw_las2_rho_gnd": 2.413333333333334,
+            "raw_csf_rho_gnd": 3.3288888888888897,
+            "raw_csf_count": 749,
+            "eval_radius_m": 8.462843753216344,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0056",
+            "claimed_mean_rho_gnd": 2.041,
+            "raw_las2_rho_gnd": 1.068403908794788,
+            "raw_csf_rho_gnd": 0.8990228013029314,
+            "raw_csf_count": 69,
+            "eval_radius_m": 4.942700048010797,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0057",
+            "claimed_mean_rho_gnd": 2.452,
+            "raw_las2_rho_gnd": 1.8302818455567964,
+            "raw_csf_rho_gnd": 1.4721832236000318,
+            "raw_csf_count": 74,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0058",
+            "claimed_mean_rho_gnd": 2.695,
+            "raw_las2_rho_gnd": 2.034364261168385,
+            "raw_csf_rho_gnd": 0.9621993127147768,
+            "raw_csf_count": 70,
+            "eval_radius_m": 4.812176661332247,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0059",
+            "claimed_mean_rho_gnd": 1.9,
+            "raw_las2_rho_gnd": 1.5731707317073167,
+            "raw_csf_rho_gnd": 1.6219512195121948,
+            "raw_csf_count": 133,
+            "eval_radius_m": 5.108953969950291,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0060",
+            "claimed_mean_rho_gnd": 6.218,
+            "raw_las2_rho_gnd": 0.6991404011461319,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0061",
+            "claimed_mean_rho_gnd": 5.868,
+            "raw_las2_rho_gnd": 1.1299826689774697,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 6.776149428843183,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0062",
+            "claimed_mean_rho_gnd": 2.461,
+            "raw_las2_rho_gnd": 1.4941176470588236,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.201570947860099,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0063",
+            "claimed_mean_rho_gnd": 3.871,
+            "raw_las2_rho_gnd": 1.5709570957095709,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.910394472791585,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0064",
+            "claimed_mean_rho_gnd": 4.262,
+            "raw_las2_rho_gnd": 2.7345844504021444,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.448155365501106,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0065",
+            "claimed_mean_rho_gnd": 3.835,
+            "raw_las2_rho_gnd": 2.858858858858859,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.147746888183273,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0066",
+            "claimed_mean_rho_gnd": 3.057,
+            "raw_las2_rho_gnd": 1.9931271477663235,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.812176661332247,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0067",
+            "claimed_mean_rho_gnd": 3.025,
+            "raw_las2_rho_gnd": 2.9642608150865506,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0068",
+            "claimed_mean_rho_gnd": 4.546,
+            "raw_las2_rho_gnd": 2.6478873239436624,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 8.234075889688375,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0069",
+            "claimed_mean_rho_gnd": 5.518,
+            "raw_las2_rho_gnd": 3.4885245901639346,
+            "raw_csf_rho_gnd": 1.5737704918032787,
+            "raw_csf_count": 120,
+            "eval_radius_m": 4.926573740594374,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0070",
+            "claimed_mean_rho_gnd": 2.458,
+            "raw_las2_rho_gnd": 1.7091988130563798,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.178571995346243,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0071",
+            "claimed_mean_rho_gnd": 2.318,
+            "raw_las2_rho_gnd": 1.4721832236000318,
+            "raw_csf_rho_gnd": 1.3528170162811104,
+            "raw_csf_count": 68,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0072",
+            "claimed_mean_rho_gnd": 4.016,
+            "raw_las2_rho_gnd": 0.9240506329113924,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.014626706796775,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0073",
+            "claimed_mean_rho_gnd": 5.02,
+            "raw_las2_rho_gnd": 0.6407766990291262,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 8.097643889049511,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0074",
+            "claimed_mean_rho_gnd": 1.36,
+            "raw_las2_rho_gnd": 0.6097560975609755,
+            "raw_csf_rho_gnd": 0.4390243902439024,
+            "raw_csf_count": 36,
+            "eval_radius_m": 5.108953969950291,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0075",
+            "claimed_mean_rho_gnd": 3.382,
+            "raw_las2_rho_gnd": 1.6310679611650485,
+            "raw_csf_rho_gnd": 1.3980582524271845,
+            "raw_csf_count": 108,
+            "eval_radius_m": 4.958773911734415,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0076",
+            "claimed_mean_rho_gnd": 2.811,
+            "raw_las2_rho_gnd": 1.8700705813297702,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0077",
+            "claimed_mean_rho_gnd": 5.294,
+            "raw_las2_rho_gnd": 2.7167630057803462,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.24726644596002,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0078",
+            "claimed_mean_rho_gnd": 1.986,
+            "raw_las2_rho_gnd": 0.5801526717557253,
+            "raw_csf_rho_gnd": 0.5190839694656489,
+            "raw_csf_count": 68,
+            "eval_radius_m": 6.457444935117649,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0079",
+            "claimed_mean_rho_gnd": 3.545,
+            "raw_las2_rho_gnd": 1.12751677852349,
+            "raw_csf_rho_gnd": 0.026845637583892624,
+            "raw_csf_count": 2,
+            "eval_radius_m": 4.869711133187717,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0080",
+            "claimed_mean_rho_gnd": 1.923,
+            "raw_las2_rho_gnd": 1.433734939759036,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.140011726956917,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0081",
+            "claimed_mean_rho_gnd": 2.994,
+            "raw_las2_rho_gnd": 0.7793696275071633,
+            "raw_csf_rho_gnd": 0.7564469914040115,
+            "raw_csf_count": 66,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0082",
+            "claimed_mean_rho_gnd": 1.762,
+            "raw_las2_rho_gnd": 2.5000000000000004,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.583497844237541,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0083",
+            "claimed_mean_rho_gnd": 2.774,
+            "raw_las2_rho_gnd": 1.8016085790884715,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.448155365501106,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0084",
+            "claimed_mean_rho_gnd": 2.329,
+            "raw_las2_rho_gnd": 1.9894367886486917,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0085",
+            "claimed_mean_rho_gnd": 4.034,
+            "raw_las2_rho_gnd": 1.6761904761904762,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.006685883593409,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0086",
+            "claimed_mean_rho_gnd": 1.565,
+            "raw_las2_rho_gnd": 0.8421052631578946,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 7.274545936211772,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0087",
+            "claimed_mean_rho_gnd": 3.088,
+            "raw_las2_rho_gnd": 2.466901617924378,
+            "raw_csf_rho_gnd": 1.3130282805081366,
+            "raw_csf_count": 66,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0088",
+            "claimed_mean_rho_gnd": 1.804,
+            "raw_las2_rho_gnd": 0.7411764705882353,
+            "raw_csf_rho_gnd": 0.03529411764705882,
+            "raw_csf_count": 3,
+            "eval_radius_m": 5.201570947860099,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0089",
+            "claimed_mean_rho_gnd": 1.876,
+            "raw_las2_rho_gnd": 1.0345071300973196,
+            "raw_csf_rho_gnd": 0.5371479329351467,
+            "raw_csf_count": 27,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0090",
+            "claimed_mean_rho_gnd": 6.023,
+            "raw_las2_rho_gnd": 1.5318663272594926,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0091",
+            "claimed_mean_rho_gnd": 1.348,
+            "raw_las2_rho_gnd": 1.0232558139534886,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.531113291328578,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0092",
+            "claimed_mean_rho_gnd": 3.798,
+            "raw_las2_rho_gnd": 2.0603351955307265,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 8.4393031130315,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0093",
+            "claimed_mean_rho_gnd": 1.299,
+            "raw_las2_rho_gnd": 0.8753521870054244,
+            "raw_csf_rho_gnd": 0.6366197723675814,
+            "raw_csf_count": 32,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0094",
+            "claimed_mean_rho_gnd": 6.153,
+            "raw_las2_rho_gnd": 0.997134670487106,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.269965613695761,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0095",
+            "claimed_mean_rho_gnd": 1.993,
+            "raw_las2_rho_gnd": 1.1741935483870969,
+            "raw_csf_rho_gnd": 0.9290322580645163,
+            "raw_csf_count": 72,
+            "eval_radius_m": 4.9667913363905045,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0096",
+            "claimed_mean_rho_gnd": 1.672,
+            "raw_las2_rho_gnd": 0.7559859796865028,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0097",
+            "claimed_mean_rho_gnd": 1.494,
+            "raw_las2_rho_gnd": 1.1145510835913313,
+            "raw_csf_rho_gnd": 1.6470588235294117,
+            "raw_csf_count": 133,
+            "eval_radius_m": 5.069864229872541,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0098",
+            "claimed_mean_rho_gnd": 3.14,
+            "raw_las2_rho_gnd": 1.452288855713545,
+            "raw_csf_rho_gnd": 1.6313381666919273,
+            "raw_csf_count": 82,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0099",
+            "claimed_mean_rho_gnd": 3.588,
+            "raw_las2_rho_gnd": 2.2082748354000477,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0100",
+            "claimed_mean_rho_gnd": 4.971,
+            "raw_las2_rho_gnd": 2.490358126721763,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 5.374627630932119,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0101",
+            "claimed_mean_rho_gnd": 6.993,
+            "raw_las2_rho_gnd": 1.714285714285714,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.222008245644752,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0102",
+            "claimed_mean_rho_gnd": 3.225,
+            "raw_las2_rho_gnd": 1.691021270351388,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 4.0,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0103",
+            "claimed_mean_rho_gnd": 1.169,
+            "raw_las2_rho_gnd": 0.5936395759717316,
+            "raw_csf_rho_gnd": 0.6077738515901061,
+            "raw_csf_count": 43,
+            "eval_radius_m": 4.745568927694886,
+            "pass": true
+          },
+          {
+            "candidate_id": "PLMP-0104",
+            "claimed_mean_rho_gnd": 3.027,
+            "raw_las2_rho_gnd": 2.4448598130841117,
+            "raw_csf_rho_gnd": 0.0,
+            "raw_csf_count": 0,
+            "eval_radius_m": 6.524871437590323,
+            "pass": true
+          }
+        ]
+      },
+      "osm_modern_infrastructure_audit": {
+        "pass": true,
+        "violations_within_15m": []
+      },
+      "gsi_textures_audit": {
+        "pass": true,
+        "textures_checked": 312,
+        "issues": []
+      },
+      "gpx_audit": {
+        "pass": true,
+        "wpt_count": 104,
+        "missing_survivors": [],
+        "coord_errors": [],
+        "max_coord_err_m": 0.006652643780700165
+      },
+      "memory_audit": {
+        "pass": true,
+        "auditor_rss_gb": 0.4616241455078125,
+        "pipeline_reported_rss_gb": 2.0112762451171875
+      }
+    }
+  },
+  "peak_rss_gb": 1.2853851318359375
+}

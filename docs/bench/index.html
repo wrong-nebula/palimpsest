@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='6' fill='%2334d399'/></svg>"
+    />
+    <title>PALIMPSEST — Seeing Space Forest X-Ray 3D Bench</title>
+    <script type="module" crossorigin src="./assets/index-BaevUCZT.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C7IEVYSw.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Top Triage & Field-Export Bar (42px) -->
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-title">PALIMPSEST</span>
+          <span class="brand-sub" id="study-zone-label">Seeing Space · Forest X-Ray</span>
+        </div>
+
+        <div class="triage-pills" id="triage-pills" role="group" aria-label="Triage Filter">
+          <button class="pill active" data-filter="All">All <span class="count" id="cnt-all">0</span></button>
+          <button class="pill" data-filter="Class A">Class A <span class="count" id="cnt-a">0</span></button>
+          <button class="pill" data-filter="Class B">Class B <span class="count" id="cnt-b">0</span></button>
+          <button class="pill" data-filter="Class C">Class C <span class="count" id="cnt-c">0</span></button>
+          <button class="pill pill-rej" data-filter="Rejected">Rejected <span class="count" id="cnt-rej">0</span></button>
+        </div>
+
+        <div class="candidate-picker">
+          <select id="candidate-select" aria-label="Select Candidate"></select>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="btn" id="btn-side-by-side" title="Compare survivor side-by-side with a rejected artifact">Side-by-Side</button>
+          <button class="btn" id="btn-caliper" title="Click-and-drag 1-D elevation &amp; density caliper (or Shift+Drag)">Caliper</button>
+          <label class="chk-label" title="Only export Confirmed annotations">
+            <input type="checkbox" id="chk-confirmed-only" />
+            <span>Confirmed</span>
+          </label>
+          <button class="btn btn-primary" id="btn-export-gpx" title="Download filtered candidates as GPX 1.1">Download .gpx</button>
+          <button class="btn btn-icon" id="btn-toggle-inspector" title="Toggle Inspector">Panels</button>
+        </div>
+      </header>
+
+      <!-- Main Workspace -->
+      <main class="workspace">
+        <!-- 3D WebGPU Viewport Area (>= 75% screen) -->
+        <section class="viewport-area" id="viewport-area">
+          <!-- Primary 3D Pane -->
+          <div class="canvas-pane" id="primary-pane">
+            <canvas id="gpu-canvas-primary" class="gpu-canvas"></canvas>
+
+            <!-- Split-Wipe Draggable Overlay Handle -->
+            <div class="split-overlay hidden" id="split-overlay">
+              <div class="split-handle" id="split-handle" title="Drag to wipe between layers">
+                <div class="split-tag split-tag-left" id="split-label-left">RRIM</div>
+                <div class="split-knob">⇄</div>
+                <div class="split-tag split-tag-right" id="split-label-right">SVF</div>
+              </div>
+            </div>
+
+            <!-- Top-Left Candidate Telemetry HUD -->
+            <div class="hud-card hud-top-left" id="primary-hud">
+              <div class="hud-row">
+                <strong id="hud-cid">—</strong>
+                <span class="badge" id="hud-class">—</span>
+                <span class="badge badge-annot hidden" id="hud-annot"></span>
+              </div>
+              <div class="hud-meta" id="hud-meta">Loading pack...</div>
+              <div class="hud-warn hidden" id="hud-rho-warn">⚠ Low ground confidence (&lt; 0.5 pts/m²)</div>
+              <div class="hud-rej hidden" id="hud-rej-reason"></div>
+            </div>
+
+            <!-- Top-Right View Controls -->
+            <div class="hud-top-right">
+              <button class="chip" id="btn-view-oblique">Oblique</button>
+              <button class="chip" id="btn-view-top">Top-Down</button>
+              <button class="chip" id="btn-view-reset">Reset</button>
+              <button class="chip" id="btn-toggle-grid">10m Grid</button>
+            </div>
+
+            <!-- Bottom-Left GSI Attribution & 1945 Status -->
+            <div class="hud-bottom-left">
+              <div class="gsi-credit" id="gsi-credit">出典：国土地理院 (Geospatial Information Authority of Japan)</div>
+              <div class="usa10-status hidden" id="usa10-unavailable">1945 ort_USA10: Unavailable at this tile</div>
+            </div>
+
+            <!-- Bottom-Right Controls Hint -->
+            <div class="hud-bottom-right">
+              Drag: Orbit · Right-Drag: Pan · Scroll: Zoom · Shift+Drag: Caliper
+            </div>
+          </div>
+
+          <!-- Secondary Comparison Pane (Side-by-Side Rejected Artifact) -->
+          <div class="canvas-pane hidden" id="compare-pane">
+            <canvas id="gpu-canvas-compare" class="gpu-canvas"></canvas>
+            <div class="hud-card hud-top-left" id="compare-hud">
+              <div class="hud-row">
+                <strong id="cmp-cid">Rejected Artifact</strong>
+                <span class="badge badge-rej" id="cmp-class">Rejected</span>
+              </div>
+              <div class="hud-meta" id="cmp-meta">Select a rejected artifact in inspector</div>
+              <div class="hud-rej" id="cmp-rej-reason"></div>
+            </div>
+          </div>
+
+          <!-- Error / Loading Banner -->
+          <div class="status-banner hidden" id="status-banner"></div>
+        </section>
+
+        <!-- Compact Right Scientific Inspector -->
+        <aside class="inspector" id="inspector">
+          <!-- 1. Peel the Forest -->
+          <section class="panel-sec">
+            <div class="sec-head">
+              <span>FOREST X-RAY</span>
+              <span class="mono-val" id="val-peel">100%</span>
+            </div>
+            <div class="slider-row">
+              <span class="mini-lbl">Bare 0%</span>
+              <input type="range" id="slider-peel" min="0" max="100" value="100" step="1" />
+              <span class="mini-lbl">100%</span>
+            </div>
+            <div class="chip-row">
+              <button class="chip" data-peel="100">Dense 100%</button>
+              <button class="chip" data-peel="45">Half 45%</button>
+              <button class="chip" data-peel="0">Bare Earth 0%</button>
+            </div>
+            <div class="sec-subrow">
+              <label for="slider-zexag">Z-Exag <span class="mono-val" id="val-zexag">1.5x</span></label>
+              <input type="range" id="slider-zexag" min="1.0" max="3.5" value="1.5" step="0.1" />
+            </div>
+          </section>
+
+          <!-- 2. Layer Toggle + Split-Wipe -->
+          <section class="panel-sec">
+            <div class="sec-head">
+              <span>SURFACE LAYER &amp; SPLIT-WIPE</span>
+              <label class="chk-mini">
+                <input type="checkbox" id="chk-split-wipe" />
+                <span>Split</span>
+              </label>
+            </div>
+            <div class="field-row">
+              <label for="select-primary-layer">Primary</label>
+              <select id="select-primary-layer"></select>
+            </div>
+            <div class="field-row" id="compare-layer-row">
+              <label for="select-compare-layer">Compare</label>
+              <select id="select-compare-layer"></select>
+            </div>
+            <div class="sec-subrow" id="split-slider-row">
+              <label for="slider-split-x">Wipe <span class="mono-val" id="val-split-x">50%</span></label>
+              <input type="range" id="slider-split-x" min="0" max="100" value="50" step="1" />
+            </div>
+            <div id="coverage-legend" class="coverage-legend hidden"></div>
+            <a class="coverage-map-link hidden" id="coverage-map-link" href="./data/coverage_map.html" target="_blank" rel="noopener">Open basin coverage map ↗</a>
+            <div class="layer-legend" id="layer-legend">Chiba RRIM: Slope (Red) + Differential Openness</div>
+          </section>
+
+          <!-- 3. Live Raking-Light Sun -->
+          <section class="panel-sec">
+            <div class="sec-head">
+              <span>RAKING-LIGHT SUN</span>
+              <span class="mono-val" id="val-sun-readout">315° / 18°</span>
+            </div>
+            <div class="sun-gizmo-wrap">
+              <canvas id="sun-gizmo" width="92" height="92" title="Drag to aim raking-light sun azimuth and elevation"></canvas>
+              <div class="sun-sliders">
+                <label>Az <span class="mono-val" id="val-sun-az">315°</span>
+                  <input type="range" id="slider-sun-az" min="0" max="360" value="315" step="1" />
+                </label>
+                <label>El <span class="mono-val" id="val-sun-el">18°</span>
+                  <input type="range" id="slider-sun-el" min="2" max="85" value="18" step="1" />
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. 1-D Elevation & Point-Density Caliper -->
+          <section class="panel-sec">
+            <div class="sec-head">
+              <span>1-D CALIPER PROFILE</span>
+              <button class="chip" id="btn-clear-caliper">Clear</button>
+            </div>
+            <canvas id="caliper-canvas" class="caliper-canvas"></canvas>
+            <div class="readout-grid">
+              <div class="readout-card">
+                <span class="ro-lbl">Wall Height</span>
+                <strong class="ro-val" id="ro-wall">—</strong>
+              </div>
+              <div class="readout-card">
+                <span class="ro-lbl">Scarp Slope</span>
+                <strong class="ro-val" id="ro-slope">—</strong>
+              </div>
+              <div class="readout-card">
+                <span class="ro-lbl">Local Relief</span>
+                <strong class="ro-val" id="ro-lrm">—</strong>
+              </div>
+              <div class="readout-card" id="ro-rho-card">
+                <span class="ro-lbl">Ground Returns/m²</span>
+                <strong class="ro-val" id="ro-rho">—</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Candidate Annotation & Side-by-Side Decoy -->
+          <section class="panel-sec">
+            <div class="sec-head">
+              <span>TRIAGE ANNOTATION</span>
+              <span class="mono-val" id="val-qval">q=—</span>
+            </div>
+            <div class="annot-row">
+              <button class="btn-annot" data-annot="Confirmed">Confirmed</button>
+              <button class="btn-annot" data-annot="Natural">Natural</button>
+              <button class="btn-annot" data-annot="Modern">Modern</button>
+            </div>
+            <div class="field-row hidden" id="rejected-picker-row">
+              <label for="select-rejected-compare">Decoy</label>
+              <select id="select-rejected-compare"></select>
+            </div>
+            <div class="cand-notes" id="cand-notes"></div>
+            <div class="support-summary" id="support-summary"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+  </body>
+</html>
