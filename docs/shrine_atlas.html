@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Synchronized 30-layer historical map, 1 m bare-earth LiDAR Red-Relief, and multi-epoch aerial atlas across Japan." />
     <title>PALIMPSEST — 30-Layer Historical, LiDAR &amp; Vanished Shrine/Temple/Haison Atlas</title>
     <link
       rel="stylesheet"
@@ -10,31 +11,52 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --bg: #0b0f16;
-        --panel: #111722;
-        --panel-2: #0d131d;
-        --border: #233044;
-        --text: #e6edf6;
-        --muted: #8ea0b8;
-        --emerald: #34d399;
-        --amber: #f59e0b;
-        --crimson: #f43f5e;
-        --violet: #a78bfa;
-        --cyan: #38bdf8;
+        color-scheme: dark;
+        --bg: #111312;
+        --panel: #151816;
+        --panel-2: #1b1f1c;
+        --border: rgba(237, 234, 226, 0.10);
+        --border-strong: rgba(237, 234, 226, 0.20);
+        --text: #edeae2;
+        --muted: #969d97;
+        --emerald: #52ad8c;
+        --amber: #d49b4b;
+        --crimson: #cf5648;
+        --violet: #a58fd6;
+        --cyan: #6ba8c9;
+        --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+        --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-jp: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+        --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
       }
-      * { box-sizing: border-box; }
+      *, *::before, *::after { box-sizing: border-box; }
+      ::selection { background: rgba(207, 86, 72, 0.28); color: var(--text); }
+      ::-webkit-scrollbar { width: 5px; height: 5px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(237, 234, 226, 0.16); border-radius: 99px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(237, 234, 226, 0.28); }
+
       html, body {
         margin: 0;
         height: 100%;
         background: var(--bg);
         color: var(--text);
-        font: 12.5px/1.42 ui-sans-serif, system-ui, -apple-system, sans-serif;
+        font: 400 12.5px/1.45 var(--font-sans);
+        font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
+      }
+      :focus-visible {
+        outline: 1.5px solid var(--emerald);
+        outline-offset: 2px;
       }
       .layout {
         display: grid;
-        grid-template-columns: 365px 1fr;
+        grid-template-columns: 356px 1fr;
         height: 100vh;
       }
       aside {
@@ -45,47 +67,77 @@
         overflow: hidden;
       }
       .hdr {
-        padding: 10px 12px;
+        padding: 12px 14px 10px;
         border-bottom: 1px solid var(--border);
       }
       .hdr-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 6px;
+        gap: 8px;
       }
       .brand {
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        font-size: 12.5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        font-size: 12px;
+        color: var(--text);
       }
-      .brand span { color: var(--emerald); }
+      .brand span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--crimson);
+        display: inline-block;
+      }
       .back-link {
-        color: var(--cyan);
+        color: var(--muted);
         text-decoration: none;
         font-size: 11.5px;
+        font-weight: 500;
+        padding: 3px 8px;
+        border-radius: 5px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        transition: transform 140ms var(--ease-out), color 140ms ease, border-color 140ms ease;
       }
-      .sub { color: var(--muted); font-size: 11px; margin-top: 3px; }
+      .back-link:active { transform: scale(0.97); }
+      @media (hover: hover) and (pointer: fine) {
+        .back-link:hover { color: var(--text); border-color: var(--border-strong); }
+      }
+      .sub { color: var(--muted); font-size: 11px; margin-top: 5px; line-height: 1.4; }
       .controls {
-        padding: 9px 12px;
+        padding: 10px 14px;
         border-bottom: 1px solid var(--border);
         display: grid;
-        gap: 7px;
+        gap: 8px;
       }
       .ctrl-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 6px;
+        font-size: 11.5px;
+        color: var(--muted);
       }
-      select, input[type="range"] {
+      select {
         width: 100%;
         background: var(--panel-2);
         color: var(--text);
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        padding: 4px 6px;
-        font: inherit;
+        border: 1px solid var(--border-strong);
+        border-radius: 5px;
+        padding: 4px 8px;
+        font: 400 11.5px/1.3 var(--font-sans);
+        transition: border-color 140ms ease;
+      }
+      input[type="range"] {
+        width: 100%;
+        accent-color: var(--emerald);
+        margin: 4px 0 0;
+        height: 4px;
+        cursor: pointer;
       }
       .chips {
         display: flex;
@@ -93,94 +145,111 @@
         gap: 4px;
       }
       .chip {
-        background: #172131;
-        color: var(--text);
+        appearance: none;
+        background: transparent;
+        color: var(--muted);
         border: 1px solid var(--border);
-        border-radius: 4px;
-        padding: 3px 7px;
-        font-size: 11px;
+        border-radius: 5px;
+        padding: 3px 8px;
+        font: 500 11px/1.25 var(--font-sans);
         cursor: pointer;
+        transition: transform 140ms var(--ease-out), background-color 140ms ease, color 140ms ease, border-color 140ms ease;
       }
-      .chip.active, .chip:hover {
-        border-color: var(--emerald);
-        color: #fff;
-        background: #1a2b3c;
+      .chip:active { transform: scale(0.97); }
+      @media (hover: hover) and (pointer: fine) {
+        .chip:hover {
+          color: var(--text);
+          border-color: var(--border-strong);
+          background: rgba(237, 234, 226, 0.04);
+        }
+      }
+      .chip.active {
+        border-color: rgba(237, 234, 226, 0.34);
+        color: var(--bg);
+        background: var(--text);
       }
       .site-list {
         flex: 1;
         overflow-y: auto;
-        padding: 7px 9px;
-        display: grid;
-        gap: 6px;
-        align-content: start;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
       }
       .card {
-        background: #0e141f;
-        border: 1px solid var(--border);
-        border-radius: 5px;
-        padding: 7px 9px;
+        background: transparent;
+        border-bottom: 1px solid var(--border);
+        padding: 9px 14px;
         cursor: pointer;
-        transition: border-color 0.12s;
+        transition: background-color 140ms ease;
       }
-      .card:hover { border-color: var(--cyan); }
+      @media (hover: hover) and (pointer: fine) {
+        .card:hover { background: rgba(237, 234, 226, 0.04); }
+      }
       .card-top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: 6px;
-        font-weight: 600;
+        align-items: baseline;
+        gap: 8px;
+        font: 500 12.5px/1.35 var(--font-jp);
+        color: var(--text);
       }
       .tag {
-        font-size: 10px;
-        padding: 1px 5px;
-        border-radius: 99px;
-        font-family: ui-monospace, monospace;
+        font: 400 10px/1.2 var(--font-mono);
+        padding: 1px 6px;
+        border-radius: 4px;
         white-space: nowrap;
+        border: 1px solid var(--border-strong);
+        color: var(--muted);
+        background: rgba(237, 234, 226, 0.04);
       }
-      .tag-vanished { background: rgba(244,63,94,0.18); color: #fda4af; border: 1px solid rgba(244,63,94,0.4); }
-      .tag-confirmed { background: rgba(34,197,94,0.22); color: #86efac; border: 1px solid rgba(34,197,94,0.55); font-weight: 700; }
+      .tag-vanished { color: #eb9a90; border-color: rgba(207, 86, 72, 0.35); background: rgba(207, 86, 72, 0.10); }
+      .tag-confirmed { color: #8fd4b8; border-color: rgba(82, 173, 140, 0.38); background: rgba(82, 173, 140, 0.11); }
       .confirm-row {
         display: flex;
         flex-wrap: wrap;
         gap: 3px;
-        margin-top: 5px;
+        margin-top: 6px;
       }
       .cbtn {
         font-size: 10.5px;
         padding: 2px 6px;
         border-radius: 4px;
-        border: 1px solid #2b3b52;
-        background: #141e2d;
-        color: #cbd5e1;
+        border: 1px solid var(--border-strong);
+        background: var(--panel-2);
+        color: var(--muted);
         cursor: pointer;
-        font-weight: 600;
+        font-weight: 500;
+        transition: transform 140ms var(--ease-out), border-color 140ms ease, color 140ms ease;
       }
-      .cbtn:hover { border-color: var(--emerald); color: #fff; }
-      .cbtn.active { background: rgba(34,197,94,0.25); border-color: var(--emerald); color: #ecfdf5; }
-      .cbtn.rej.active { background: rgba(244,63,94,0.28); border-color: var(--crimson); color: #ffe4e6; }
+      .cbtn:active { transform: scale(0.97); }
+      @media (hover: hover) and (pointer: fine) {
+        .cbtn:hover { border-color: var(--emerald); color: var(--text); }
+      }
+      .cbtn.active { background: rgba(82,173,140,0.2); border-color: var(--emerald); color: var(--text); }
+      .cbtn.rej.active { background: rgba(207,86,72,0.22); border-color: var(--crimson); color: var(--text); }
       .gt-strip {
-        margin-top: 5px;
-        padding: 4px 7px;
+        margin-top: 7px;
+        padding: 5px 8px;
         border-radius: 5px;
-        background: #0b121c;
-        border: 1px solid #1e2d42;
-        font-size: 10.5px;
-        color: #a7f3d0;
+        background: rgba(82, 173, 140, 0.07);
+        border: 1px solid rgba(82, 173, 140, 0.22);
+        font: 400 10.5px/1.3 var(--font-mono);
+        color: #9dd8c0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 4px;
       }
-      .tag-temple { background: rgba(56,189,248,0.18); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.4); }
-      .tag-school { background: rgba(251,191,36,0.18); color: #fde68a; border: 1px solid rgba(251,191,36,0.4); }
-      .tag-shrine { background: rgba(245,158,11,0.18); color: #fcd34d; border: 1px solid rgba(245,158,11,0.4); }
-      .tag-haison { background: rgba(250,204,21,0.18); color: #fef08a; border: 1px solid rgba(250,204,21,0.45); }
-      .tag-castle { background: rgba(251,146,60,0.2); color: #fed7aa; border: 1px solid rgba(251,146,60,0.48); }
-      .tag-mound { background: rgba(45,212,191,0.2); color: #99f6e4; border: 1px solid rgba(45,212,191,0.48); }
-      .tag-lidar { background: rgba(52,211,153,0.18); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.4); }
-      .cond-ruin { color: #34d399; font-weight: 600; }
-      .cond-bldg { color: #fbbf24; }
-      .card-meta { color: var(--muted); font-size: 11px; margin-top: 3px; }
+      .tag-temple { color: #9bc5de; border-color: rgba(107,168,201,0.32); }
+      .tag-school { color: #dfc48d; border-color: rgba(212,155,75,0.32); }
+      .tag-shrine { color: #e6b48c; border-color: rgba(212,130,85,0.32); }
+      .tag-haison { color: #d6c89a; border-color: rgba(196,178,118,0.32); }
+      .tag-castle { color: #e2b494; border-color: rgba(214,134,84,0.35); }
+      .tag-mound { color: #94d2c5; border-color: rgba(76,175,158,0.35); }
+      .tag-lidar { color: #96d4b9; border-color: rgba(82,173,140,0.35); }
+      .cond-ruin { color: var(--emerald); font-weight: 500; }
+      .cond-bldg { color: var(--amber); }
+      .card-meta { color: var(--muted); font-size: 11px; margin-top: 3px; line-height: 1.4; }
 
       /* Right workspace: top toolbar + 1/2/4-pane map matrix + bottom archive deep-link bar */
       .workspace {
@@ -190,9 +259,9 @@
         overflow: hidden;
       }
       .topbar {
-        background: #0e1520;
+        background: var(--panel);
         border-bottom: 1px solid var(--border);
-        padding: 6px 10px;
+        padding: 7px 12px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -202,15 +271,15 @@
       .mode-group, .preset-group {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 4px;
         flex-wrap: wrap;
       }
       .pane-grid {
         display: grid;
         width: 100%;
         height: 100%;
-        gap: 2px;
-        background: var(--border);
+        gap: 1px;
+        background: var(--border-strong);
       }
       .pane-grid.mode-1 { grid-template-columns: 1fr; grid-template-rows: 1fr; }
       .pane-grid.mode-2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
@@ -219,7 +288,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        background: #090d12;
+        background: #0d0f0e;
         overflow: hidden;
       }
       .pane.hidden { display: none; }
@@ -227,87 +296,114 @@
       .pane-hud {
         position: absolute;
         top: 8px;
-        left: 46px;
+        left: 44px;
         right: 8px;
         z-index: 650;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 5px;
         pointer-events: none;
       }
       .pane-hud select {
         pointer-events: auto;
-        max-width: 310px;
-        background: rgba(13, 19, 29, 0.92);
-        backdrop-filter: blur(4px);
-        border: 1px solid #324663;
-        font-size: 11.5px;
-        padding: 3px 6px;
+        width: auto;
+        max-width: min(320px, calc(100% - 34px));
+        background: rgba(21, 24, 22, 0.90);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid var(--border-strong);
+        font-size: 11px;
+        padding: 3px 10px 3px 7px;
       }
       .pane-badge {
-        background: rgba(17, 23, 34, 0.9);
-        border: 1px solid var(--border);
-        color: var(--emerald);
-        font-family: ui-monospace, monospace;
-        font-size: 10.5px;
-        padding: 2px 6px;
+        background: rgba(21, 24, 22, 0.90);
+        border: 1px solid var(--border-strong);
+        color: var(--muted);
+        font: 500 10px/1.2 var(--font-mono);
+        padding: 3px 6px;
         border-radius: 4px;
       }
-      /* Crosshair at center of synchronized panes so user compares exact pixel across all 4 maps */
+      /* Precision hairline crosshair */
       .crosshair {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 18px;
-        height: 18px;
-        margin-left: -9px;
-        margin-top: -9px;
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        margin-top: -8px;
         z-index: 620;
         pointer-events: none;
       }
       .crosshair::before, .crosshair::after {
         content: "";
         position: absolute;
-        background: rgba(244, 63, 94, 0.78);
+        background: rgba(207, 86, 72, 0.72);
       }
-      .crosshair::before { left: 8px; top: 0; width: 2px; height: 18px; }
-      .crosshair::after { top: 8px; left: 0; width: 18px; height: 2px; }
+      .crosshair::before { left: 7.5px; top: 0; width: 1px; height: 16px; }
+      .crosshair::after { top: 7.5px; left: 0; width: 16px; height: 1px; }
 
       .archive-bar {
-        background: #0e1520;
+        background: var(--panel);
         border-top: 1px solid var(--border);
-        padding: 5px 10px;
+        padding: 6px 12px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         gap: 8px;
-        font-size: 11.5px;
+        font-size: 11px;
       }
       .archive-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
       }
       .archive-links a {
-        color: var(--cyan);
+        color: var(--muted);
         text-decoration: none;
-        padding: 2px 6px;
-        background: #141e2e;
-        border: 1px solid #253650;
-        border-radius: 4px;
-      }
-      .archive-links a:hover { border-color: var(--emerald); color: #fff; }
-
-      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-        background: #111722;
-        color: var(--text);
+        padding: 2px 7px;
+        background: var(--panel-2);
         border: 1px solid var(--border);
+        border-radius: 4px;
+        transition: transform 140ms var(--ease-out), border-color 140ms ease, color 140ms ease;
+      }
+      .archive-links a:active { transform: scale(0.97); }
+      @media (hover: hover) and (pointer: fine) {
+        .archive-links a:hover { border-color: var(--border-strong); color: var(--text); }
+      }
+
+      .leaflet-control-zoom {
+        border: 1px solid var(--border-strong) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28) !important;
+        border-radius: 5px !important;
+        overflow: hidden;
+      }
+      .leaflet-control-zoom a {
+        background: rgba(21, 24, 22, 0.90) !important;
+        color: var(--text) !important;
+        width: 26px !important;
+        height: 26px !important;
+        line-height: 26px !important;
+        font-size: 14px !important;
+      }
+      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+        background: var(--panel);
+        color: var(--text);
+        border: 1px solid var(--border-strong);
       }
       .leaflet-popup-content a { color: var(--cyan); }
       @media (max-width: 900px) {
-        .layout { grid-template-columns: 1fr; grid-template-rows: 40vh 60vh; }
-        .workspace { height: 60vh; }
+        .layout { grid-template-columns: 1fr; grid-template-rows: 42vh 58vh; }
+        .workspace { height: 58vh; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .chip, .back-link, .cbtn, .archive-links a {
+          transition: background-color 140ms ease, color 140ms ease !important;
+        }
+        .chip:active, .back-link:active, .cbtn:active, .archive-links a:active {
+          transform: none !important;
+        }
       }
     </style>
   </head>
@@ -316,51 +412,48 @@
       <aside>
         <div class="hdr">
           <div class="hdr-top">
-            <div class="brand"><span>●</span> PALIMPSEST 30-LAYER ATLAS</div>
-            <div style="display:flex;gap:7px;">
-              <a class="back-link" href="./" onclick="if(location.hostname==='127.0.0.1'||location.hostname==='localhost')this.href='./japan_map.html'">🗾 Japan Map</a>
-              <a class="back-link" id="nav-voter-link" style="display:none;font-weight:700;color:#38bdf8" href="./symbol_labeler_r6.html">🗳 9-Class Deck →</a>
+            <div class="brand"><span aria-hidden="true"></span> PALIMPSEST ATLAS</div>
+            <div style="display:flex;gap:6px;">
+              <a class="back-link" href="./" onclick="if(location.hostname==='127.0.0.1'||location.hostname==='localhost')this.href='./japan_map.html'">← Map</a>
+              <a class="back-link" id="nav-voter-link" style="display:none;color:var(--cyan)" href="./symbol_labeler_r6.html">9-Class Deck →</a>
             </div>
           </div>
-          <div class="sub">
-            Native z=16 Konjakumap (60 Regions) · Live z=17 1m LiDAR Red-Relief · 1936–2021 Aerials · H-GIS Warper · 文化財総覧
-          </div>
           <div class="gt-strip" id="atlas-gt-strip">
-            <span>✓ Verified Corpus: loading...</span>
+            <span>Corpus: loading…</span>
           </div>
         </div>
 
         <div class="controls">
           <div>
             <div class="ctrl-row">
-              <label>Pane 1 Overlay (Blend on top of Pane 1)</label>
-              <span id="op-val" style="font-family:monospace;color:var(--emerald)">45%</span>
+              <label for="overlay-select">Overlay</label>
+              <span id="op-val" style="font-family:var(--font-mono);color:var(--text)">45%</span>
             </div>
             <select id="overlay-select"></select>
-            <input type="range" id="overlay-opacity" min="0" max="100" value="45" />
+            <input type="range" id="overlay-opacity" min="0" max="100" value="45" aria-label="Overlay opacity" />
           </div>
 
           <div class="ctrl-row">
-            <span style="color:var(--muted);font-size:11px">Modern Roof Filter (1:2,500 GSI):</span>
+            <label for="ruin-filter">Filter</label>
             <select id="ruin-filter" style="width:auto;font-size:11px;padding:2px 6px">
-              <option value="all">All Sites (Ruins + Unmapped Halls)</option>
-              <option value="pure_ruin">Pure Bare/Forest Ruins (&gt;25m from any roof)</option>
+              <option value="all">All Sites</option>
+              <option value="pure_ruin">Sub-Canopy (&gt;25 m)</option>
             </select>
           </div>
 
           <div class="chips" id="region-chips">
             <button class="chip active" data-filter="all">All</button>
-            <button class="chip" data-filter="confirmed" style="border-color:rgba(52,211,153,0.45);color:#6ee7b7">✓ Confirmed</button>
-            <button class="chip" data-filter="shizuoka_100km2">100 km² Shizuoka</button>
-            <button class="chip" data-filter="vanished_torii">Vanished ⛩</button>
-            <button class="chip" data-filter="vanished_manji">Vanished 卍</button>
-            <button class="chip" data-filter="vanished_bun">Closed 文</button>
-            <button class="chip" data-filter="haison" style="border-color:rgba(250,204,21,0.4);color:#fef08a">⚒ Mines/廃村</button>
-            <button class="chip" data-filter="castle_ruin" style="border-color:rgba(251,146,60,0.45);color:#fed7aa">⛫ Castles</button>
-            <button class="chip" data-filter="burial_mound" style="border-color:rgba(45,212,191,0.45);color:#99f6e4">∴ Burial Mounds</button>
-            <button class="chip" data-filter="linear_earthwork" style="border-color:rgba(163,230,53,0.45);color:#d9f99d">═ Roads/Walls</button>
-            <button class="chip" data-filter="megalith_iwakura" style="border-color:rgba(232,121,249,0.45);color:#f5d0fe">🪨 Iwakura</button>
-            <button class="chip" data-filter="lidar">0.5m LiDAR</button>
+            <button class="chip" data-filter="confirmed">Verified</button>
+            <button class="chip" data-filter="shizuoka_100km2">Shizuoka</button>
+            <button class="chip" data-filter="vanished_torii">⛩ Shrines</button>
+            <button class="chip" data-filter="vanished_manji">卍 Temples</button>
+            <button class="chip" data-filter="vanished_bun">文 Schools</button>
+            <button class="chip" data-filter="haison">Mines / Haison</button>
+            <button class="chip" data-filter="castle_ruin">Castles</button>
+            <button class="chip" data-filter="burial_mound">∴ Mounds</button>
+            <button class="chip" data-filter="linear_earthwork">Earthworks</button>
+            <button class="chip" data-filter="megalith_iwakura">Iwakura</button>
+            <button class="chip" data-filter="lidar">0.5 m LiDAR</button>
             <button class="chip" data-filter="shrine">廃神社</button>
           </div>
         </div>
@@ -368,42 +461,42 @@
         <div class="site-list" id="site-list"></div>
       </aside>
 
-      <div class="workspace">
+      <main class="workspace">
         <div class="topbar">
           <div class="mode-group" id="mode-btns">
-            <span style="color:var(--muted);font-weight:600">View:</span>
-            <button class="chip" data-mode="1">1-Pane + Overlay</button>
-            <button class="chip" data-mode="2">2-Pane Sync</button>
-            <button class="chip active" data-mode="4">4-Pane At-a-Glance</button>
+            <span style="color:var(--muted);font-size:11px;margin-right:2px">Layout</span>
+            <button class="chip" data-mode="1">Single</button>
+            <button class="chip" data-mode="2">Dual</button>
+            <button class="chip active" data-mode="4">Quad</button>
           </div>
           <div class="preset-group" id="preset-btns">
-            <span style="color:var(--muted)">At-a-Glance Presets:</span>
-            <button class="chip active" data-preset="shrine_hunt">1889 Meiji + 1938 WW2 + 1m LiDAR + Sat</button>
-            <button class="chip" data-preset="epochs4">4-Epoch Topo (1889·1916·1938·Today)</button>
-            <button class="chip" data-preset="aerials4">Aerials (1945·1965·1975·2021 Leaf-Off)</button>
-            <button class="chip" data-preset="terrain4">1m LiDAR CS + Slope + Meiji Wetland + Ortho</button>
-            <button class="chip" id="btn-warper-scan" title="Query H-GIS / UC Berkeley MapWarper for georeferenced historical sheets in current view">🔍 Load H-GIS Sheet Here</button>
+            <span style="color:var(--muted);font-size:11px;margin-right:2px">Presets</span>
+            <button class="chip active" data-preset="shrine_hunt">Meiji · 1938 · 1 m LiDAR · Ortho</button>
+            <button class="chip" data-preset="epochs4">4-Epoch Topo</button>
+            <button class="chip" data-preset="aerials4">4-Epoch Aerials</button>
+            <button class="chip" data-preset="terrain4">Terrain &amp; Slope</button>
+            <button class="chip" id="btn-warper-scan" title="Query H-GIS / UC Berkeley MapWarper for georeferenced historical sheets in current view">H-GIS Sheet</button>
           </div>
         </div>
 
         <div class="pane-grid mode-4" id="pane-grid">
           <div class="pane" id="pane-0">
-            <div class="pane-hud"><span class="pane-badge">A</span><select class="pane-layer-sel" data-pane="0"></select></div>
+            <div class="pane-hud"><span class="pane-badge">A</span><select class="pane-layer-sel" data-pane="0" aria-label="Pane A layer"></select></div>
             <div class="crosshair"></div>
             <div class="pane-map" id="map-0"></div>
           </div>
           <div class="pane" id="pane-1">
-            <div class="pane-hud"><span class="pane-badge">B</span><select class="pane-layer-sel" data-pane="1"></select></div>
+            <div class="pane-hud"><span class="pane-badge">B</span><select class="pane-layer-sel" data-pane="1" aria-label="Pane B layer"></select></div>
             <div class="crosshair"></div>
             <div class="pane-map" id="map-1"></div>
           </div>
           <div class="pane" id="pane-2">
-            <div class="pane-hud"><span class="pane-badge">C</span><select class="pane-layer-sel" data-pane="2"></select></div>
+            <div class="pane-hud"><span class="pane-badge">C</span><select class="pane-layer-sel" data-pane="2" aria-label="Pane C layer"></select></div>
             <div class="crosshair"></div>
             <div class="pane-map" id="map-2"></div>
           </div>
           <div class="pane" id="pane-3">
-            <div class="pane-hud"><span class="pane-badge">D</span><select class="pane-layer-sel" data-pane="3"></select></div>
+            <div class="pane-hud"><span class="pane-badge">D</span><select class="pane-layer-sel" data-pane="3" aria-label="Pane D layer"></select></div>
             <div class="crosshair"></div>
             <div class="pane-map" id="map-3"></div>
           </div>
@@ -415,7 +508,7 @@
           </div>
           <div class="archive-links" id="center-links"></div>
         </div>
-      </div>
+      </main>
     </div>
 
     <script
@@ -538,7 +631,7 @@
       }
 
       const KjDynamicLayer = L.TileLayer.extend({
-        getTileUrl: function(coords) {
+        _kjUrlForEpoch: function(coords, epoch) {
           let z = this._getZoomForUrl();
           const n = Math.pow(2, z);
           const lon = (coords.x / n) * 360 - 180;
@@ -550,7 +643,30 @@
             z = reg.maxNative; tx = tx >> shift; ty = ty >> shift;
           }
           const tmsY = (1 << z) - ty - 1;
-          return `https://ktgis.net/kjmapw/kjtilemap/${reg.folder}/${this.options.epoch}/${z}/${tx}/${tmsY}.png`;
+          return `https://ktgis.net/kjmapw/kjtilemap/${reg.folder}/${epoch}/${z}/${tx}/${tmsY}.png`;
+        },
+        getTileUrl: function(coords) {
+          return this._kjUrlForEpoch(coords, this.options.epoch);
+        },
+        createTile: function(coords, done) {
+          const tile = document.createElement("img");
+          L.DomEvent.on(tile, "load", L.Util.bind(this._tileOnLoad, this, done, tile));
+          const chain = this.options.epoch === "2man" ? ["00", "01"] : (this.options.epoch === "00" ? ["01"] : []);
+          let fallbackIdx = 0;
+          tile.onerror = () => {
+            if (fallbackIdx < chain.length) {
+              tile.src = this._kjUrlForEpoch(coords, chain[fallbackIdx++]);
+            } else {
+              this._tileOnError(done, tile, new Error("tile missing"));
+            }
+          };
+          if (this.options.crossOrigin || this.options.crossOrigin === "") {
+            tile.crossOrigin = this.options.crossOrigin === true ? "" : this.options.crossOrigin;
+          }
+          tile.alt = "";
+          tile.setAttribute("role", "presentation");
+          tile.src = this.getTileUrl(coords);
+          return tile;
         }
       });
 
@@ -663,44 +779,44 @@
       // Catalog of 30 verified live tile layers!
       const LAYER_CATALOG = [
         // Historical Imperial & Meiji/Edo Topographic Surveys
-        { id: "kj_2man", group: "Historical Topo", label: "1888–98 Meiji 1:20k / Rapid (今昔 2man z=16)", make: () => new KjDynamicLayer("", { epoch: "2man", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (明治二万分一)" }) },
-        { id: "kj_00", group: "Historical Topo", label: "1916–24 Taishō Survey (今昔 00 z=16)", make: () => new KjDynamicLayer("", { epoch: "00", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (大正)" }) },
-        { id: "kj_01", group: "Historical Topo", label: "1930–45 WW2 Imperial Survey (今昔 01 z=16)", make: () => new KjDynamicLayer("", { epoch: "01", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (昭和戦前)" }) },
-        { id: "kj_02", group: "Historical Topo", label: "1946–58 Immediate Postwar (今昔 02 z=16)", make: () => new KjDynamicLayer("", { epoch: "02", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (戦後直後)" }) },
-        { id: "kj_03", group: "Historical Topo", label: "1965–75 High-Growth Topo (今昔 03 z=16)", make: () => new KjDynamicLayer("", { epoch: "03", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (1965–75)" }) },
-        { id: "naro_rapid", group: "Historical Topo", label: "1880–86 NARO Kanto Meiji 1:20k Color (z=17)", make: () => L.tileLayer("https://boiledorange73.sakura.ne.jp/ws/tile/Kanto_Rapid-900913/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "農研機構 歴史的農業環境閲覧システム (迅速測図)" }) },
-        { id: "naro_tokyo5k", group: "Historical Topo", label: "1883–84 Early Meiji Tokyo 1:5,000 (z=17)", make: () => L.tileLayer("https://boiledorange73.sakura.ne.jp/ws/tile/Tokyo5000-900913/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "参謀本部 東京五千分一" }) },
-        { id: "hgis_warper", group: "Historical Topo", label: "H-GIS / UC Berkeley Georeferenced Sheet (z=18)", make: () => L.tileLayer(`https://mapwarper.h-gis.jp/maps/tile/${activeWarperMapId}/{z}/{x}/{y}.png`, { maxNativeZoom: 18, maxZoom: 19, attribution: "日本版MapWarper / UC Berkeley" }) },
+        { id: "kj_2man", group: "Historical Topo", label: "1888–98 Meiji 1:20k Survey", make: () => new KjDynamicLayer("", { epoch: "2man", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (明治)" }) },
+        { id: "kj_00", group: "Historical Topo", label: "1916–24 Taishō Survey", make: () => new KjDynamicLayer("", { epoch: "00", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (大正)" }) },
+        { id: "kj_01", group: "Historical Topo", label: "1930–45 Imperial 1:25k Survey", make: () => new KjDynamicLayer("", { epoch: "01", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (昭和戦前)" }) },
+        { id: "kj_02", group: "Historical Topo", label: "1946–58 Postwar Survey", make: () => new KjDynamicLayer("", { epoch: "02", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (戦後直後)" }) },
+        { id: "kj_03", group: "Historical Topo", label: "1965–75 Topo Survey", make: () => new KjDynamicLayer("", { epoch: "03", maxNativeZoom: 16, maxZoom: 19, attribution: "今昔マップ (1965–75)" }) },
+        { id: "naro_rapid", group: "Historical Topo", label: "1880–86 NARO Kantō Rapid", make: () => L.tileLayer("https://boiledorange73.sakura.ne.jp/ws/tile/Kanto_Rapid-900913/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "農研機構 (迅速測図)" }) },
+        { id: "naro_tokyo5k", group: "Historical Topo", label: "1883–84 Tokyo 1:5,000", make: () => L.tileLayer("https://boiledorange73.sakura.ne.jp/ws/tile/Tokyo5000-900913/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "参謀本部 東京五千分一" }) },
+        { id: "hgis_warper", group: "Historical Topo", label: "H-GIS Georeferenced Sheet", make: () => L.tileLayer(`https://mapwarper.h-gis.jp/maps/tile/${activeWarperMapId}/{z}/{x}/{y}.png`, { maxNativeZoom: 18, maxZoom: 19, attribution: "日本版MapWarper" }) },
 
         // Canopy-Penetrating LiDAR & Geomorphology
-        { id: "lidar_cs1m", group: "LiDAR & Geomorph", label: "★ Live 1m LiDAR Red-Relief / CS立体図 (DEM1A z=17)", make: () => new GsiDemRedReliefLayer({ maxZoom: 19, attribution: "国土地理院 DEM1A (1m LiDAR) / DEM5A" }) },
-        { id: "gsi_hillshade", group: "LiDAR & Geomorph", label: "GSI LiDAR Hillshade Relief (陰影起伏図 z=16)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (陰影起伏図)" }) },
-        { id: "gsi_slope", group: "LiDAR & Geomorph", label: "GSI LiDAR Slope — Flat Pads=White (傾斜量図 z=15)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png", { maxNativeZoom: 15, maxZoom: 19, attribution: "国土地理院 (傾斜量図)" }) },
-        { id: "gsi_sekishoku", group: "LiDAR & Geomorph", label: "GSI Macro Red Relief (赤色立体地図 z=14)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/sekishoku/{z}/{x}/{y}.png", { maxNativeZoom: 14, maxZoom: 19, attribution: "国土地理院・アジア航測 (赤色立体地図)" }) },
-        { id: "gsi_relief", group: "LiDAR & Geomorph", label: "GSI Color Elevation Relief (色別標高図 z=15)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png", { maxNativeZoom: 15, maxZoom: 19, attribution: "国土地理院 (色別標高図)" }) },
-        { id: "gsi_swale", group: "LiDAR & Geomorph", label: "GSI Meiji Wetland & Moat Reconstruction (明治期の低湿地 z=16)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/swale/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (明治期の低湿地)" }) },
-        { id: "gsi_lcm25k", group: "LiDAR & Geomorph", label: "GSI 1:25k Landform & Earthworks (土地条件図 z=16)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/lcm25k_2012/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (数値地図25000土地条件図)" }) },
-        { id: "gsi_lcmfc2", group: "LiDAR & Geomorph", label: "GSI Flood Geomorphology (治水地形分類図 z=16)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/lcmfc2/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (治水地形分類図)" }) },
-        { id: "gsi_afm", group: "LiDAR & Geomorph", label: "GSI Active Faults & Scarps (都市圏活断層図 z=16)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/afm/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (活断層図)" }) },
-        { id: "gsi_landslide", group: "LiDAR & Geomorph", label: "Landslide Hazard Zones (土砂災害警戒区域 z=17)", make: () => L.tileLayer("https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "重ねるハザードマップ" }) },
+        { id: "lidar_cs1m", group: "LiDAR & Geomorph", label: "1 m Bare-Earth LiDAR Red-Relief", make: () => new GsiDemRedReliefLayer({ maxZoom: 19, attribution: "国土地理院 DEM1A" }) },
+        { id: "gsi_hillshade", group: "LiDAR & Geomorph", label: "GSI LiDAR Hillshade", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (陰影起伏図)" }) },
+        { id: "gsi_slope", group: "LiDAR & Geomorph", label: "GSI LiDAR Slope", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png", { maxNativeZoom: 15, maxZoom: 19, attribution: "国土地理院 (傾斜量図)" }) },
+        { id: "gsi_sekishoku", group: "LiDAR & Geomorph", label: "GSI Macro Red-Relief", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/sekishoku/{z}/{x}/{y}.png", { maxNativeZoom: 14, maxZoom: 19, attribution: "国土地理院 (赤色立体地図)" }) },
+        { id: "gsi_relief", group: "LiDAR & Geomorph", label: "GSI Elevation Relief", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png", { maxNativeZoom: 15, maxZoom: 19, attribution: "国土地理院 (色別標高図)" }) },
+        { id: "gsi_swale", group: "LiDAR & Geomorph", label: "GSI Meiji Wetland & Moat", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/swale/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (明治期の低湿地)" }) },
+        { id: "gsi_lcm25k", group: "LiDAR & Geomorph", label: "GSI 1:25k Landform", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/lcm25k_2012/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (土地条件図)" }) },
+        { id: "gsi_lcmfc2", group: "LiDAR & Geomorph", label: "GSI Flood Geomorphology", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/lcmfc2/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (治水地形分類図)" }) },
+        { id: "gsi_afm", group: "LiDAR & Geomorph", label: "GSI Active Faults & Scarps", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/afm/{z}/{x}/{y}.png", { maxNativeZoom: 16, maxZoom: 19, attribution: "国土地理院 (活断層図)" }) },
+        { id: "gsi_landslide", group: "LiDAR & Geomorph", label: "Steep Slope Zones", make: () => L.tileLayer("https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "重ねるハザードマップ" }) },
 
         // Historical Aerial Photography Time-Series
-        { id: "gsi_riku10", group: "Historical Aerials", label: "1936–42 Imperial Japanese Army Aerial (ort_riku10 z=18)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/ort_riku10/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (陸軍撮影)" }) },
-        { id: "gsi_usa10", group: "Historical Aerials", label: "1945–50 US Military / B-29 Aerial (ort_USA10 z=17)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/ort_USA10/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (米軍撮影)" }) },
-        { id: "gsi_old10", group: "Historical Aerials", label: "1961–69 Pre-Monoculture Monochrome (ort_old10 z=17)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/ort_old10/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1961–69)" }) },
-        { id: "gsi_gazo1", group: "Historical Aerials", label: "1974–78 National Color Phase 1 (gazo1 z=17)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo1/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1974–78)" }) },
-        { id: "gsi_gazo2", group: "Historical Aerials", label: "1979–83 Color Aerial (gazo2 z=17)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1979–83)" }) },
-        { id: "gsi_gazo3", group: "Historical Aerials", label: "1984–86 Color Aerial (gazo3 z=17)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo3/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1984–86)" }) },
-        { id: "gsi_gazo4", group: "Historical Aerials", label: "1987–90 Bubble-Era Color Aerial (gazo4 z=17)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo4/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1987–90)" }) },
+        { id: "gsi_riku10", group: "Historical Aerials", label: "1936–42 Imperial Army Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/ort_riku10/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (陸軍撮影)" }) },
+        { id: "gsi_usa10", group: "Historical Aerials", label: "1945–50 US Military Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/ort_USA10/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (米軍撮影)" }) },
+        { id: "gsi_old10", group: "Historical Aerials", label: "1961–69 Monochrome Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/ort_old10/{z}/{x}/{y}.png", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1961–69)" }) },
+        { id: "gsi_gazo1", group: "Historical Aerials", label: "1974–78 Color Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo1/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1974–78)" }) },
+        { id: "gsi_gazo2", group: "Historical Aerials", label: "1979–83 Color Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1979–83)" }) },
+        { id: "gsi_gazo3", group: "Historical Aerials", label: "1984–86 Color Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo3/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1984–86)" }) },
+        { id: "gsi_gazo4", group: "Historical Aerials", label: "1987–90 Color Aerial", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/gazo4/{z}/{x}/{y}.jpg", { maxNativeZoom: 17, maxZoom: 19, attribution: "国土地理院 (1987–90)" }) },
 
         // Modern Satellite, Leaf-Off Aerials & Vector Topo
-        { id: "esri_sat", group: "Modern Sat & Topo", label: "Esri World Imagery Satellite (Global z=19)", make: () => L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxNativeZoom: 19, maxZoom: 19, attribution: "Esri, Maxar" }) },
-        { id: "gsi_ortho", group: "Modern Sat & Topo", label: "GSI Seamless Ortho Today (seamlessphoto z=18)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (最新写真)" }) },
-        { id: "gsi_nendo2021", group: "Modern Sat & Topo", label: "GSI 2021 Leaf-Off / Alt-Sun Ortho (z=18)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/nendophoto2021/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (2021年度写真)" }) },
-        { id: "gsi_nendo2020", group: "Modern Sat & Topo", label: "GSI 2020 Flight Ortho (z=18)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/nendophoto2020/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (2020年度写真)" }) },
-        { id: "gsi_std", group: "Modern Sat & Topo", label: "GSI Modern Topographic Map (標準地図 std z=18)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (標準地図)" }) },
-        { id: "gsi_pale", group: "Modern Sat & Topo", label: "GSI Pale Base Map (淡色地図 pale z=18)", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (淡色地図)" }) },
-        { id: "osm", group: "Modern Sat & Topo", label: "OpenStreetMap Japan (z=19)", make: () => L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxNativeZoom: 19, maxZoom: 19, attribution: "&copy; OpenStreetMap" }) }
+        { id: "esri_sat", group: "Modern Sat & Topo", label: "Esri World Imagery", make: () => L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxNativeZoom: 19, maxZoom: 19, attribution: "Esri, Maxar" }) },
+        { id: "gsi_ortho", group: "Modern Sat & Topo", label: "GSI Seamless Ortho", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (最新写真)" }) },
+        { id: "gsi_nendo2021", group: "Modern Sat & Topo", label: "GSI 2021 Leaf-Off Ortho", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/nendophoto2021/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (2021年度写真)" }) },
+        { id: "gsi_nendo2020", group: "Modern Sat & Topo", label: "GSI 2020 Ortho", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/nendophoto2020/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (2020年度写真)" }) },
+        { id: "gsi_std", group: "Modern Sat & Topo", label: "GSI Standard Topo", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (標準地図)" }) },
+        { id: "gsi_pale", group: "Modern Sat & Topo", label: "GSI Pale Survey", make: () => L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png", { maxNativeZoom: 18, maxZoom: 19, attribution: "国土地理院 (淡色地図)" }) },
+        { id: "osm", group: "Modern Sat & Topo", label: "OpenStreetMap", make: () => L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxNativeZoom: 19, maxZoom: 19, attribution: "&copy; OpenStreetMap" }) }
       ];
 
       function buildOptionsHtml(includeNone) {
@@ -782,18 +898,17 @@
         const c = maps[0].getCenter();
         const z = maps[0].getZoom();
         const lat = c.lat.toFixed(5), lon = c.lng.toFixed(5);
-        document.getElementById("center-readout").textContent = `Center: ${lat}, ${lon} (z=${z})`;
+        document.getElementById("center-readout").textContent = `${lat}, ${lon} · z${z}`;
         const d = 0.015;
         const reg = nearestKjReg(c.lat, c.lng);
         document.getElementById("center-links").innerHTML = `
-          <a href="https://heritagemap.nabunken.go.jp/?lat=${lat}&lng=${lon}&zoom=16.0&bearing=0.0&pitch=0.0" target="_blank" rel="noopener" title="Nara National Research Institute for Cultural Properties — 610,000+ archaeological &amp; ruined temple/shrine sites">🏛 文化財総覧WebGIS ↗</a>
-          <a href="https://maps.qchizu.jp/#17/${lat}/${lon}/&base=pale&ls=pale%7Cdem1a_cs&disp=11" target="_blank" rel="noopener" title="Qchizu 1m CS立体図 micro-topography">⛰ Q地図 1m CS立体図 ↗</a>
-          <a href="https://ktgis.net/kjmapw/kjmapw.html?lat=${lat}&lng=${lon}&zoom=16&dataset=${reg.folder}&age=0&screen=2" target="_blank" rel="noopener">📜 今昔マップ Dual ↗</a>
-          <a href="https://service.gsi.go.jp/map-photos/?lat=${lat}&lon=${lon}&zoom=15" target="_blank" rel="noopener" title="Search raw GSI aerial &amp; 1890 Meiji 1:20,000 archival scans">🛩 GSI 原図・空中写真検索 ↗</a>
-          <a href="https://mapwarper.h-gis.jp/maps/geosearch?bbox=${(c.lng-d).toFixed(4)},${(c.lat-d).toFixed(4)},${(c.lng+d).toFixed(4)},${(c.lat+d).toFixed(4)}" target="_blank" rel="noopener">🗺 H-GIS / UC Berkeley ↗</a>
-          <a href="https://user.numazu-ct.ac.jp/~tsato/webmap/map/lmap.html?ll=${lat},${lon}&z=16&b=GSIstd&o=GSIort_old10" target="_blank" rel="noopener">🔍 佐藤古地図比較 ↗</a>
-          <a href="https://maps.gsi.go.jp/#17/${lat}/${lon}/&base=ort&ls=ort%7Chillshademap&disp=11" target="_blank" rel="noopener">🗾 地理院地図 ↗</a>
-          <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${lat},${lon}&zoom=18&basemap=satellite" target="_blank" rel="noopener">🛰 Google Sat ↗</a>
+          <a href="https://heritagemap.nabunken.go.jp/?lat=${lat}&lng=${lon}&zoom=16.0&bearing=0.0&pitch=0.0" target="_blank" rel="noopener">文化財総覧 ↗</a>
+          <a href="https://maps.qchizu.jp/#17/${lat}/${lon}/&base=pale&ls=pale%7Cdem1a_cs&disp=11" target="_blank" rel="noopener">Q地図 1m CS ↗</a>
+          <a href="https://ktgis.net/kjmapw/kjmapw.html?lat=${lat}&lng=${lon}&zoom=16&dataset=${reg.folder}&age=0&screen=2" target="_blank" rel="noopener">今昔マップ ↗</a>
+          <a href="https://service.gsi.go.jp/map-photos/?lat=${lat}&lon=${lon}&zoom=15" target="_blank" rel="noopener">GSI 原図・写真 ↗</a>
+          <a href="https://mapwarper.h-gis.jp/maps/geosearch?bbox=${(c.lng-d).toFixed(4)},${(c.lat-d).toFixed(4)},${(c.lng+d).toFixed(4)},${(c.lat+d).toFixed(4)}" target="_blank" rel="noopener">H-GIS ↗</a>
+          <a href="https://maps.gsi.go.jp/#17/${lat}/${lon}/&base=ort&ls=ort%7Chillshademap&disp=11" target="_blank" rel="noopener">地理院地図 ↗</a>
+          <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${lat},${lon}&zoom=18&basemap=satellite" target="_blank" rel="noopener">Satellite ↗</a>
         `;
       }
 
@@ -885,7 +1000,7 @@
           const voterHtml = IS_LOCAL_DEV
             ? `<a class="back-link" href="./symbol_labeler_r6.html" style="font-size:10.5px;color:#bae6fd">Vote R6 + 9-Tier Deck ↗</a>`
             : "";
-          el.innerHTML = `<span>✓ Verified Corpus (${summary.confirmed_positive_count || 318}): <b>${bc.shrine_torii || 0}</b>⛩ · <b>${bc.temple_manji || 0}</b>卍 · <b>${bc.school_bun || 0}</b>文 · <b>${bc.mine_quarry || 0}</b>⚒ · <b>${bc.castle_ruin || 0}</b>⛫ · <b>${bc.burial_mound || 0}</b>∴</span>${voterHtml}`;
+          el.innerHTML = `<span><b>${summary.confirmed_positive_count || 318}</b> verified · ${bc.shrine_torii || 0} ⛩ · ${bc.temple_manji || 0} 卍 · ${bc.burial_mound || 0} ∴ · ${bc.castle_ruin || 0} castles · ${bc.mine_quarry || 0} mines</span>${voterHtml}`;
         }
       }
 
@@ -1009,7 +1124,7 @@
               fillOpacity: 0.9
             });
             if (idx === 0) {
-              m.bindPopup(popupHtml(it));
+              m.bindPopup(popupHtml(it), { autoPanPaddingTopLeft: [16, 48], autoPanPaddingBottomRight: [16, 16] });
               primaryMarker = m;
               if (it.id) markerById.set(String(it.id), m);
               if (it.humanCode) markerById.set(String(it.humanCode), m);
@@ -1032,29 +1147,29 @@
             it.group === "lidar" ? "tag-lidar" :
             it.group === "haison" ? "tag-haison" : "tag-shrine");
           const tagLbl = it.humanLabel || (
-            it.group === "vanished_torii" ? "VANISHED ⛩" :
-            it.group === "vanished_manji" ? "VANISHED 卍" :
-            it.group === "vanished_bun" ? "CLOSED 文" :
-            it.group === "castle_ruin" ? "CASTLE ⛫" :
-            it.group === "burial_mound" ? "KOFUN ∴" :
-            it.group === "linear_earthwork" ? "LINEAR ═" :
-            it.group === "megalith_iwakura" ? "IWAKURA 🪨" :
+            it.group === "vanished_torii" ? "⛩ Shrine" :
+            it.group === "vanished_manji" ? "卍 Temple" :
+            it.group === "vanished_bun" ? "文 School" :
+            it.group === "castle_ruin" ? "Castle" :
+            it.group === "burial_mound" ? "∴ Mound" :
+            it.group === "linear_earthwork" ? "Earthwork" :
+            it.group === "megalith_iwakura" ? "Iwakura" :
             it.group === "lidar" ? "0.5m LiDAR" :
-            it.group === "haison" ? "⚒ MINE / 廃村" : "廃神社");
+            it.group === "haison" ? "Mine / Haison" : "Shrine");
+          const codePrefix = (it.humanCode || it.id) ? `${it.humanCode || it.id} · ` : "";
           const bldgBadge = it.distBldg !== undefined
-            ? ` · <span class="${it.distBldg > 25 ? 'cond-ruin' : 'cond-bldg'}">${it.distBldg > 25 ? 'NO-ROOF (' + it.distBldg + 'm)' : 'ROOF (' + it.distBldg + 'm)'}</span>`
+            ? ` · <span class="${it.distBldg > 25 ? 'cond-ruin' : 'cond-bldg'}">${it.distBldg > 25 ? '>' + it.distBldg + 'm' : it.distBldg + 'm'}</span>`
             : "";
           card.innerHTML = `
             <div class="card-top">
               <span>${it.title}</span>
               <span class="tag ${tagCls}">${tagLbl}</span>
             </div>
-            <div class="card-meta">${it.note}${bldgBadge}</div>
+            <div class="card-meta" style="font-family:var(--font-mono);font-size:10.5px">${codePrefix}${it.lat.toFixed(4)}, ${it.lon.toFixed(4)}${bldgBadge}</div>
             ${confirmButtonsHtml(it)}
           `;
           card.addEventListener("click", () => {
-            maps[0].flyTo([it.lat, it.lon], 16, { duration: 0.65 });
-            if (primaryMarker) primaryMarker.openPopup();
+            maps[0].flyTo([it.lat, it.lon], 16, { duration: 0.55 });
           });
           listEl.appendChild(card);
         }
@@ -1096,14 +1211,14 @@
                   v.kind === "megalith_iwakura" ? "megalith_iwakura" :
                   (v.kind === "mine_quarry" || v.kind === "haison_industrial") ? "haison" : "vanished_bun";
                 const sym =
-                  v.kind === "shrine_torii" ? "⛩ Vanished Shrine" :
-                  v.kind === "temple_manji" ? "卍 Vanished Temple" :
-                  v.kind === "castle_ruin" ? "⛫ Fortification / Castle" :
-                  v.kind === "burial_mound" ? "∴ Mound / Kofun" :
-                  v.kind === "linear_earthwork" ? "═ Linear Earthwork / Road / Wall" :
-                  v.kind === "megalith_iwakura" ? "🪨 Sacred Iwakura / Quarry" :
-                  v.kind === "haison_industrial" ? "🏚 Haison / WWII / Industrial Relic" :
-                  v.kind === "mine_quarry" ? "⚒ Historical Mine" : "文 Closed Pre-War School";
+                  v.kind === "shrine_torii" ? "⛩ Shrine" :
+                  v.kind === "temple_manji" ? "卍 Temple" :
+                  v.kind === "castle_ruin" ? "Castle" :
+                  v.kind === "burial_mound" ? "∴ Mound" :
+                  v.kind === "linear_earthwork" ? "Earthwork" :
+                  v.kind === "megalith_iwakura" ? "Iwakura" :
+                  v.kind === "haison_industrial" ? "Haison" :
+                  v.kind === "mine_quarry" ? "Mine" : "文 School";
                 const hv =
                   v.human_verified ? (
                     v.kind === "shrine_torii" ? "T" :
@@ -1115,26 +1230,22 @@
                     v.kind === "haison_industrial" ? "H" :
                     v.kind === "mine_quarry" ? "K" : "B"
                   ) : null;
-                const codeTag = v.human_code || v.discovery_id || "";
-                const hTag = codeTag ? ` [${codeTag}]` : "";
-                const regTag = v.region_folder ? ` · ${v.region_folder}` : "";
+                const cleanTitle = v.wikidata_name || `${sym}${v.region_folder ? " (" + v.region_folder + ")" : ""}`;
                 const ocr = (v.ocr_kanji_nearby && v.ocr_kanji_nearby.length) ? ` · OCR: ${v.ocr_kanji_nearby.slice(0,2).join("/")}` : "";
                 const mdlTag = !v.human_verified ? (
                   v.model_source ? ` · ${v.model_source}` : ""
                 ) : "";
                 const qaExtra = v.qa_note ? ` · ${v.qa_note}` : "";
-                const dMod = Math.min(v.dist_nearest_modern_shrine_m || 9999, v.dist_nearest_modern_temple_m || 9999);
-                const wkTag = v.wikidata_name ? ` · ${v.wikidata_name}` : "";
                 vanItems.push({
                   id: v.human_code || v.discovery_id || `VAN-${idx+1}`,
                   humanCode: v.human_code || v.discovery_id || null,
                   humanConfirmed: Boolean(v.human_verified),
                   humanVote: hv,
-                  humanLabel: v.human_verified ? `CONFIRMED ${v.human_confirmed_label || sym.split(" ")[0]}` : null,
+                  humanLabel: v.human_verified ? "Verified" : null,
                   group: grp,
                   in100km2: v.in100km2 !== undefined ? Boolean(v.in100km2) : true,
                   distBldg: v.dist_gsi_bldg_m,
-                  title: `${sym}${hTag}${wkTag} #${idx+1} (${(v.epochs_present || []).join(",")}${regTag})`,
+                  title: cleanTitle,
                   lat: v.lat,
                   lon: v.lon,
                   note: `Score=${Number(v.consensus_score || 0.85).toFixed(2)}${mdlTag}${ocr}${qaExtra}`
@@ -1162,7 +1273,7 @@
                 dup.humanConfirmed = true;
                 dup.humanVote = p.human_vote;
                 dup.humanCode = p.code;
-                dup.humanLabel = `CONFIRMED ${p.confirmed_label}`;
+                dup.humanLabel = "Verified";
                 if (p.confirmed_class === "shrine_torii") dup.group = "vanished_torii";
                 else if (p.confirmed_class === "temple_manji") dup.group = "vanished_manji";
                 else if (p.confirmed_class === "school_bun") dup.group = "vanished_bun";
@@ -1181,10 +1292,10 @@
                   humanCode: p.code,
                   humanConfirmed: true,
                   humanVote: p.human_vote,
-                  humanLabel: `CONFIRMED ${p.confirmed_label}`,
+                  humanLabel: "Verified",
                   group: grp,
                   in100km2: p.region_folder === "hamamatsu",
-                  title: `${p.confirmed_label} [${p.code}] (${p.region_short || p.region_folder})`,
+                  title: p.site_name || `${String(p.confirmed_label || "").replace(/[⚒🪨🏚⛫]/g, "").trim()} (${p.region_short || p.region_folder})`,
                   lat: p.lat,
                   lon: p.lon,
                   note: `${p.round} human-confirmed ground truth · Epoch: ${p.epoch || "hist"} · ${p.modern_status || ""}`
@@ -1254,9 +1365,6 @@
             const hcode = parts[3] ? decodeURIComponent(parts[3]) : "";
             if (!Number.isNaN(hlat) && !Number.isNaN(hlon)) {
               maps[0].setView([hlat, hlon], Number.isNaN(hz) ? 17 : hz);
-              if (hcode && markerById.has(hcode)) {
-                setTimeout(() => markerById.get(hcode).openPopup(), 220);
-              }
             }
           }
         }
