@@ -1,5 +1,5 @@
 {
-  "count": 20,
+  "count": 24,
   "cards": [
     {
       "rank": 1,
@@ -360,6 +360,78 @@
       "scarp_deg": 29.1,
       "image": "./cards/20_W2-006.png",
       "atlas_url": "./shrine_atlas.html#17/33.785403/130.693383/W2-006"
+    },
+    {
+      "rank": 21,
+      "code": "W5-001",
+      "slug": "21_W5-001",
+      "place_ja": "福岡県北九州市八幡東区大字田代",
+      "title_ja": "樹林下・尾根端の明治期消滅社祠土壇",
+      "era_ja": "明治・大正図 · 鳥居記号",
+      "badge_ja": "消滅社祠",
+      "accent": "#E85D4A",
+      "score": 0.7254,
+      "lat": 33.806083,
+      "lon": 130.803984,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+4.9m",
+      "scarp_deg": 25.8,
+      "image": "./cards/21_W5-001.png",
+      "atlas_url": "./shrine_atlas.html#17/33.806083/130.803984/W5-001"
+    },
+    {
+      "rank": 22,
+      "code": "W5-003",
+      "slug": "22_W5-003",
+      "place_ja": "宮城県黒川郡大和町小野",
+      "title_ja": "樹林下・方形切土壇の明治期消滅社祠",
+      "era_ja": "明治・大正図 · 鳥居記号",
+      "badge_ja": "消滅社祠",
+      "accent": "#E85D4A",
+      "score": 0.7113,
+      "lat": 38.40453,
+      "lon": 140.872568,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+3.5m",
+      "scarp_deg": 25.8,
+      "image": "./cards/22_W5-003.png",
+      "atlas_url": "./shrine_atlas.html#17/38.404530/140.872568/W5-003"
+    },
+    {
+      "rank": 23,
+      "code": "W5-004",
+      "slug": "23_W5-004",
+      "place_ja": "宮城県黒川郡大和町宮床",
+      "title_ja": "樹林下・多段山頂平場の消滅社祠遺構",
+      "era_ja": "明治・大正図 · 鳥居記号",
+      "badge_ja": "消滅社祠",
+      "accent": "#E85D4A",
+      "score": 0.7028,
+      "lat": 38.415173,
+      "lon": 140.853835,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+3.4m",
+      "scarp_deg": 31.2,
+      "image": "./cards/23_W5-004.png",
+      "atlas_url": "./shrine_atlas.html#17/38.415173/140.853835/W5-004"
+    },
+    {
+      "rank": 24,
+      "code": "W5-006",
+      "slug": "24_W5-006",
+      "place_ja": "香川県仲多度郡まんのう町吉野",
+      "title_ja": "樹林下・楕円形山頂土壇の消滅社祠",
+      "era_ja": "明治・大正図 · 鳥居記号",
+      "badge_ja": "消滅社祠",
+      "accent": "#E85D4A",
+      "score": 0.696,
+      "lat": 34.164721,
+      "lon": 133.885113,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+4.9m",
+      "scarp_deg": 30.4,
+      "image": "./cards/24_W5-006.png",
+      "atlas_url": "./shrine_atlas.html#17/34.164721/133.885113/W5-006"
     }
   ]
 }
