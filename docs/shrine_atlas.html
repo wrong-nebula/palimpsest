@@ -873,16 +873,39 @@
         return html;
       }
 
+      function parseUrlTarget() {
+        if (location.hash && location.hash.startsWith("#")) {
+          const parts = location.hash.slice(1).split("/");
+          if (parts.length >= 3) {
+            const hz = Number(parts[0]), hlat = Number(parts[1]), hlon = Number(parts[2]);
+            const hcode = parts[3] ? decodeURIComponent(parts[3]) : "";
+            if (!Number.isNaN(hlat) && !Number.isNaN(hlon)) {
+              return { lat: hlat, lon: hlon, z: Number.isNaN(hz) ? 17 : hz, code: hcode };
+            }
+          }
+        }
+        const sp = new URLSearchParams(location.search);
+        const qlat = Number(sp.get("lat"));
+        const qlon = Number(sp.get("lon") ?? sp.get("lng"));
+        const qz = Number(sp.get("z") ?? sp.get("zoom") ?? 17);
+        const qcode = sp.get("id") || sp.get("code") || sp.get("site") || "";
+        if (sp.has("lat") && (sp.has("lon") || sp.has("lng")) && !Number.isNaN(qlat) && !Number.isNaN(qlon)) {
+          return { lat: qlat, lon: qlon, z: Number.isNaN(qz) ? 17 : qz, code: qcode };
+        }
+        return null;
+      }
+
       // Initialize 4 synchronized Leaflet panes
       const maps = [];
       const paneBaseLayers = [null, null, null, null];
       const markerGroups = [];
       const shizuokaBounds = [[34.7259, 137.8966], [34.8172, 138.0072]];
+      const bootTarget = parseUrlTarget();
 
       for (let i = 0; i < 4; i++) {
         const m = L.map(`map-${i}`, {
-          center: [34.772, 137.955],
-          zoom: 15,
+          center: bootTarget ? [bootTarget.lat, bootTarget.lon] : [34.772, 137.955],
+          zoom: bootTarget ? bootTarget.z : 15,
           maxZoom: 19,
           zoomControl: i === 0,
           attributionControl: i === 0 || i === 3
@@ -1398,17 +1421,25 @@
           } catch {}
         }
         renderItems();
-        if (location.hash && location.hash.startsWith("#")) {
-          const parts = location.hash.slice(1).split("/");
-          if (parts.length >= 3) {
-            const hz = Number(parts[0]), hlat = Number(parts[1]), hlon = Number(parts[2]);
-            const hcode = parts[3] ? decodeURIComponent(parts[3]) : "";
-            if (!Number.isNaN(hlat) && !Number.isNaN(hlon)) {
-              maps[0].setView([hlat, hlon], Number.isNaN(hz) ? 17 : hz);
-            }
-          }
+        applyUrlTarget();
+      }
+
+      function applyUrlTarget() {
+        const tgt = parseUrlTarget();
+        if (!tgt) return;
+        isSyncing = true;
+        maps.forEach((m) => m.setView([tgt.lat, tgt.lon], tgt.z, { animate: false }));
+        updateArchiveBar();
+        isSyncing = false;
+        if (tgt.code && markerById.has(tgt.code)) {
+          setTimeout(() => {
+            const mk = markerById.get(tgt.code);
+            if (mk) mk.openPopup();
+          }, 60);
         }
       }
+
+      window.addEventListener("hashchange", applyUrlTarget);
 
       renderItems();
       loadDynamicCatalogs();
