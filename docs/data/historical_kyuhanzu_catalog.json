@@ -10387,6 +10387,78 @@
       "qa_note": "R8=0.73 ZNCC=0.79 · 1mLiDAR cov=1.00 dome=3.38m scarp=32.0° elev=120.3m"
     },
     {
+      "discovery_id": "W4-006",
+      "model_source": "Blind-R8 (Wave4_Echizen_TakefuKofun)",
+      "corridor_id": "Wave4_Echizen_TakefuKofun",
+      "region_folder": "fukui",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 35.850613,
+      "lon": 136.174818,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.7133,
+      "branch_a_prob": 0.7133,
+      "branch_b_prob": 0.7133,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "福井県越前市国兼町・樹林下 明治期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Genuine vanished Meiji ⛩ on isolated knoll, crisp rectilinear leveled platform/scarp in 1m RRIM, intact mature forest canopy · R8=0.71 ZNCC=0.62 · 1mLiDAR cov=1.00 dome=5.60m scarp=34.1° elev=97.9m"
+    },
+    {
+      "discovery_id": "W4-041",
+      "model_source": "Blind-R8 (Wave4_Kazusa_IchiharaKofun)",
+      "corridor_id": "Wave4_Kazusa_IchiharaKofun",
+      "region_folder": "kanto",
+      "in100km2": false,
+      "kind": "burial_mound",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 35.458212,
+      "lon": 140.115489,
+      "epochs_present": [
+        "kanto_rapid"
+      ],
+      "consensus_score": 0.7105,
+      "branch_a_prob": 0.7105,
+      "branch_b_prob": 0.7105,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "千葉県市原市安須・樹林下未盗掘円墳・方墳マウンド候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Crisp circular Kofun tumulus with enclosing ring-ditch (周溝) on plateau rim in 1m RRIM, zero modern features, mature forest canopy · R8=0.71 8octDrop=4.04m · 1mLiDAR cov=1.00 dome=5.32m scarp=38.0° elev=55.4m"
+    },
+    {
+      "discovery_id": "W4-007",
+      "model_source": "Blind-R8 (Wave4_Bungo_OitaOtomo)",
+      "corridor_id": "Wave4_Bungo_OitaOtomo",
+      "region_folder": "oita",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 33.224266,
+      "lon": 131.839446,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.7038,
+      "branch_a_prob": 0.7038,
+      "branch_b_prob": 0.7038,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "大分県大分市大字志生木・樹林下 明治期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Clear vanished Taishō ⛩ glyph, distinct stepped ridge-crest earthwork platform in 1m RRIM, unbroken mature forest canopy · R8=0.70 ZNCC=0.65 · 1mLiDAR cov=1.00 dome=5.19m scarp=39.1° elev=64.3m"
+    },
+    {
       "discovery_id": "MM6-001",
       "model_source": "DualBranch-R6",
       "corridor_id": "hamamatsu_north",
@@ -10410,6 +10482,30 @@
       "wikidata_name": null,
       "ocr_kanji_nearby": [],
       "qa_note": "Verified vanished Meiji–Taishō temple (`卍` on 2man/00 near Kami-Nobe, Tenryū; absent on modern GSI)"
+    },
+    {
+      "discovery_id": "W4-061",
+      "model_source": "Blind-R8 (Wave4_Izumo_SacredKofun)",
+      "corridor_id": "Wave4_Izumo_SacredKofun",
+      "region_folder": "matsue",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 35.344894,
+      "lon": 132.787167,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.6928,
+      "branch_a_prob": 0.6928,
+      "branch_b_prob": 0.6928,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "島根県出雲市大津町・樹林下 大正期消滅社祠(⛩) 尾根端土壇遺構",
+      "ocr_kanji_nearby": [],
+      "qa_note": "QA PASS: Genuine 1915 Taishō ⛩ glyph on westward spur nose; vanished on modern GSI; compact leveled oval spur-nose platform (土壇) in 1m Bare-Earth LiDAR under intact closed forest canopy"
     },
     {
       "discovery_id": "MM6-022",
@@ -10924,7 +11020,7 @@
         "temple_manji": "4/4"
       }
     },
-    "published_multitier_discoveries": 51,
+    "published_multitier_discoveries": 55,
     "published_by_subtier": {
       "Tier1_KodaiKando": 3,
       "Tier1_ForestRail": 2,
@@ -10950,83 +11046,87 @@
       "Wave3_Okayama_AncientKibi": 1,
       "Wave3_Kyushu_HizenHokusho": 3,
       "Wave3_Shinano_Matsumoto": 1,
-      "Wave3_Tohoku_SendaiMatsushima": 1
+      "Wave3_Tohoku_SendaiMatsushima": 1,
+      "Wave4_Echizen_TakefuKofun": 1,
+      "Wave4_Bungo_OitaOtomo": 1,
+      "Wave4_Kazusa_IchiharaKofun": 1,
+      "Wave4_Izumo_SacredKofun": 1
     },
     "published_by_class": {
       "linear_earthwork": 7,
       "haison_industrial": 7,
       "mine_quarry": 4,
-      "burial_mound": 16,
+      "burial_mound": 17,
       "megalith_iwakura": 5,
       "castle_ruin": 8,
       "temple_manji": 1,
-      "shrine_torii": 3
+      "shrine_torii": 6
     }
   },
   "multimodal_r8_model_summary": {
     "schema": "palimpsest_multimodal_r8_eval_v1",
     "dataset_summary": {
-      "total_examples": 808,
+      "total_examples": 921,
       "pure_human_examples": 647,
       "total_human_votes_including_unsure": 840,
-      "wide_area_and_multitier_hard_negatives": 86,
-      "verified_aux_positives": 75,
-      "spatial_clusters_100m": 737,
+      "wide_area_and_multitier_hard_negatives": 181,
+      "verified_aux_positives": 93,
+      "spatial_clusters_100m": 850,
       "positives_by_9_classes": {
-        "shrine_torii": 79,
-        "temple_manji": 43,
+        "shrine_torii": 84,
+        "temple_manji": 44,
         "school_bun": 49,
-        "mine_quarry": 93,
-        "castle_ruin": 57,
-        "burial_mound": 60,
+        "mine_quarry": 95,
+        "castle_ruin": 59,
+        "burial_mound": 68,
         "linear_earthwork": 7,
         "megalith_iwakura": 3,
         "haison_industrial": 6
       }
     },
-    "r8_core6_macro_roc_auc": 0.9702,
-    "r8_core6_macro_pr_auc": 0.8562,
-    "r8_core6_macro_best_f1": 0.8545,
-    "strict_human_core6_macro_roc_auc": 0.9791,
-    "strict_human_core6_macro_pr_auc": 0.875,
+    "r8_core6_macro_roc_auc": 0.9649,
+    "r8_core6_macro_pr_auc": 0.8133,
+    "r8_core6_macro_best_f1": 0.8114,
+    "strict_human_core6_macro_roc_auc": 0.9798,
+    "strict_human_core6_macro_pr_auc": 0.8878,
     "extended_multitier_3class_oof": {
       "linear_earthwork": {
         "positives": 7,
-        "roc_auc": 0.8623,
-        "pr_auc": 0.1635,
-        "best_f1": 0.3158
+        "roc_auc": 0.7388,
+        "pr_auc": 0.1954,
+        "best_f1": 0.3636
       },
       "megalith_iwakura": {
         "positives": 3,
-        "roc_auc": 0.6623,
-        "pr_auc": 0.017,
-        "best_f1": 0.046
+        "roc_auc": 0.6443,
+        "pr_auc": 0.024,
+        "best_f1": 0.0851
       },
       "haison_industrial": {
         "positives": 6,
-        "roc_auc": 0.9605,
-        "pr_auc": 0.1417,
-        "best_f1": 0.2222
+        "roc_auc": 0.9054,
+        "pr_auc": 0.0503,
+        "best_f1": 0.1231
       }
     },
     "wide_area_fp_suppression_oof": {
-      "suppressed_at_sweep_threshold": 64,
-      "suppressed_at_p50": 57,
-      "total_hard_negatives_evaluated": 86,
-      "suppression_rate_sweep_threshold": 0.7442,
-      "suppression_rate_p50": 0.6628,
+      "suppressed_at_sweep_threshold": 154,
+      "suppressed_at_p50": 143,
+      "total_hard_negatives_evaluated": 181,
+      "suppression_rate_sweep_threshold": 0.8508,
+      "suppression_rate_p50": 0.7901,
       "by_original_fp_class": {
-        "mine_quarry": "14/14",
-        "school_bun": "1/1",
-        "shrine_torii": "3/5",
-        "burial_mound": "24/30",
-        "castle_ruin": "10/24",
-        "temple_manji": "4/4",
+        "mine_quarry": "30/31",
+        "school_bun": "0/1",
+        "shrine_torii": "22/23",
+        "burial_mound": "57/64",
+        "castle_ruin": "33/48",
+        "temple_manji": "5/6",
         "linear_earthwork": "5/5",
-        "haison_industrial": "3/3"
+        "haison_industrial": "2/3"
       }
     },
-    "published_discoveries_total": 51,
+    "published_discoveries_total": 55,
     "published_by_subtier": {
       "Tier1_KodaiKando": 3,
       "Tier1_ForestRail": 2,
@@ -11052,17 +11152,21 @@
       "Wave3_Okayama_AncientKibi": 1,
       "Wave3_Kyushu_HizenHokusho": 3,
       "Wave3_Shinano_Matsumoto": 1,
-      "Wave3_Tohoku_SendaiMatsushima": 1
+      "Wave3_Tohoku_SendaiMatsushima": 1,
+      "Wave4_Echizen_TakefuKofun": 1,
+      "Wave4_Bungo_OitaOtomo": 1,
+      "Wave4_Kazusa_IchiharaKofun": 1,
+      "Wave4_Izumo_SacredKofun": 1
     },
     "published_by_class": {
       "linear_earthwork": 7,
       "haison_industrial": 7,
       "mine_quarry": 4,
-      "burial_mound": 16,
+      "burial_mound": 17,
       "megalith_iwakura": 5,
       "castle_ruin": 8,
       "temple_manji": 1,
-      "shrine_torii": 3
+      "shrine_torii": 6
     }
   }
 }

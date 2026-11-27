@@ -633,43 +633,80 @@
         return best;
       }
 
-      const KjDynamicLayer = L.TileLayer.extend({
-        _kjUrlForEpoch: function(coords, epoch) {
-          let z = this._getZoomForUrl();
-          const n = Math.pow(2, z);
-          const lon = (coords.x / n) * 360 - 180;
-          const lat = (Math.atan(Math.sinh(Math.PI * (1 - (2 * coords.y) / n))) * 180) / Math.PI;
-          const reg = nearestKjReg(lat, lon);
-          let tx = coords.x, ty = coords.y;
-          if (reg.maxNative && z > reg.maxNative) {
-            const shift = z - reg.maxNative;
-            z = reg.maxNative; tx = tx >> shift; ty = ty >> shift;
-          }
-          const tmsY = (1 << z) - ty - 1;
-          return `https://ktgis.net/kjmapw/kjtilemap/${reg.folder}/${epoch}/${z}/${tx}/${tmsY}.png`;
+      const KjDynamicLayer = L.GridLayer.extend({
+        initialize: function(url, options) {
+          L.GridLayer.prototype.initialize.call(this, typeof url === "object" ? url : options);
         },
-        getTileUrl: function(coords) {
-          return this._kjUrlForEpoch(coords, this.options.epoch);
+        _kjSpecForEpoch: function(coords, epoch) {
+          let z = Math.min(coords.z, this.options.maxNativeZoom || 16);
+          const extraShift = coords.z - z;
+          const txBase = coords.x >> extraShift;
+          const tyBase = coords.y >> extraShift;
+          const n = Math.pow(2, z);
+          const lon = ((txBase + 0.5) / n) * 360 - 180;
+          const lat = (Math.atan(Math.sinh(Math.PI * (1 - (2 * (tyBase + 0.5)) / n))) * 180) / Math.PI;
+          const reg = nearestKjReg(lat, lon);
+          let shift = extraShift;
+          let zReq = z, tx = txBase, ty = tyBase;
+          if (reg.maxNative && zReq > reg.maxNative) {
+            const ds = zReq - reg.maxNative;
+            shift += ds;
+            zReq = reg.maxNative;
+            tx = tx >> ds;
+            ty = ty >> ds;
+          }
+          const tmsY = (1 << zReq) - ty - 1;
+          return {
+            url: `https://ktgis.net/kjmapw/kjtilemap/${reg.folder}/${epoch}/${zReq}/${tx}/${tmsY}.png`,
+            shift
+          };
         },
         createTile: function(coords, done) {
-          const tile = document.createElement("img");
-          L.DomEvent.on(tile, "load", L.Util.bind(this._tileOnLoad, this, done, tile));
-          const chain = this.options.epoch === "2man" ? ["00", "01"] : (this.options.epoch === "00" ? ["01"] : []);
+          const wrap = document.createElement("div");
+          wrap.style.width = "256px";
+          wrap.style.height = "256px";
+          wrap.style.overflow = "hidden";
+          const img = document.createElement("img");
+          img.alt = "";
+          img.setAttribute("role", "presentation");
+          img.style.display = "block";
+          img.style.maxWidth = "none";
+          wrap.appendChild(img);
+
+          const applyShift = (shift) => {
+            const scale = 1 << shift;
+            const qx = coords.x & (scale - 1);
+            const qy = coords.y & (scale - 1);
+            img.style.width = `${256 * scale}px`;
+            img.style.height = `${256 * scale}px`;
+            img.style.transform = shift > 0 ? `translate(${-qx * 256}px, ${-qy * 256}px)` : "none";
+          };
+
+          const chain = this.options.epoch === "2man" ? ["00", "01", "02"] : (this.options.epoch === "00" ? ["01", "02"] : []);
           let fallbackIdx = 0;
-          tile.onerror = () => {
+          let triedGazo = false;
+
+          img.onload = () => done(null, wrap);
+          img.onerror = () => {
             if (fallbackIdx < chain.length) {
-              tile.src = this._kjUrlForEpoch(coords, chain[fallbackIdx++]);
+              const spec = this._kjSpecForEpoch(coords, chain[fallbackIdx++]);
+              applyShift(spec.shift);
+              img.src = spec.url;
+            } else if (!triedGazo) {
+              triedGazo = true;
+              const zG = Math.min(coords.z, 17);
+              const shG = coords.z - zG;
+              applyShift(shG);
+              img.src = `https://cyberjapandata.gsi.go.jp/xyz/gazo1/${zG}/${coords.x >> shG}/${coords.y >> shG}.jpg`;
             } else {
-              this._tileOnError(done, tile, new Error("tile missing"));
+              done(new Error("tile missing"), wrap);
             }
           };
-          if (this.options.crossOrigin || this.options.crossOrigin === "") {
-            tile.crossOrigin = this.options.crossOrigin === true ? "" : this.options.crossOrigin;
-          }
-          tile.alt = "";
-          tile.setAttribute("role", "presentation");
-          tile.src = this.getTileUrl(coords);
-          return tile;
+
+          const first = this._kjSpecForEpoch(coords, this.options.epoch);
+          applyShift(first.shift);
+          img.src = first.url;
+          return wrap;
         }
       });
 

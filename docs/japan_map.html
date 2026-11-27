@@ -777,7 +777,7 @@
       <a class="brand" href="#top">
         <span class="seal" aria-hidden="true">古層</span>
         <span>PALIMPSEST</span>
-        <span class="brand-count" id="stat-total-sites">411</span>
+        <span class="brand-count" id="stat-total-sites">424</span>
       </a>
       <nav class="nav" aria-label="Primary">
         <a class="nav-item nav-secondary" href="#discoveries">Plates</a>
@@ -1057,33 +1057,33 @@
             <tbody>
               <tr>
                 <td>Historical map only</td>
-                <td class="num-col">0.9349</td>
-                <td class="num-col">0.7058</td>
-                <td class="num-col">0.7439</td>
+                <td class="num-col">0.9188</td>
+                <td class="num-col">0.6494</td>
+                <td class="num-col">0.7078</td>
               </tr>
               <tr>
                 <td>1 m LiDAR Red-Relief only</td>
-                <td class="num-col">0.8329</td>
-                <td class="num-col">0.4662</td>
-                <td class="num-col">0.5099</td>
+                <td class="num-col">0.8262</td>
+                <td class="num-col">0.4451</td>
+                <td class="num-col">0.4730</td>
               </tr>
               <tr>
                 <td>Dual-branch neural only</td>
-                <td class="num-col">0.9570</td>
-                <td class="num-col">0.8471</td>
-                <td class="num-col">0.8382</td>
+                <td class="num-col">0.9531</td>
+                <td class="num-col">0.8211</td>
+                <td class="num-col">0.8005</td>
               </tr>
               <tr class="strong-row">
-                <td>Modality-aware R8 (N = 808)</td>
-                <td class="num-col">0.9702</td>
-                <td class="num-col">0.8562</td>
-                <td class="num-col">0.8545</td>
+                <td>Modality-aware R8 (N = 921)</td>
+                <td class="num-col">0.9649</td>
+                <td class="num-col">0.8133</td>
+                <td class="num-col">0.8114</td>
               </tr>
               <tr class="strong-row">
                 <td>Verified subset (N = 647)</td>
-                <td class="num-col" id="stat-roc-auc">0.9791</td>
-                <td class="num-col">0.8750</td>
-                <td class="num-col">0.8919</td>
+                <td class="num-col" id="stat-roc-auc">0.9798</td>
+                <td class="num-col">0.8878</td>
+                <td class="num-col">0.8806</td>
               </tr>
             </tbody>
           </table>
@@ -1135,15 +1135,15 @@
     };
 
     const CORRIDORS = {
-      all:      { label: "All Japan", center: [35.45, 136.4], zoom: 5.5, bbox: null },
-      kyushu:   { label: "Kyūshū", center: [33.15, 130.45], zoom: 8.1, bbox: [31.00, 129.40, 34.05, 131.95] },
-      setouchi: { label: "Setouchi", center: [34.35, 133.40], zoom: 8.2, bbox: [33.20, 131.05, 35.65, 134.95] },
-      kansai:   { label: "Kansai", center: [34.72, 135.72], zoom: 8.8, bbox: [33.40, 134.96, 35.58, 136.506] },
-      shizuoka: { label: "Shizuoka", center: [34.81, 137.84], zoom: 10.2, bbox: [34.55, 137.05, 35.55, 138.98] },
-      chubu:    { label: "Chūbu", center: [35.95, 137.15], zoom: 8.1, bbox: [35.05, 136.507, 37.12, 138.35] },
-      kanto:    { label: "Kantō", center: [35.74, 139.78], zoom: 9.0, bbox: [34.90, 138.60, 37.05, 140.90] },
-      north:    { label: "North", center: [39.60, 141.20], zoom: 6.3, bbox: [37.15, 138.80, 45.60, 145.90] },
-      okinawa:  { label: "Okinawa", center: [26.35, 127.83], zoom: 9.8, bbox: [25.90, 127.40, 27.00, 128.40] }
+      all:      { label: "All Japan", center: [35.85, 137.20], zoom: 5.4, bbox: null },
+      okinawa:  { label: "Okinawa", center: [26.32, 127.80], zoom: 10.2, bbox: [25.80, 127.20, 27.20, 128.60] },
+      kyushu:   { label: "Kyūshū", center: [32.75, 130.75], zoom: 7.6, bbox: [30.90, 129.20, 33.98, 131.98] },
+      setouchi: { label: "Setouchi", center: [34.45, 133.25], zoom: 7.8, bbox: [32.70, 130.85, 35.75, 134.95] },
+      kansai:   { label: "Kansai", center: [34.72, 135.72], zoom: 8.5, bbox: [33.35, 134.95, 35.72, 136.52] },
+      shizuoka: { label: "Shizuoka", center: [34.85, 137.95], zoom: 9.6, bbox: [34.55, 137.05, 35.38, 139.12] },
+      chubu:    { label: "Chūbu", center: [36.10, 137.45], zoom: 7.7, bbox: [35.05, 135.85, 37.65, 138.82] },
+      kanto:    { label: "Kantō", center: [35.85, 139.75], zoom: 8.6, bbox: [34.90, 138.82, 37.10, 140.95] },
+      north:    { label: "North", center: [40.35, 141.35], zoom: 6.1, bbox: [37.10, 137.80, 45.70, 146.00] }
     };
 
     function initWipeSliders() {
@@ -1521,7 +1521,7 @@
       merged.sort((a, b) => {
         const tier = (c) => {
           const s = String(c || "");
-          if (s.startsWith("W3-")) return 0;
+          if (s.startsWith("W4-") || s.startsWith("W3-")) return 0;
           if (s.startsWith("W2-")) return 1;
           if (s.startsWith("TD") || s.startsWith("MM6-")) return 2;
           return 3;
