@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Palimpsest — 樹林下遺構 X共有カード集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080a0d;
+      --surface: #0e1116;
+      --border: rgba(245, 240, 230, 0.10);
+      --border-hover: rgba(245, 240, 230, 0.26);
+      --ink: #f5f0e6;
+      --muted: #9a9285;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Hiragino Sans', 'YuGothic', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(8, 10, 13, 0.84);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-inner {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 22px;
+    }
+    .brand-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .f-btn {
+      appearance: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      cursor: pointer;
+      transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), background 160ms var(--ease-out), transform 130ms var(--ease-out);
+    }
+    .f-btn:hover { color: var(--ink); border-color: var(--border-hover); }
+    .f-btn:active { transform: scale(0.97); }
+    .f-btn[aria-pressed="true"] {
+      background: rgba(245, 240, 230, 0.11);
+      color: var(--ink);
+      border-color: rgba(245, 240, 230, 0.34);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 11.5px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+    }
+    .nav-a:hover { color: var(--ink); border-color: var(--border-hover); }
+    .nav-a.primary {
+      color: var(--bg);
+      background: var(--ink);
+      border-color: var(--ink);
+      font-weight: 600;
+    }
+    main {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 22px 24px 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 680px) {
+      .grid { grid-template-columns: 1fr; }
+      main { padding: 14px; }
+    }
+    .card-shell {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 220ms var(--ease-out), transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out);
+    }
+    .card-shell:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 46px rgba(0, 0, 0, 0.58);
+    }
+    .thumb-btn {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #080a0d;
+      border: 0;
+      cursor: zoom-in;
+      overflow: hidden;
+    }
+    .thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 360ms var(--ease-out);
+    }
+    .card-shell:hover .thumb-btn img {
+      transform: scale(1.012);
+    }
+    .bar {
+      padding: 9px 13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .meta {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      min-width: 0;
+    }
+    .code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .title {
+      font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+      font-size: 13px;
+      color: #d6cec0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .act {
+      appearance: none;
+      text-decoration: none;
+      background: rgba(245, 240, 230, 0.04);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 150ms var(--ease-out), border-color 150ms var(--ease-out), transform 120ms var(--ease-out);
+    }
+    .act:hover {
+      background: rgba(245, 240, 230, 0.10);
+      border-color: var(--border-hover);
+    }
+    .act:active { transform: scale(0.96); }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(4, 6, 9, 0.93);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms var(--ease-out);
+    }
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lb-img {
+      max-width: min(94vw, 1720px);
+      max-height: 83vh;
+      border-radius: 8px;
+      border: 1px solid var(--border-hover);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+    }
+    .lb-controls {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hdr-inner">
+      <a class="brand" href="./japan_map.html">
+        <span>Palimpsest</span>
+        <span class="brand-badge">TOP 20 · 2400×1350</span>
+      </a>
+      <div class="filters">
+        <button class="f-btn" data-cls="all" aria-pressed="true">すべて 20</button>
+        <button class="f-btn" data-cls="古墳マウンド" aria-pressed="false">古墳</button>
+        <button class="f-btn" data-cls="山城・主郭遺構" aria-pressed="false">山城</button>
+        <button class="f-btn" data-cls="消滅社祠" aria-pressed="false">消滅社祠</button>
+        <button class="f-btn" data-cls="消滅山寺" aria-pressed="false">消滅山寺</button>
+        <button class="f-btn" data-cls="戦前炭坑口" aria-pressed="false">戦前炭坑</button>
+      </div>
+      <div class="nav-links">
+        <a class="nav-a" href="./japan_map.html">全国地図</a>
+        <a class="nav-a primary" href="./shrine_atlas.html">アトラス →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <img class="lb-img" id="lb-img" alt="" />
+    <div class="lb-controls">
+      <button class="act" id="lb-prev">← 前へ</button>
+      <span id="lb-caption"></span>
+      <a class="act" id="lb-dl" download>PNG保存 (2400×1350)</a>
+      <button class="act" id="lb-next">次へ →</button>
+      <button class="act" id="lb-close">閉じる</button>
+    </div>
+  </div>
+
+  <script>
+    let allCards = [];
+    let visibleCards = [];
+    let lbIdx = 0;
+
+    function buildTweetText(c) {
+      const atlasAbs = `https://wrong-nebula.github.io/palimpsest/shrine_atlas.html#17/${c.lat.toFixed(6)}/${c.lon.toFixed(6)}/${c.code}`;
+      return `${c.place_ja}｜${c.title_ja}（${c.code}）\n1m航空レーザ裸地陰影（${c.relief_lbl_ja} ${c.relief_val}・最大傾斜 ${c.scarp_deg}°）× ${c.era_ja}\n${atlasAbs}`;
+    }
+
+    function renderGrid(filterCls = "all") {
+      visibleCards = filterCls === "all" ? allCards : allCards.filter((c) => c.badge_ja === filterCls);
+      const grid = document.getElementById("grid");
+      grid.innerHTML = visibleCards.map((c, idx) => {
+        const xIntent = `https://x.com/intent/post?text=${encodeURIComponent(buildTweetText(c))}`;
+        return `
+          <article class="card-shell">
+            <button class="thumb-btn" type="button" data-idx="${idx}" aria-label="${c.code}">
+              <img src="${c.image}" alt="${c.place_ja} ${c.title_ja}" loading="lazy" />
+            </button>
+            <div class="bar">
+              <div class="meta">
+                <span class="code" style="color:${c.accent}">${c.code}</span>
+                <span class="title">${c.place_ja}・${c.title_ja}</span>
+              </div>
+              <div class="actions">
+                <a class="act" href="${c.image}" download="palimpsest_${c.slug}.png">PNG ↓</a>
+                <button class="act" type="button" data-copy="${idx}">文面コピー</button>
+                <a class="act" href="${xIntent}" target="_blank" rel="noopener">𝕏 投稿 ↗</a>
+                <a class="act" href="${c.atlas_url}">4画面比較 →</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      grid.querySelectorAll(".thumb-btn").forEach((btn) => {
+        btn.addEventListener("click", () => openLb(Number(btn.dataset.idx)));
+      });
+      grid.querySelectorAll("[data-copy]").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const c = visibleCards[Number(btn.dataset.copy)];
+          await navigator.clipboard.writeText(buildTweetText(c));
+          const prev = btn.textContent;
+          btn.textContent = "コピー済 ✓";
+          setTimeout(() => { btn.textContent = prev; }, 1400);
+        });
+      });
+    }
+
+    function openLb(idx) {
+      if (!visibleCards.length) return;
+      lbIdx = (idx + visibleCards.length) % visibleCards.length;
+      const c = visibleCards[lbIdx];
+      document.getElementById("lb-img").src = c.image;
+      document.getElementById("lb-caption").textContent = `${c.code} · ${c.place_ja}｜${c.title_ja}`;
+      const dl = document.getElementById("lb-dl");
+      dl.href = c.image;
+      dl.download = `palimpsest_${c.slug}.png`;
+      document.getElementById("lightbox").classList.add("open");
+    }
+
+    function closeLb() {
+      document.getElementById("lightbox").classList.remove("open");
+    }
+
+    document.getElementById("lb-prev").addEventListener("click", () => openLb(lbIdx - 1));
+    document.getElementById("lb-next").addEventListener("click", () => openLb(lbIdx + 1));
+    document.getElementById("lb-close").addEventListener("click", closeLb);
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+      if (e.target.id === "lightbox") closeLb();
+    });
+    window.addEventListener("keydown", (e) => {
+      const open = document.getElementById("lightbox").classList.contains("open");
+      if (!open) return;
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowLeft") openLb(lbIdx - 1);
+      if (e.key === "ArrowRight") openLb(lbIdx + 1);
+    });
+
+    document.querySelectorAll(".f-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".f-btn").forEach((b) => b.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+        renderGrid(btn.dataset.cls);
+      });
+    });
+
+    fetch("./cards/manifest.json")
+      .then((r) => r.json())
+      .then((d) => {
+        allCards = d.cards || [];
+        renderGrid("all");
+      });
+  </script>
+</body>
+</html>
