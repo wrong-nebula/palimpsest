@@ -7413,58 +7413,6 @@
       "human_confirmed_label": "Linear Road / Wall / Grade (═)"
     },
     {
-      "discovery_id": "TD1-005",
-      "model_source": "MultiTier-R7 (Tier1_ForestRail)",
-      "corridor_id": "Tier1_ForestRail",
-      "region_folder": "hamamatsu",
-      "in100km2": false,
-      "kind": "linear_earthwork",
-      "secondary_classes": [],
-      "human_verified": true,
-      "lat": 34.961649,
-      "lon": 137.888234,
-      "epochs_present": [
-        "gazo1"
-      ],
-      "consensus_score": 0.99,
-      "branch_a_prob": 0.98,
-      "branch_b_prob": 0.98,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "旧気田・天竜森林鉄道 軌道跡 #2 (Keta Timber Railway Bench)",
-      "ocr_kanji_nearby": [],
-      "qa_note": "[QA PASS] Clear contour logging-railway bench · Contour shelf aniso=4.56 · scarp=52.9° · dem1a=100%",
-      "human_code": "TD1-005",
-      "human_confirmed_label": "Linear Road / Wall / Grade (═)"
-    },
-    {
-      "discovery_id": "TD3-012",
-      "model_source": "MultiTier-R7 (Tier4_USA10_VanishedMound)",
-      "corridor_id": "Tier4_USA10_VanishedMound",
-      "region_folder": "tokyo",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": true,
-      "lat": 35.655453,
-      "lon": 139.747696,
-      "epochs_present": [
-        "ort_usa10"
-      ],
-      "consensus_score": 0.99,
-      "branch_a_prob": 0.968,
-      "branch_b_prob": 0.968,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "芝丸山古墳 戦前米軍空撮・前方後円墳 (Shiba Maruyama Kofun in 1945 USAF)",
-      "ocr_kanji_nearby": [],
-      "qa_note": "[QA PASS] Shiba Maruyama keyhole kofun in 1945 USAF + 1m LiDAR · Spire DoG=1.89m · Dome=4.02m · scarp=25.1°",
-      "human_code": "TD3-012",
-      "human_confirmed_label": "Shrine (⛩)"
-    },
-    {
       "discovery_id": "TD3-013",
       "model_source": "MultiTier-R7 (Tier4_USA10_VanishedMound)",
       "corridor_id": "Tier4_USA10_VanishedMound",
@@ -7593,6 +7541,344 @@
       "qa_note": "[QA PASS] Dead-center on Imashirozuka 1596-slumped moated kofun · Dome/Bank=4.10m · prom=8.9m · scarp=19.7° · dem1a=55%",
       "human_code": "TD5-018",
       "human_confirmed_label": "Mound / Kofun / Ring (∴)"
+    },
+    {
+      "discovery_id": "W3-025",
+      "model_source": "Blind-R8 (Wave3_Tohoku_Yamagata)",
+      "corridor_id": "Wave3_Tohoku_Yamagata",
+      "region_folder": "yamagata",
+      "in100km2": false,
+      "kind": "temple_manji",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 38.22065,
+      "lon": 140.263782,
+      "epochs_present": [
+        "2man"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7521,
+      "branch_b_prob": 0.7521,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "山形県山形市大字柏倉・明治地形図 消滅山寺・堂宇(卍)遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.75 ZNCC=0.69 · 1mLiDAR cov=0.99 dome=-2.01m scarp=33.1° elev=188.5m",
+      "human_code": "W3-025",
+      "human_confirmed_label": "Temple (卍)"
+    },
+    {
+      "discovery_id": "W3-026",
+      "model_source": "Blind-R8 (Wave3_Kyushu_HizenHokusho)",
+      "corridor_id": "Wave3_Kyushu_HizenHokusho",
+      "region_folder": "sasebo",
+      "in100km2": false,
+      "kind": "mine_quarry",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 33.250227,
+      "lon": 129.626334,
+      "epochs_present": [
+        "2man"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7343,
+      "branch_b_prob": 0.7343,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "長崎県佐々町志方免・明治地形図 樹林残存 戦前坑口(⚒)遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.73 ZNCC=0.79 · 1mLiDAR cov=1.00 dome=3.38m scarp=32.0° elev=120.3m",
+      "human_code": "W3-026",
+      "human_confirmed_label": "Mine / Quarry (⚒)"
+    },
+    {
+      "discovery_id": "W3-029",
+      "model_source": "Blind-R8 (Wave3_Tohoku_Yamagata)",
+      "corridor_id": "Wave3_Tohoku_Yamagata",
+      "region_folder": "yamagata",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 38.299047,
+      "lon": 140.375061,
+      "epochs_present": [
+        "2man"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.6732,
+      "branch_b_prob": 0.6732,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "山形県山形市大字風間・明治地形図 消滅古社・合祀廃社(⛩)遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.67 ZNCC=0.74 · 1mLiDAR cov=1.00 dome=4.07m scarp=35.8° elev=151.6m",
+      "human_code": "W3-029",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W3-030",
+      "model_source": "Blind-R8 (Wave3_Kyushu_HizenHokusho)",
+      "corridor_id": "Wave3_Kyushu_HizenHokusho",
+      "region_folder": "sasebo",
+      "in100km2": false,
+      "kind": "mine_quarry",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 33.217795,
+      "lon": 129.749157,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.6716,
+      "branch_b_prob": 0.6716,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "長崎県佐世保市柚木元町・大正・昭和戦前図 樹林残存 戦前坑口(⚒)遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.67 ZNCC=0.72 · 1mLiDAR cov=1.00 dome=-0.84m scarp=32.5° elev=190.6m",
+      "human_code": "W3-030",
+      "human_confirmed_label": "Mine / Quarry (⚒)"
+    },
+    {
+      "discovery_id": "W3-032",
+      "model_source": "Blind-R8 (Wave3_Shinano_Matsumoto)",
+      "corridor_id": "Wave3_Shinano_Matsumoto",
+      "region_folder": "matsumoto",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 36.28647,
+      "lon": 137.980428,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.6301,
+      "branch_b_prob": 0.6301,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "長野県松本市大字岡田伊深・大正・昭和戦前図 消滅古社・合祀廃社(⛩)遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.63 ZNCC=0.66 · 1mLiDAR cov=1.00 dome=2.27m scarp=35.5° elev=778.1m",
+      "human_code": "W3-032",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W3-033",
+      "model_source": "Blind-R8 (Wave3_Tohoku_SendaiMatsushima)",
+      "corridor_id": "Wave3_Tohoku_SendaiMatsushima",
+      "region_folder": "sendai",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 38.376267,
+      "lon": 140.973387,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.6074,
+      "branch_b_prob": 0.6074,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "宮城県大和町鶴巣小鶴沢・大正・昭和戦前図 消滅古社・合祀廃社(⛩)遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.61 ZNCC=0.75 · 1mLiDAR cov=1.00 dome=0.69m scarp=42.4° elev=75.2m",
+      "human_code": "W3-033",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W4-006",
+      "model_source": "Blind-R8 (Wave4_Echizen_TakefuKofun)",
+      "corridor_id": "Wave4_Echizen_TakefuKofun",
+      "region_folder": "fukui",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 35.850613,
+      "lon": 136.174818,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7133,
+      "branch_b_prob": 0.7133,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "福井県越前市国兼町・樹林下 明治期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Genuine vanished Meiji ⛩ on isolated knoll, crisp rectilinear leveled platform/scarp in 1m RRIM, intact mature forest canopy · R8=0.71 ZNCC=0.62 · 1mLiDAR cov=1.00 dome=5.60m scarp=34.1° elev=97.9m",
+      "human_code": "W4-006",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W4-007",
+      "model_source": "Blind-R8 (Wave4_Bungo_OitaOtomo)",
+      "corridor_id": "Wave4_Bungo_OitaOtomo",
+      "region_folder": "oita",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 33.224266,
+      "lon": 131.839446,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7038,
+      "branch_b_prob": 0.7038,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "大分県大分市大字志生木・樹林下 明治期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Clear vanished Taishō ⛩ glyph, distinct stepped ridge-crest earthwork platform in 1m RRIM, unbroken mature forest canopy · R8=0.70 ZNCC=0.65 · 1mLiDAR cov=1.00 dome=5.19m scarp=39.1° elev=64.3m",
+      "human_code": "W4-007",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W4-061",
+      "model_source": "Blind-R8 (Wave4_Izumo_SacredKofun)",
+      "corridor_id": "Wave4_Izumo_SacredKofun",
+      "region_folder": "matsue",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 35.344894,
+      "lon": 132.787167,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.6928,
+      "branch_b_prob": 0.6928,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "島根県出雲市大津町・樹林下 大正期消滅社祠(⛩) 尾根端土壇遺構",
+      "ocr_kanji_nearby": [],
+      "qa_note": "QA PASS: Genuine 1915 Taishō ⛩ glyph on westward spur nose; vanished on modern GSI; compact leveled oval spur-nose platform (土壇) in 1m Bare-Earth LiDAR under intact closed forest canopy",
+      "human_code": "W4-061",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W5-001",
+      "model_source": "Blind-R8 (Wave5_Stage1_Fukuoka)",
+      "corridor_id": "Wave5_Stage1_Fukuoka",
+      "region_folder": "fukuoka",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 33.806083,
+      "lon": 130.803984,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7254,
+      "branch_b_prob": 0.7254,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "福岡県北九州市八幡東区大字田代・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.73 ZNCC=0.84 · 1mLiDAR cov=1.00 dome=4.88m pad=22.2° scarp=25.8° elev=334.1m",
+      "human_code": "W5-001",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W5-003",
+      "model_source": "Blind-R8 (Wave5_Stage1_Sendai)",
+      "corridor_id": "Wave5_Stage1_Sendai",
+      "region_folder": "sendai",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 38.40453,
+      "lon": 140.872568,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7113,
+      "branch_b_prob": 0.7113,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "宮城県大和町小野・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.71 ZNCC=0.80 · 1mLiDAR cov=1.00 dome=3.46m pad=13.0° scarp=25.8° elev=40.3m",
+      "human_code": "W5-003",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W5-004",
+      "model_source": "Blind-R8 (Wave5_Stage1_Sendai)",
+      "corridor_id": "Wave5_Stage1_Sendai",
+      "region_folder": "sendai",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 38.415173,
+      "lon": 140.853835,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.7028,
+      "branch_b_prob": 0.7028,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "宮城県大和町宮床・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.70 ZNCC=0.84 · 1mLiDAR cov=1.00 dome=3.36m pad=28.4° scarp=31.2° elev=68.1m",
+      "human_code": "W5-004",
+      "human_confirmed_label": "Shrine (⛩)"
+    },
+    {
+      "discovery_id": "W5-006",
+      "model_source": "Blind-R8 (Wave5_Stage1_Takamatsu)",
+      "corridor_id": "Wave5_Stage1_Takamatsu",
+      "region_folder": "takamatsu",
+      "in100km2": false,
+      "kind": "shrine_torii",
+      "secondary_classes": [],
+      "human_verified": true,
+      "lat": 34.164721,
+      "lon": 133.885113,
+      "epochs_present": [
+        "2man"
+      ],
+      "consensus_score": 0.99,
+      "branch_a_prob": 0.696,
+      "branch_b_prob": 0.696,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "香川県まんのう町吉野・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R8=0.70 ZNCC=0.83 · 1mLiDAR cov=1.00 dome=4.87m pad=7.7° scarp=30.4° elev=226.8m",
+      "human_code": "W5-006",
+      "human_confirmed_label": "Shrine (⛩)"
     },
     {
       "kind": "temple_manji",
@@ -9001,6 +9287,30 @@
       "qa_note": "[QA PASS] Crisp contour timber-railway bench shelf · Contour shelf aniso=4.19 · scarp=43.3° · dem1a=100%"
     },
     {
+      "discovery_id": "TD1-005",
+      "model_source": "MultiTier-R7 (Tier1_ForestRail)",
+      "corridor_id": "Tier1_ForestRail",
+      "region_folder": "hamamatsu",
+      "in100km2": false,
+      "kind": "linear_earthwork",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 34.961649,
+      "lon": 137.888234,
+      "epochs_present": [
+        "gazo1"
+      ],
+      "consensus_score": 0.98,
+      "branch_a_prob": 0.98,
+      "branch_b_prob": 0.98,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "旧気田・天竜森林鉄道 軌道跡 #2 (Keta Timber Railway Bench)",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Clear contour logging-railway bench · Contour shelf aniso=4.56 · scarp=52.9° · dem1a=100%"
+    },
+    {
       "discovery_id": "TD3-011",
       "model_source": "MultiTier-R7 (Tier4_Ichirizuka_Fujizuka)",
       "corridor_id": "Tier4_Ichirizuka_Fujizuka",
@@ -9023,6 +9333,30 @@
       "wikidata_name": "品川富士 急傾斜富士塚遺構 (Shinagawa Jinja Steep Fujizuka Cone)",
       "ocr_kanji_nearby": [],
       "qa_note": "[QA PASS] Crisp Shinagawa Fujizuka mound in 1m LiDAR · Spire DoG=1.89m · Dome=3.11m · scarp=32.2°"
+    },
+    {
+      "discovery_id": "TD3-012",
+      "model_source": "MultiTier-R7 (Tier4_USA10_VanishedMound)",
+      "corridor_id": "Tier4_USA10_VanishedMound",
+      "region_folder": "tokyo",
+      "in100km2": false,
+      "kind": "burial_mound",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 35.655453,
+      "lon": 139.747696,
+      "epochs_present": [
+        "ort_usa10"
+      ],
+      "consensus_score": 0.968,
+      "branch_a_prob": 0.968,
+      "branch_b_prob": 0.968,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "芝丸山古墳 戦前米軍空撮・前方後円墳 (Shiba Maruyama Kofun in 1945 USAF)",
+      "ocr_kanji_nearby": [],
+      "qa_note": "[QA PASS] Shiba Maruyama keyhole kofun in 1945 USAF + 1m LiDAR · Spire DoG=1.89m · Dome=4.02m · scarp=25.1°"
     },
     {
       "discovery_id": "MM6-029",
@@ -10339,30 +10673,6 @@
       "qa_note": "Isolated paddy-plain circular tumulus (円墳) on 1m dem1a@z17 Red-Relief (B=0.60)"
     },
     {
-      "discovery_id": "W3-025",
-      "model_source": "Blind-R8 (Wave3_Tohoku_Yamagata)",
-      "corridor_id": "Wave3_Tohoku_Yamagata",
-      "region_folder": "yamagata",
-      "in100km2": false,
-      "kind": "temple_manji",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 38.22065,
-      "lon": 140.263782,
-      "epochs_present": [
-        "2man"
-      ],
-      "consensus_score": 0.7521,
-      "branch_a_prob": 0.7521,
-      "branch_b_prob": 0.7521,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "山形県山形市大字柏倉・明治地形図 消滅山寺・堂宇(卍)遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.75 ZNCC=0.69 · 1mLiDAR cov=0.99 dome=-2.01m scarp=33.1° elev=188.5m"
-    },
-    {
       "discovery_id": "W3-003",
       "model_source": "Blind-R8 (Wave3_Tohoku_Yamagata)",
       "corridor_id": "Wave3_Tohoku_Yamagata",
@@ -10385,102 +10695,6 @@
       "wikidata_name": "山形県山形市大字村木沢・樹林下 8方位閉合 山城主郭・曲輪マウンド候補",
       "ocr_kanji_nearby": [],
       "qa_note": "R8=0.75 · 1mLiDAR cov=1.00 dome=4.81m prom=10.3m scarp=20.4° elev=158.4m"
-    },
-    {
-      "discovery_id": "W3-026",
-      "model_source": "Blind-R8 (Wave3_Kyushu_HizenHokusho)",
-      "corridor_id": "Wave3_Kyushu_HizenHokusho",
-      "region_folder": "sasebo",
-      "in100km2": false,
-      "kind": "mine_quarry",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 33.250227,
-      "lon": 129.626334,
-      "epochs_present": [
-        "2man"
-      ],
-      "consensus_score": 0.7343,
-      "branch_a_prob": 0.7343,
-      "branch_b_prob": 0.7343,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "長崎県佐々町志方免・明治地形図 樹林残存 戦前坑口(⚒)遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.73 ZNCC=0.79 · 1mLiDAR cov=1.00 dome=3.38m scarp=32.0° elev=120.3m"
-    },
-    {
-      "discovery_id": "W5-001",
-      "model_source": "Blind-R8 (Wave5_Stage1_Fukuoka)",
-      "corridor_id": "Wave5_Stage1_Fukuoka",
-      "region_folder": "fukuoka",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 33.806083,
-      "lon": 130.803984,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.7254,
-      "branch_a_prob": 0.7254,
-      "branch_b_prob": 0.7254,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "福岡県北九州市八幡東区大字田代・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.73 ZNCC=0.84 · 1mLiDAR cov=1.00 dome=4.88m pad=22.2° scarp=25.8° elev=334.1m"
-    },
-    {
-      "discovery_id": "W4-006",
-      "model_source": "Blind-R8 (Wave4_Echizen_TakefuKofun)",
-      "corridor_id": "Wave4_Echizen_TakefuKofun",
-      "region_folder": "fukui",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 35.850613,
-      "lon": 136.174818,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.7133,
-      "branch_a_prob": 0.7133,
-      "branch_b_prob": 0.7133,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "福井県越前市国兼町・樹林下 明治期消滅社祠(⛩) 土壇遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "[QA PASS] Genuine vanished Meiji ⛩ on isolated knoll, crisp rectilinear leveled platform/scarp in 1m RRIM, intact mature forest canopy · R8=0.71 ZNCC=0.62 · 1mLiDAR cov=1.00 dome=5.60m scarp=34.1° elev=97.9m"
-    },
-    {
-      "discovery_id": "W5-003",
-      "model_source": "Blind-R8 (Wave5_Stage1_Sendai)",
-      "corridor_id": "Wave5_Stage1_Sendai",
-      "region_folder": "sendai",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 38.40453,
-      "lon": 140.872568,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.7113,
-      "branch_a_prob": 0.7113,
-      "branch_b_prob": 0.7113,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "宮城県大和町小野・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.71 ZNCC=0.80 · 1mLiDAR cov=1.00 dome=3.46m pad=13.0° scarp=25.8° elev=40.3m"
     },
     {
       "discovery_id": "W4-041",
@@ -10531,54 +10745,6 @@
       "qa_note": "R9=0.71 ZNCC=0.71 · 1mLiDAR cov=0.94 dome=0.09m pad=7.3° scarp=19.6° elev=242.2m"
     },
     {
-      "discovery_id": "W4-007",
-      "model_source": "Blind-R8 (Wave4_Bungo_OitaOtomo)",
-      "corridor_id": "Wave4_Bungo_OitaOtomo",
-      "region_folder": "oita",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 33.224266,
-      "lon": 131.839446,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.7038,
-      "branch_a_prob": 0.7038,
-      "branch_b_prob": 0.7038,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "大分県大分市大字志生木・樹林下 明治期消滅社祠(⛩) 土壇遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "[QA PASS] Clear vanished Taishō ⛩ glyph, distinct stepped ridge-crest earthwork platform in 1m RRIM, unbroken mature forest canopy · R8=0.70 ZNCC=0.65 · 1mLiDAR cov=1.00 dome=5.19m scarp=39.1° elev=64.3m"
-    },
-    {
-      "discovery_id": "W5-004",
-      "model_source": "Blind-R8 (Wave5_Stage1_Sendai)",
-      "corridor_id": "Wave5_Stage1_Sendai",
-      "region_folder": "sendai",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 38.415173,
-      "lon": 140.853835,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.7028,
-      "branch_a_prob": 0.7028,
-      "branch_b_prob": 0.7028,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "宮城県大和町宮床・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.70 ZNCC=0.84 · 1mLiDAR cov=1.00 dome=3.36m pad=28.4° scarp=31.2° elev=68.1m"
-    },
-    {
       "discovery_id": "MM6-001",
       "model_source": "DualBranch-R6",
       "corridor_id": "hamamatsu_north",
@@ -10604,52 +10770,28 @@
       "qa_note": "Verified vanished Meiji–Taishō temple (`卍` on 2man/00 near Kami-Nobe, Tenryū; absent on modern GSI)"
     },
     {
-      "discovery_id": "W5-006",
-      "model_source": "Blind-R8 (Wave5_Stage1_Takamatsu)",
-      "corridor_id": "Wave5_Stage1_Takamatsu",
-      "region_folder": "takamatsu",
+      "discovery_id": "W7-001",
+      "model_source": "Blind-R9 (Wave7_mine_arrow_Okayama)",
+      "corridor_id": "Wave7_mine_arrow_Okayama",
+      "region_folder": "okayama",
       "in100km2": false,
-      "kind": "shrine_torii",
+      "kind": "mine_quarry",
       "secondary_classes": [],
       "human_verified": false,
-      "lat": 34.164721,
-      "lon": 133.885113,
+      "lat": 34.591089,
+      "lon": 133.634538,
       "epochs_present": [
         "2man"
       ],
-      "consensus_score": 0.696,
-      "branch_a_prob": 0.696,
-      "branch_b_prob": 0.696,
+      "consensus_score": 0.6845,
+      "branch_a_prob": 0.6845,
+      "branch_b_prob": 0.6845,
       "dist_nearest_modern_shrine_m": 999.0,
       "dist_nearest_modern_temple_m": 999.0,
       "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "香川県まんのう町吉野・樹林下 明治・大正期消滅社祠(⛩) 土壇遺構候補",
+      "wikidata_name": "岡山県小田郡矢掛町横谷・彌高銅山 明治図矢印が示す樹林下の廃坑口・切土遺構(⚒↓)",
       "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.70 ZNCC=0.83 · 1mLiDAR cov=1.00 dome=4.87m pad=7.7° scarp=30.4° elev=226.8m"
-    },
-    {
-      "discovery_id": "W4-061",
-      "model_source": "Blind-R8 (Wave4_Izumo_SacredKofun)",
-      "corridor_id": "Wave4_Izumo_SacredKofun",
-      "region_folder": "matsue",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 35.344894,
-      "lon": 132.787167,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.6928,
-      "branch_a_prob": 0.6928,
-      "branch_b_prob": 0.6928,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "島根県出雲市大津町・樹林下 大正期消滅社祠(⛩) 尾根端土壇遺構",
-      "ocr_kanji_nearby": [],
-      "qa_note": "QA PASS: Genuine 1915 Taishō ⛩ glyph on westward spur nose; vanished on modern GSI; compact leveled oval spur-nose platform (土壇) in 1m Bare-Earth LiDAR under intact closed forest canopy"
+      "qa_note": "R9=0.68 ZNCC=0.68 · 1mLiDAR cov=0.98 dome=4.94m pit=3.64m scarp=36.8° elev=154.5m"
     },
     {
       "discovery_id": "W6-003",
@@ -10702,54 +10844,6 @@
       ],
       "qa_note": "Verified vanished 1890s Meiji temple (`卍` on 2man at Yokoo, Inasa near Tenpaku Iwakura; absent modern)",
       "ocr_model": "datalab-to/surya-ocr-2.5"
-    },
-    {
-      "discovery_id": "W3-029",
-      "model_source": "Blind-R8 (Wave3_Tohoku_Yamagata)",
-      "corridor_id": "Wave3_Tohoku_Yamagata",
-      "region_folder": "yamagata",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 38.299047,
-      "lon": 140.375061,
-      "epochs_present": [
-        "2man"
-      ],
-      "consensus_score": 0.6732,
-      "branch_a_prob": 0.6732,
-      "branch_b_prob": 0.6732,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "山形県山形市大字風間・明治地形図 消滅古社・合祀廃社(⛩)遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.67 ZNCC=0.74 · 1mLiDAR cov=1.00 dome=4.07m scarp=35.8° elev=151.6m"
-    },
-    {
-      "discovery_id": "W3-030",
-      "model_source": "Blind-R8 (Wave3_Kyushu_HizenHokusho)",
-      "corridor_id": "Wave3_Kyushu_HizenHokusho",
-      "region_folder": "sasebo",
-      "in100km2": false,
-      "kind": "mine_quarry",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 33.217795,
-      "lon": 129.749157,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.6716,
-      "branch_a_prob": 0.6716,
-      "branch_b_prob": 0.6716,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "長崎県佐世保市柚木元町・大正・昭和戦前図 樹林残存 戦前坑口(⚒)遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.67 ZNCC=0.72 · 1mLiDAR cov=1.00 dome=-0.84m scarp=32.5° elev=190.6m"
     },
     {
       "discovery_id": "W2-002",
@@ -10822,6 +10916,30 @@
       "wikidata_name": "岡山県岡山市東区沼・樹林下 8方位完全閉合 古墳円丘マウンド候補",
       "ocr_kanji_nearby": [],
       "qa_note": "R8=0.66 · 1mLiDAR cov=1.00 dome=6.73m prom=20.5m scarp=29.6° elev=133.1m"
+    },
+    {
+      "discovery_id": "W7-002",
+      "model_source": "Blind-R9 (Wave7_temple_manji_Tokyo50)",
+      "corridor_id": "Wave7_temple_manji_Tokyo50",
+      "region_folder": "tokyo50",
+      "in100km2": false,
+      "kind": "temple_manji",
+      "secondary_classes": [],
+      "human_verified": false,
+      "lat": 35.649075,
+      "lon": 139.28273,
+      "epochs_present": [
+        "00"
+      ],
+      "consensus_score": 0.6472,
+      "branch_a_prob": 0.6472,
+      "branch_b_prob": 0.6472,
+      "dist_nearest_modern_shrine_m": 999.0,
+      "dist_nearest_modern_temple_m": 999.0,
+      "dist_gsi_bldg_m": 120.0,
+      "wikidata_name": "東京都八王子市長房町・樹林下に残る明治・大正期消滅山寺(卍) 境内平場遺構",
+      "ocr_kanji_nearby": [],
+      "qa_note": "R9=0.65 ZNCC=0.82 · 1mLiDAR cov=0.99 dome=0.40m pad=4.4° scarp=25.4° elev=178.6m"
     },
     {
       "discovery_id": "W3-009",
@@ -10932,30 +11050,6 @@
       "qa_note": "Verified vanished mountain shrine (`⛩` on 00/01 on Takayama ridge, Kurate; forested today)"
     },
     {
-      "discovery_id": "W3-032",
-      "model_source": "Blind-R8 (Wave3_Shinano_Matsumoto)",
-      "corridor_id": "Wave3_Shinano_Matsumoto",
-      "region_folder": "matsumoto",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 36.28647,
-      "lon": 137.980428,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.6301,
-      "branch_a_prob": 0.6301,
-      "branch_b_prob": 0.6301,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "長野県松本市大字岡田伊深・大正・昭和戦前図 消滅古社・合祀廃社(⛩)遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.63 ZNCC=0.66 · 1mLiDAR cov=1.00 dome=2.27m scarp=35.5° elev=778.1m"
-    },
-    {
       "discovery_id": "MM6-067",
       "model_source": "DualBranch-R6",
       "corridor_id": "fukuoka_chikuho",
@@ -10978,30 +11072,6 @@
       "wikidata_name": null,
       "ocr_kanji_nearby": [],
       "qa_note": "Verified vanished Taishō valley shrine (`⛩` on 00 in southern Yahata-Nishi; forested valley today)"
-    },
-    {
-      "discovery_id": "W3-033",
-      "model_source": "Blind-R8 (Wave3_Tohoku_SendaiMatsushima)",
-      "corridor_id": "Wave3_Tohoku_SendaiMatsushima",
-      "region_folder": "sendai",
-      "in100km2": false,
-      "kind": "shrine_torii",
-      "secondary_classes": [],
-      "human_verified": false,
-      "lat": 38.376267,
-      "lon": 140.973387,
-      "epochs_present": [
-        "00"
-      ],
-      "consensus_score": 0.6074,
-      "branch_a_prob": 0.6074,
-      "branch_b_prob": 0.6074,
-      "dist_nearest_modern_shrine_m": 999.0,
-      "dist_nearest_modern_temple_m": 999.0,
-      "dist_gsi_bldg_m": 120.0,
-      "wikidata_name": "宮城県大和町鶴巣小鶴沢・大正・昭和戦前図 消滅古社・合祀廃社(⛩)遺構候補",
-      "ocr_kanji_nearby": [],
-      "qa_note": "R8=0.61 ZNCC=0.75 · 1mLiDAR cov=1.00 dome=0.69m scarp=42.4° elev=75.2m"
     },
     {
       "discovery_id": "W2-004",
@@ -11072,19 +11142,19 @@
     }
   ],
   "human_ground_truth_summary": {
-    "total_votes": 840,
-    "confirmed_positives_count": 318,
+    "total_votes": 863,
+    "confirmed_positives_count": 329,
     "confirmed_negatives_count": 329,
     "counts_by_class": {
       "negative": 329,
-      "shrine_torii": 71,
-      "unsure": 193,
-      "temple_manji": 41,
+      "shrine_torii": 80,
+      "unsure": 205,
+      "temple_manji": 42,
       "school_bun": 49,
-      "mine_quarry": 80,
+      "mine_quarry": 82,
       "castle_ruin": 21,
       "burial_mound": 54,
-      "linear_earthwork": 2
+      "linear_earthwork": 1
     }
   },
   "multimodal_r5_model_summary": {
@@ -11188,7 +11258,7 @@
         "temple_manji": "4/4"
       }
     },
-    "published_multitier_discoveries": 62,
+    "published_multitier_discoveries": 64,
     "published_by_subtier": {
       "Tier1_KodaiKando": 3,
       "Tier1_ForestRail": 2,
@@ -11224,16 +11294,18 @@
       "Wave5_Stage1_Takamatsu": 1,
       "Wave6A_mine_quarry_Hiroshima": 1,
       "Wave6A_mine_quarry_Sasebo": 1,
-      "Wave6A_temple_manji_Himeji": 1
+      "Wave6A_temple_manji_Himeji": 1,
+      "Wave7_mine_arrow_Okayama": 1,
+      "Wave7_temple_manji_Tokyo50": 1
     },
     "published_by_class": {
       "linear_earthwork": 7,
       "haison_industrial": 7,
-      "mine_quarry": 6,
+      "mine_quarry": 7,
       "burial_mound": 17,
       "megalith_iwakura": 5,
       "castle_ruin": 8,
-      "temple_manji": 2,
+      "temple_manji": 3,
       "shrine_torii": 10
     }
   },
@@ -11300,7 +11372,7 @@
         "haison_industrial": "2/3"
       }
     },
-    "published_discoveries_total": 62,
+    "published_discoveries_total": 64,
     "published_by_subtier": {
       "Tier1_KodaiKando": 3,
       "Tier1_ForestRail": 2,
@@ -11336,16 +11408,18 @@
       "Wave5_Stage1_Takamatsu": 1,
       "Wave6A_mine_quarry_Hiroshima": 1,
       "Wave6A_mine_quarry_Sasebo": 1,
-      "Wave6A_temple_manji_Himeji": 1
+      "Wave6A_temple_manji_Himeji": 1,
+      "Wave7_mine_arrow_Okayama": 1,
+      "Wave7_temple_manji_Tokyo50": 1
     },
     "published_by_class": {
       "linear_earthwork": 7,
       "haison_industrial": 7,
-      "mine_quarry": 6,
+      "mine_quarry": 7,
       "burial_mound": 17,
       "megalith_iwakura": 5,
       "castle_ruin": 8,
-      "temple_manji": 2,
+      "temple_manji": 3,
       "shrine_torii": 10
     }
   },
@@ -11413,7 +11487,7 @@
         "haison_industrial": "3/3"
       }
     },
-    "published_discoveries_total": 62,
+    "published_discoveries_total": 64,
     "published_by_subtier": {
       "Tier1_KodaiKando": 3,
       "Tier1_ForestRail": 2,
@@ -11449,16 +11523,18 @@
       "Wave5_Stage1_Takamatsu": 1,
       "Wave6A_mine_quarry_Hiroshima": 1,
       "Wave6A_mine_quarry_Sasebo": 1,
-      "Wave6A_temple_manji_Himeji": 1
+      "Wave6A_temple_manji_Himeji": 1,
+      "Wave7_mine_arrow_Okayama": 1,
+      "Wave7_temple_manji_Tokyo50": 1
     },
     "published_by_class": {
       "linear_earthwork": 7,
       "haison_industrial": 7,
-      "mine_quarry": 6,
+      "mine_quarry": 7,
       "burial_mound": 17,
       "megalith_iwakura": 5,
       "castle_ruin": 8,
-      "temple_manji": 2,
+      "temple_manji": 3,
       "shrine_torii": 10
     }
   }

@@ -1,6 +1,6 @@
 {
   "schema": "palimpsest_symbol_r6_candidates_v1",
-  "count": 163,
+  "count": 165,
   "candidates": [
     {
       "code": "W5-001",
@@ -1763,6 +1763,28 @@
       "ort_url": "./r6_crops/MM6-001_ort.png"
     },
     {
+      "code": "W7-001",
+      "lat": 34.591089,
+      "lon": 133.634538,
+      "target_kind": "mine",
+      "predicted_class": "mine_quarry",
+      "sub_tier": "Wave7_mine_arrow_Okayama",
+      "site_name": "岡山県小田郡矢掛町横谷・彌高銅山 明治図矢印が示す樹林下の廃坑口・切土遺構(⚒↓)",
+      "region_folder": "okayama",
+      "region_short": "OKAYAMA",
+      "region_label": "Wave-7 Leader-Arrow Portal (okayama:2man)",
+      "epoch": "2man",
+      "epoch_label": "Konjakumap okayama:2man + 1m Bare-Earth LiDAR",
+      "score": 0.6845,
+      "qa_status": "PASS",
+      "bucket_note": "R9=0.68 ZNCC=0.68 · 1mLiDAR cov=0.98 dome=4.94m pit=3.64m scarp=36.8° elev=154.5m",
+      "glyph_url": "./r6_crops/W7-001_glyph.png",
+      "ctx_url": "./r6_crops/W7-001_ctx.png",
+      "mod_url": "./r6_crops/W7-001_mod.png",
+      "rel_url": "./r6_crops/W7-001_rel.png",
+      "ort_url": "./r6_crops/W7-001_ort.png"
+    },
+    {
       "code": "W6-003",
       "lat": 34.804298,
       "lon": 134.933749,
@@ -1805,6 +1827,28 @@
       "mod_url": "./r6_crops/MM6-022_mod.png",
       "rel_url": "./r6_crops/MM6-022_rel.png",
       "ort_url": "./r6_crops/MM6-022_ort.png"
+    },
+    {
+      "code": "W7-002",
+      "lat": 35.649075,
+      "lon": 139.28273,
+      "target_kind": "manji",
+      "predicted_class": "temple_manji",
+      "sub_tier": "Wave7_temple_manji_Tokyo50",
+      "site_name": "東京都八王子市長房町・樹林下に残る明治・大正期消滅山寺(卍) 境内平場遺構",
+      "region_folder": "tokyo50",
+      "region_short": "TOKYO50",
+      "region_label": "Wave-7 Zero-Region Sweep (tokyo50:00)",
+      "epoch": "00",
+      "epoch_label": "Konjakumap tokyo50:00 + 1m Bare-Earth LiDAR",
+      "score": 0.6472,
+      "qa_status": "PASS",
+      "bucket_note": "R9=0.65 ZNCC=0.82 · 1mLiDAR cov=0.99 dome=0.40m pad=4.4° scarp=25.4° elev=178.6m",
+      "glyph_url": "./r6_crops/W7-002_glyph.png",
+      "ctx_url": "./r6_crops/W7-002_ctx.png",
+      "mod_url": "./r6_crops/W7-002_mod.png",
+      "rel_url": "./r6_crops/W7-002_rel.png",
+      "ort_url": "./r6_crops/W7-002_ort.png"
     },
     {
       "code": "MM6-004",
