@@ -1,5 +1,5 @@
 {
-  "count": 29,
+  "count": 33,
   "cards": [
     {
       "rank": 1,
@@ -522,6 +522,78 @@
       "scarp_deg": 25.4,
       "image": "./cards/29_W7-002.png",
       "atlas_url": "./shrine_atlas.html#17/35.649075/139.282730/W7-002"
+    },
+    {
+      "rank": 30,
+      "code": "W8-001",
+      "slug": "30_W8-001",
+      "place_ja": "新潟県五泉市山崎",
+      "title_ja": "五泉丘陵・樹林下の消滅古社と尾根土壇",
+      "era_ja": "明治・大正図 · 鳥居記号",
+      "badge_ja": "消滅社祠",
+      "accent": "#EC604D",
+      "score": 0.6531,
+      "lat": 37.757051,
+      "lon": 139.14677,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+7.1m",
+      "scarp_deg": 35.8,
+      "image": "./cards/30_W8-001.png",
+      "atlas_url": "./shrine_atlas.html#17/37.757051/139.146770/W8-001"
+    },
+    {
+      "rank": 31,
+      "code": "W8-017",
+      "slug": "31_W8-017",
+      "place_ja": "山口県山陽小野田市大字高畑",
+      "title_ja": "高畑・樹林下に残る双子陥没坑口遺構",
+      "era_ja": "明治地形図 · 坑口記号",
+      "badge_ja": "戦前坑口",
+      "accent": "#D99A5E",
+      "score": 0.7527,
+      "lat": 34.037449,
+      "lon": 131.197475,
+      "relief_lbl_ja": "切岸段差",
+      "relief_val": "7.9m",
+      "scarp_deg": 24.5,
+      "image": "./cards/31_W8-017.png",
+      "atlas_url": "./shrine_atlas.html#17/34.037449/131.197475/W8-017"
+    },
+    {
+      "rank": 32,
+      "code": "W8-018",
+      "slug": "32_W8-018",
+      "place_ja": "山口県山陽小野田市大字有帆",
+      "title_ja": "有帆炭田・樹林下の戦前炭坑切土遺構",
+      "era_ja": "明治・大正図 · 坑口記号",
+      "badge_ja": "戦前坑口",
+      "accent": "#D99A5E",
+      "score": 0.7282,
+      "lat": 34.034284,
+      "lon": 131.213633,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+5.0m",
+      "scarp_deg": 24.3,
+      "image": "./cards/32_W8-018.png",
+      "atlas_url": "./shrine_atlas.html#17/34.034284/131.213633/W8-018"
+    },
+    {
+      "rank": 33,
+      "code": "W8-019",
+      "slug": "33_W8-019",
+      "place_ja": "香川県高松市西植田町",
+      "title_ja": "讃岐段丘・樹林下の独立閉合円墳候補",
+      "era_ja": "国土地理院地図 · 未記載",
+      "badge_ja": "古墳マウンド",
+      "accent": "#4AD2B8",
+      "score": 0.6724,
+      "lat": 34.249629,
+      "lon": 134.080174,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+6.8m",
+      "scarp_deg": 25.4,
+      "image": "./cards/33_W8-019.png",
+      "atlas_url": "./shrine_atlas.html#17/34.249629/134.080174/W8-019"
     }
   ]
 }
