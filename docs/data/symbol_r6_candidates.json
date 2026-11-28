@@ -1,6 +1,6 @@
 {
   "schema": "palimpsest_symbol_r6_candidates_v1",
-  "count": 160,
+  "count": 163,
   "candidates": [
     {
       "code": "W5-001",
@@ -1609,6 +1609,28 @@
       "ort_url": "./r6_crops/MM6-048_ort.png"
     },
     {
+      "code": "W6-001",
+      "lat": 34.492955,
+      "lon": 132.533605,
+      "target_kind": "mine",
+      "predicted_class": "mine_quarry",
+      "sub_tier": "Wave6A_mine_quarry_Hiroshima",
+      "site_name": "広島県広島市安佐北区深川町・樹林下 明治・戦前期廃坑口・ズリ山(⚒) 遺構候補",
+      "region_folder": "hiroshima",
+      "region_short": "HIROSHIMA",
+      "region_label": "Wave-6A Monochrome z16 (hiroshima:2man)",
+      "epoch": "2man",
+      "epoch_label": "Konjakumap hiroshima:2man + 1m Bare-Earth LiDAR",
+      "score": 0.8282,
+      "qa_status": "PASS",
+      "bucket_note": "R9=0.83 ZNCC=0.72 · 1mLiDAR cov=1.00 dome=4.98m pit=4.06m scarp=39.2° elev=242.9m",
+      "glyph_url": "./r6_crops/W6-001_glyph.png",
+      "ctx_url": "./r6_crops/W6-001_ctx.png",
+      "mod_url": "./r6_crops/W6-001_mod.png",
+      "rel_url": "./r6_crops/W6-001_rel.png",
+      "ort_url": "./r6_crops/W6-001_ort.png"
+    },
+    {
       "code": "MM6-051",
       "lat": 33.806734,
       "lon": 130.644522,
@@ -1697,6 +1719,28 @@
       "ort_url": "./r6_crops/TD1-003_ort.png"
     },
     {
+      "code": "W6-002",
+      "lat": 33.197013,
+      "lon": 129.708055,
+      "target_kind": "mine",
+      "predicted_class": "mine_quarry",
+      "sub_tier": "Wave6A_mine_quarry_Sasebo",
+      "site_name": "長崎県佐世保市横尾町・樹林下 明治・戦前期廃坑口・ズリ山(⚒) 遺構候補",
+      "region_folder": "sasebo",
+      "region_short": "SASEBO",
+      "region_label": "Wave-6A Monochrome z16 (sasebo:2man)",
+      "epoch": "2man",
+      "epoch_label": "Konjakumap sasebo:2man + 1m Bare-Earth LiDAR",
+      "score": 0.7059,
+      "qa_status": "PASS",
+      "bucket_note": "R9=0.71 ZNCC=0.71 · 1mLiDAR cov=0.94 dome=0.09m pad=7.3° scarp=19.6° elev=242.2m",
+      "glyph_url": "./r6_crops/W6-002_glyph.png",
+      "ctx_url": "./r6_crops/W6-002_ctx.png",
+      "mod_url": "./r6_crops/W6-002_mod.png",
+      "rel_url": "./r6_crops/W6-002_rel.png",
+      "ort_url": "./r6_crops/W6-002_ort.png"
+    },
+    {
       "code": "MM6-001",
       "lat": 34.850773,
       "lon": 137.821598,
@@ -1717,6 +1761,28 @@
       "mod_url": "./r6_crops/MM6-001_mod.png",
       "rel_url": "./r6_crops/MM6-001_rel.png",
       "ort_url": "./r6_crops/MM6-001_ort.png"
+    },
+    {
+      "code": "W6-003",
+      "lat": 34.804298,
+      "lon": 134.933749,
+      "target_kind": "manji",
+      "predicted_class": "temple_manji",
+      "sub_tier": "Wave6A_temple_manji_Himeji",
+      "site_name": "兵庫県三木市別所町正法寺・樹林下 明治・大正期消滅山寺(卍) 境内平場遺構候補",
+      "region_folder": "himeji",
+      "region_short": "HIMEJI",
+      "region_label": "Wave-6A Monochrome z16 (himeji:2man)",
+      "epoch": "2man",
+      "epoch_label": "Konjakumap himeji:2man + 1m Bare-Earth LiDAR",
+      "score": 0.6826,
+      "qa_status": "PASS",
+      "bucket_note": "R9=0.68 ZNCC=0.81 · 1mLiDAR cov=1.00 dome=1.77m pad=28.3° scarp=34.5° elev=68.8m",
+      "glyph_url": "./r6_crops/W6-003_glyph.png",
+      "ctx_url": "./r6_crops/W6-003_ctx.png",
+      "mod_url": "./r6_crops/W6-003_mod.png",
+      "rel_url": "./r6_crops/W6-003_rel.png",
+      "ort_url": "./r6_crops/W6-003_ort.png"
     },
     {
       "code": "MM6-022",

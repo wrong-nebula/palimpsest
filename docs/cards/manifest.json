@@ -1,5 +1,5 @@
 {
-  "count": 24,
+  "count": 27,
   "cards": [
     {
       "rank": 1,
@@ -432,6 +432,60 @@
       "scarp_deg": 30.4,
       "image": "./cards/24_W5-006.png",
       "atlas_url": "./shrine_atlas.html#17/34.164721/133.885113/W5-006"
+    },
+    {
+      "rank": 25,
+      "code": "W6-001",
+      "slug": "25_W6-001",
+      "place_ja": "広島県広島市安佐北区深川町",
+      "title_ja": "明治図矢印が示す樹林下の廃坑口遺構",
+      "era_ja": "明治・大正図 · 坑口記号",
+      "badge_ja": "戦前坑口",
+      "accent": "#D99A5E",
+      "score": 0.8282,
+      "lat": 34.492955,
+      "lon": 132.533605,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+5.0m",
+      "scarp_deg": 39.2,
+      "image": "./cards/25_W6-001.png",
+      "atlas_url": "./shrine_atlas.html#17/34.492955/132.533605/W6-001"
+    },
+    {
+      "rank": 26,
+      "code": "W6-002",
+      "slug": "26_W6-002",
+      "place_ja": "長崎県佐世保市横尾町",
+      "title_ja": "北松炭田・樹林下の明治期坑口切岸遺構",
+      "era_ja": "明治・大正図 · 坑口記号",
+      "badge_ja": "戦前坑口",
+      "accent": "#D99A5E",
+      "score": 0.7059,
+      "lat": 33.197013,
+      "lon": 129.708055,
+      "relief_lbl_ja": "切岸段差",
+      "relief_val": "2.1m",
+      "scarp_deg": 19.6,
+      "image": "./cards/26_W6-002.png",
+      "atlas_url": "./shrine_atlas.html#17/33.197013/129.708055/W6-002"
+    },
+    {
+      "rank": 27,
+      "code": "W6-003",
+      "slug": "27_W6-003",
+      "place_ja": "兵庫県三木市別所町正法寺",
+      "title_ja": "正法寺・明治期消滅山寺の方形平場",
+      "era_ja": "明治・大正図 · 寺院記号",
+      "badge_ja": "消滅山寺",
+      "accent": "#E6B450",
+      "score": 0.6826,
+      "lat": 34.804298,
+      "lon": 134.933749,
+      "relief_lbl_ja": "比高",
+      "relief_val": "+1.8m",
+      "scarp_deg": 34.5,
+      "image": "./cards/27_W6-003.png",
+      "atlas_url": "./shrine_atlas.html#17/34.804298/134.933749/W6-003"
     }
   ]
 }
